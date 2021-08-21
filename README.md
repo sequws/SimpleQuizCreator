@@ -1,0 +1,2 @@
+# SimpleQuizCreator
+WPF, Prism, SQLite
