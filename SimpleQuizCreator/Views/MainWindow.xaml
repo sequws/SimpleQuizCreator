@@ -4,7 +4,12 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="350" Width="525">
-    <Grid>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="140">
+            <Button Content="HelloView" Margin="2"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
+            <Button Content="QuizListView" Margin="2"  Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
+            <Button Content="StartQuizView" Margin="2"  Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
+        </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
-    </Grid>
+    </DockPanel>
 </Window>

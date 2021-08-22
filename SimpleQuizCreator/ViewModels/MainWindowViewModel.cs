@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Ioc;
+using Prism.Mvvm;
+using Prism.Regions;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -11,9 +14,20 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        public MainWindowViewModel()
-        {
+        IContainerExtension _container;
+        IRegionManager _regionManager;
+        public DelegateCommand<string> NavigateCommand { get; set; }
 
+        public MainWindowViewModel(IContainerExtension container, IRegionManager regionManager)
+        {
+            _container = container;
+            _regionManager = regionManager;
+            NavigateCommand = new DelegateCommand<string>(Navigate);
+        }
+
+        private void Navigate(string uri)
+        {
+            _regionManager.RequestNavigate("ContentRegion", uri);
         }
     }
 }
