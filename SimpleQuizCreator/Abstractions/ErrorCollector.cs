@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SimpleQuizCreator.Abstractions
 {
@@ -13,6 +9,11 @@ namespace SimpleQuizCreator.Abstractions
     {
         protected List<string> errors = new List<string>();
         protected int errorCoutner = 0;
+
+        public ErrorCollector()
+        {
+            ClearData();
+        }
 
         protected void AddError(string text)
         {
