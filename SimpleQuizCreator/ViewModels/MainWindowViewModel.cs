@@ -1,4 +1,5 @@
-﻿using Prism.Commands;
+﻿using NLog;
+using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -7,6 +8,9 @@ namespace SimpleQuizCreator.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
+
         private string _title = "SimpleQuizCreator v0.01b";
         public string Title
         {
@@ -23,6 +27,7 @@ namespace SimpleQuizCreator.ViewModels
             _container = container;
             _regionManager = regionManager;
             NavigateCommand = new DelegateCommand<string>(Navigate);
+
         }
 
         private void Navigate(string uri)
