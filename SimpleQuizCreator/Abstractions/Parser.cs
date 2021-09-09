@@ -20,5 +20,7 @@ namespace SimpleQuizCreator.Abstractions
             }
             return true;
         }
+
+        public abstract bool TryParse(List<string> input);
     }
 }

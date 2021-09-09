@@ -16,7 +16,13 @@ namespace SimpleQuizCreator.DataAccess
 
         public override bool TryParse(string input)
         {
-            throw new NotImplementedException();
+            return true;
+        }
+
+        public override bool TryParse(List<string> input)
+        {
+
+            return true;
         }
     }
 }

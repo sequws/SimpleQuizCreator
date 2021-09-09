@@ -7,7 +7,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
-    <Grid>
-        <Label Content="QuizList"></Label>
-    </Grid>
+    <DockPanel>
+        <Label DockPanel.Dock="Top" Content="QuizList"></Label>
+        <Grid>
+            <ListBox ItemsSource="{Binding ListOfQuizzes}">
+                
+            </ListBox>
+        </Grid>
+    </DockPanel>
 </UserControl>

@@ -6,9 +6,9 @@ using System.Linq;
 
 namespace SimpleQuizCreator.ViewModels
 {
-    public class QuizListViewViewModel : BindableBase
+    public class HelloViewModel : BindableBase
     {
-        public QuizListViewViewModel()
+        public HelloViewModel()
         {
 
         }

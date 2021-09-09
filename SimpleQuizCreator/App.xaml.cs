@@ -5,6 +5,7 @@ using System.Windows;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.DataAccess;
 using SimpleQuizCreator.Models;
+using SimpleQuizCreator.Services;
 
 namespace SimpleQuizCreator
 {
@@ -22,6 +23,7 @@ namespace SimpleQuizCreator
         {
             containerRegistry.RegisterSingleton<IParser, QuizParser>();
             containerRegistry.RegisterSingleton<ILoader<QuizFile>, QuizLoader>();
+            containerRegistry.RegisterSingleton<IQuizService, QuizService>();
         }
     }
 }

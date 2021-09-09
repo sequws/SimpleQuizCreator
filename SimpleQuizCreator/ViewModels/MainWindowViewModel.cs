@@ -22,20 +22,23 @@ namespace SimpleQuizCreator.ViewModels
 
         IContainerExtension _container;
         IRegionManager _regionManager;
-        IParser _parser;
-        ILoader<QuizFile> _loader;
+        IQuizService _quizService;
+
         public DelegateCommand<string> NavigateCommand { get; set; }
 
         public MainWindowViewModel(IContainerExtension container,
             IRegionManager regionManager,
-            IParser parser,
-            ILoader<QuizFile> loader)
+            IQuizService quizService
+            )
         {
-            _parser = parser;
             _container = container;
+
+            //_container.RegisterForNavigation(typeof(HelloView),)
+
             _regionManager = regionManager;
-            _loader = loader;
-            var fileList = _loader.LoadData();
+            _quizService = quizService;
+
+            var quizzes = _quizService.GetAllQuizzes();
 
             NavigateCommand = new DelegateCommand<string>(Navigate);
         }

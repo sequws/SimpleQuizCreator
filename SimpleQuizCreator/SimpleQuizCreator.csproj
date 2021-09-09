@@ -64,12 +64,14 @@
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
+    <Compile Include="Interfaces\IQuizService.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\QuizFile.cs" />
-    <Compile Include="ViewModels\QuizListViewViewModel.cs" />
-    <Compile Include="ViewModels\StartQuizViewViewModel.cs" />
+    <Compile Include="Services\QuizService.cs" />
+    <Compile Include="ViewModels\QuizListViewModel.cs" />
+    <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\QuizListView.xaml.cs">
       <DependentUpon>QuizListView.xaml</DependentUpon>
     </Compile>
@@ -88,7 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ViewModels\HelloViewViewModel.cs" />
+    <Compile Include="ViewModels\HelloViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\HelloView.xaml.cs">
       <DependentUpon>HelloView.xaml</DependentUpon>

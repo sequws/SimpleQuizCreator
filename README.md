@@ -14,6 +14,7 @@ Look how simple it is:
 - good answers start with [*]
 
 ##Examples
+
 Look at the example:
 file:  **Animals.txt** (file in the quizzes folder)
 file content:
