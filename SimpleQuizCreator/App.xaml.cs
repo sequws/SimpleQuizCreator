@@ -20,6 +20,7 @@ namespace SimpleQuizCreator
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IParser, QuizParser>();
+            containerRegistry.RegisterSingleton<ILoader, QuizLoader>();
         }
     }
 }

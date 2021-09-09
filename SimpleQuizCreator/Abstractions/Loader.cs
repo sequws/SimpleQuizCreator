@@ -13,7 +13,7 @@ namespace SimpleQuizCreator.Abstractions
     /// </summary>
     public abstract class Loader : ErrorCollector
     {
-        string dataPath;
+        readonly string dataPath;
         private const string mainDataFolder = "data"; // main folder for all loaders
         protected string loadDirectory;
         protected string extension = "*.*";

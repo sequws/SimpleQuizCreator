@@ -10,5 +10,6 @@ namespace SimpleQuizCreator.Interfaces
     public interface ILoader
     {
         bool Load();
+        List<string> GetFiles();
     }
 }
