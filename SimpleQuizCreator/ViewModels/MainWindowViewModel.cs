@@ -3,6 +3,7 @@ using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
+using SimpleQuizCreator.Interfaces;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -20,10 +21,12 @@ namespace SimpleQuizCreator.ViewModels
 
         IContainerExtension _container;
         IRegionManager _regionManager;
+        IParser _parser;
         public DelegateCommand<string> NavigateCommand { get; set; }
 
-        public MainWindowViewModel(IContainerExtension container, IRegionManager regionManager)
+        public MainWindowViewModel(IContainerExtension container, IRegionManager regionManager, IParser parser)
         {
+            _parser = parser;
             _container = container;
             _regionManager = regionManager;
             NavigateCommand = new DelegateCommand<string>(Navigate);

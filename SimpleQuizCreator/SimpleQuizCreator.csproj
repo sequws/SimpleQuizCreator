@@ -58,8 +58,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Abstractions\ErrorCollector.cs" />
+    <Compile Include="Abstractions\Loader.cs" />
     <Compile Include="Abstractions\Parser.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
+    <Compile Include="Interfaces\ILoader.cs" />
+    <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />

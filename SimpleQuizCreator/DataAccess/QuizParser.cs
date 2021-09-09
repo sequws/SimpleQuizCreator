@@ -9,6 +9,11 @@ namespace SimpleQuizCreator.DataAccess
 {
     public class QuizParser : Parser
     {
+        public QuizParser()
+        {
+            
+        }
+
         public override bool TryParse(string input)
         {
             throw new NotImplementedException();
