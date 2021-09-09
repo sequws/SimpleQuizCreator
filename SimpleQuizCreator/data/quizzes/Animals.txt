@@ -1,0 +1,15 @@
+[Q]Which animal has the most extended tail?
+-Elephant
+[*]-Giraffe
+-Cat
+-Cow
+
+[Q]Which big cat has the loudest roar out of all the big cats?
+-Cat
+[*]-Lion
+-Leopard
+
+[Q]Which animal has three hearts?
+[*]-Octopus
+-Elephant
+-Whale

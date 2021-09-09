@@ -9,11 +9,11 @@ Create your own quizzes using simple TXT files.
 Look how simple it is:
 - one file = one quiz
 - on each file as many question as you want
-- each question starts with [Q], or [q]
+- each question starts with __[Q]__, or __[q]__
 - each question may have up to nine answers
-- good answers start with [*]
+- good answers start with __[*]__
 
-##Examples
+### Examples
 
 Look at the example:
 file:  **Animals.txt** (file in the quizzes folder)
