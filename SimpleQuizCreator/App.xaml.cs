@@ -4,6 +4,7 @@ using Prism.Modularity;
 using System.Windows;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.DataAccess;
+using SimpleQuizCreator.Models;
 
 namespace SimpleQuizCreator
 {
@@ -20,7 +21,7 @@ namespace SimpleQuizCreator
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IParser, QuizParser>();
-            containerRegistry.RegisterSingleton<ILoader, QuizLoader>();
+            containerRegistry.RegisterSingleton<ILoader<QuizFile>, QuizLoader>();
         }
     }
 }

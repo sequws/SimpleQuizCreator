@@ -4,6 +4,7 @@ using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
 using SimpleQuizCreator.Interfaces;
+using SimpleQuizCreator.Models;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -22,19 +23,19 @@ namespace SimpleQuizCreator.ViewModels
         IContainerExtension _container;
         IRegionManager _regionManager;
         IParser _parser;
-        ILoader _loader;
+        ILoader<QuizFile> _loader;
         public DelegateCommand<string> NavigateCommand { get; set; }
 
         public MainWindowViewModel(IContainerExtension container,
             IRegionManager regionManager,
             IParser parser,
-            ILoader loader)
+            ILoader<QuizFile> loader)
         {
             _parser = parser;
             _container = container;
             _regionManager = regionManager;
             _loader = loader;
-            var fileList = _loader.GetFiles();
+            var fileList = _loader.LoadData();
 
             NavigateCommand = new DelegateCommand<string>(Navigate);
         }
