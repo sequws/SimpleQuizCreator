@@ -11,7 +11,7 @@ namespace SimpleQuizCreator.Services
     public class QuizService : IQuizService
     {
         ILoader<QuizFile> _quizLoader;
-        IParser _quizParser;
+        IParser<Quiz> _quizParser;
         private readonly List<Quiz> _listOfQuizzes = new List<Quiz>();
 
         public QuizService()
@@ -19,7 +19,7 @@ namespace SimpleQuizCreator.Services
 
         }
 
-        public QuizService( ILoader<QuizFile> quizLoader, IParser quizParser)
+        public QuizService( ILoader<QuizFile> quizLoader, IParser<Quiz> quizParser)
         {
             _quizLoader = quizLoader;
             _quizParser = quizParser;
@@ -33,7 +33,13 @@ namespace SimpleQuizCreator.Services
             {
                 if (_quizParser.TryParse(quizFile.Lines))
                 {
-                    _listOfQuizzes.Add(new Quiz { Name = quizFile.Name, Questions = new List<Question>() });
+                    var quiz = new Quiz
+                    {
+                        Name = quizFile.Name,
+                        //Questions = _quizParser.GetData().Questions
+                    };
+
+                    _listOfQuizzes.Add( quiz);
                 }
             }
         }

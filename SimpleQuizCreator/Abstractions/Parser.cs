@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.Abstractions
 {
-    public abstract class Parser : ErrorCollector, IParser
+    public abstract class Parser : ErrorCollector
     {
         public abstract bool TryParse(string input);
 
