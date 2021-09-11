@@ -10,6 +10,17 @@ namespace SimpleQuizCreator.Models
     {
         public string Name { get; set; }
         public List<Question> Questions { get; set; } = new List<Question>();
+        public int QuestionAmount
+        {
+            get
+            {
+                return Questions.Count();
+            }
+        }
+
+        public List<string> Errors { get; set; } = new List<string>();
+        public bool CorrectlyLoaded { get; internal set; }
+
         public Quiz() {}
     }
 }
