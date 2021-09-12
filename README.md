@@ -17,6 +17,7 @@ Look how simple it is:
 
 Look at the example:
 file:  **Animals.txt** (file in the quizzes folder)
+
 file content:
 
     [Q]Which animal has the most extended tail?
