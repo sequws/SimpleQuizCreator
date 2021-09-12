@@ -135,5 +135,72 @@ namespace SimpleQuizCreator.Tests
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.Equal($"Question: {question} - has more than 9 answers!", ((ErrorCollector)_quizParser).Errors[0]);
         }
+
+        [Fact]
+        public void TryParse_ParseMultipleQuizzes_ShouldWork()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            List<string> fakeFile = new List<string>
+            {
+                "[Q]Test question:",
+                "-ans1",
+                "-ans2",
+                "[*]-ans3"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var data = _quizParser.GetData();
+
+            List<string> fakeFile2 = new List<string>
+            {
+                "[Q]Test question:",
+                "-ans1",
+                "-ans2",
+                "[*]-ans3"
+            };
+
+            var res2 = _quizParser.TryParse(fakeFile2);
+            var data2 = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.Single(data.Questions);
+            Assert.True(res2);
+            Assert.Equal(0, ((ErrorCollector)_quizParser).ErrorCounter);
+            Assert.Single(data2.Questions);
+        }
+
+        [Fact]
+        public void TryParse_ParseMultipleQuizzes_OnlyOnePass()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            List<string> fakeFile = new List<string>
+            {
+                "[Q]Test question:",
+                "-ans1",
+                "-ans2",
+                "[*]-ans3"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var data = _quizParser.GetData();
+
+            List<string> fakeFile2 = new List<string>
+            {
+                "[Q]Test question:",
+                "-ans1",
+                "-ans2",
+                "-ans3"
+            };
+
+            var res2 = _quizParser.TryParse(fakeFile2);
+            var data2 = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.Single(data.Questions);
+            Assert.True(data.CorrectlyLoaded);
+            Assert.False(res2);
+            Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
+            Assert.False(data2.CorrectlyLoaded);
+        }
     }
 }
