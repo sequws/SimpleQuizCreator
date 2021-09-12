@@ -26,8 +26,8 @@ namespace SimpleQuizCreator.DataAccess
         public override bool TryParse(List<string> input)
         {
             ClearData();
-
             Question lastQuestion = null;
+            parsedQuiz = new Quiz();
             int questionNumber = 0;
             int answerCounter = 0;
             int goodAnswer = 0;

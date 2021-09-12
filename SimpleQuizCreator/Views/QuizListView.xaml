@@ -11,7 +11,16 @@
         <Label DockPanel.Dock="Top" Content="QuizList"></Label>
         <Grid>
             <ListBox ItemsSource="{Binding ListOfQuizzes}">
-                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Name}"></TextBlock>
+                            <TextBlock Text=" - ("></TextBlock>
+                            <TextBlock Text="{Binding Path=Questions.Count}"></TextBlock>
+                            <TextBlock Text=")"></TextBlock>
+                        </StackPanel>                       
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </Grid>
     </DockPanel>
