@@ -32,9 +32,6 @@ namespace SimpleQuizCreator.ViewModels
             )
         {
             _container = container;
-
-            //_container.RegisterForNavigation(typeof(HelloView),)
-
             _regionManager = regionManager;
             _quizService = quizService;
 

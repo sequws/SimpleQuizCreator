@@ -85,7 +85,7 @@ namespace SimpleQuizCreator.DataAccess
                     {
 
                     }
-                }                
+                }              
             }
             if (parsedQuiz.QuestionAmount == 0)
             {

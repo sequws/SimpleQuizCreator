@@ -33,13 +33,10 @@ namespace SimpleQuizCreator.Services
             {
                 if (_quizParser.TryParse(quizFile.Lines))
                 {
-                    var quiz = new Quiz
-                    {
-                        Name = quizFile.Name,
-                        //Questions = _quizParser.GetData().Questions
-                    };
+                    var quiz = _quizParser.GetData();
+                    quiz.Name = quizFile.Name;
 
-                    _listOfQuizzes.Add( quiz);
+                    _listOfQuizzes.Add(quiz);
                 }
             }
         }
