@@ -89,18 +89,18 @@ namespace SimpleQuizCreator.DataAccess
             }
             if (parsedQuiz.QuestionAmount == 0)
             {
-                AddError("No question in quizz");
+                AddError("No questions in the quiz!");
             }
 
             foreach (var question in parsedQuiz.Questions)
             {
                 if (question.AnswersCount == 0)
                 {
-                    AddError($"Question: {question.QuestionText} - has no answer!");
+                    AddError($"Question: {question.QuestionText} - has no answers!");
                 }
                 else if (question.GoodAnswersCount == 0)
                 {
-                    AddError($"Question: {question.QuestionText} - has no good answer!");
+                    AddError($"Question: {question.QuestionText} - has no correct answer!");
                 }
                 else if (question.AnswersCount > 9)
                 {
