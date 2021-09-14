@@ -8,8 +8,7 @@ namespace SimpleQuizCreator.Interfaces
 {
     public interface IParser<T>
     {
-        bool TryParse(string input);
-        bool TryParse(string input, Action failAction);
+        bool TryParse(List<string> input, Action failAction);
         bool TryParse(List<string> input);
         T GetData();
     }

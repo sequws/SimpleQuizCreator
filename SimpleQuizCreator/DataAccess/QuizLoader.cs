@@ -17,11 +17,6 @@ namespace SimpleQuizCreator.DataAccess
             Console.WriteLine("Loader Created!");
         }
 
-        public bool Load()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<string> GetFiles()
         {
             if (!Directory.Exists(DataFolder))

@@ -11,20 +11,8 @@ namespace SimpleQuizCreator.Models
         public string QuestionText { get; set; }
         public List<Answer> Answers { get; set; } = new List<Answer>();
 
-        public int GoodAnswersCount
-        {
-            get
-            {
-                return Answers.Where(x => x.IsCorrect).Count();
-            }
-        }
+        public int GoodAnswersCount => Answers.Where(x => x.IsCorrect).Count();
 
-        public int AnswersCount
-        {
-            get
-            {
-                return Answers.Count();
-            }
-        }
+        public int AnswersCount => Answers.Count();
     }
 }

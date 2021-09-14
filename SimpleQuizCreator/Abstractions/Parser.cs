@@ -9,9 +9,7 @@ namespace SimpleQuizCreator.Abstractions
 {
     public abstract class Parser : ErrorCollector
     {
-        public abstract bool TryParse(string input);
-
-        public bool TryParse(string input, Action failAction)
+        public bool TryParse(List<string> input, Action failAction)
         {
             if (!TryParse(input))
             {

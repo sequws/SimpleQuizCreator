@@ -18,11 +18,6 @@ namespace SimpleQuizCreator.DataAccess
             
         }
 
-        public override bool TryParse(string input)
-        {
-            return true;
-        }
-
         public override bool TryParse(List<string> input)
         {
             ClearData();
@@ -85,7 +80,7 @@ namespace SimpleQuizCreator.DataAccess
                     {
 
                     }
-                }              
+                }
             }
             if (parsedQuiz.QuestionAmount == 0)
             {
