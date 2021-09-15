@@ -24,7 +24,8 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IParser<Quiz>, QuizParser>();
             containerRegistry.RegisterSingleton<ILoader<QuizFile>, QuizLoader>();
             containerRegistry.RegisterSingleton<IQuizService, QuizService>();
-            containerRegistry.RegisterSingleton<IWindowView, QuizWindow>();
+            containerRegistry.RegisterSingleton<IQuizGenerator, QuizGenerator>();
+            containerRegistry.Register<IWindowView, QuizWindow>();
         }
     }
 }
