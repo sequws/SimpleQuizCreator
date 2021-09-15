@@ -7,7 +7,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
-    <Grid>
-        <Label Content="StartQuiz"></Label> 
-    </Grid>
+    <StackPanel>
+        <Label Content="StartQuiz"></Label>
+        <Button Width="120" Content="Start Quiz" Command="{Binding OpenQuizWindow}"> </Button>
+    </StackPanel>
 </UserControl>

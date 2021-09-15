@@ -65,15 +65,20 @@
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
+    <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\QuizFile.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
+    <Compile Include="ViewModels\QuizWindowViewModel.cs" />
     <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\QuizListView.xaml.cs">
       <DependentUpon>QuizListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuizWindow.xaml.cs">
+      <DependentUpon>QuizWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\StartQuizView.xaml.cs">
       <DependentUpon>StartQuizView.xaml</DependentUpon>
@@ -100,6 +105,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\QuizListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuizWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
