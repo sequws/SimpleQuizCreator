@@ -2,8 +2,10 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
-        prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+        xmlns:resx="clr-namespace:SimpleQuizCreator.Properties"
+        prism:ViewModelLocator.AutoWireViewModel="True" Height="350" Width="525" 
+        WindowStartupLocation="CenterScreen" Closed="Window_Closed" Icon="/SimpleQuizCreator;component/QuizIcon.ico" 
+        >
     <DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="140">
             <Button Content="HelloView" Margin="2"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
