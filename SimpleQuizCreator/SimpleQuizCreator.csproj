@@ -76,6 +76,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\QuizFile.cs" />
+    <Compile Include="Models\QuizSettings.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
