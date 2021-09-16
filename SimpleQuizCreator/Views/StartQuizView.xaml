@@ -6,9 +6,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="600">
-    <StackPanel>
-        <Label Content="StartQuiz"></Label>
-        <Button Width="120" Content="Start Quiz" Command="{Binding OpenQuizWindow}"> </Button>
-    </StackPanel>
+             d:DesignHeight="450" d:DesignWidth="600" Background="AliceBlue">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Label Content="Select quiz"></Label>
+            <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" ></ComboBox>
+        </StackPanel>
+        <Button DockPanel.Dock="Bottom"  Width="120" Content="Start Quiz" Command="{Binding OpenQuizWindow}"></Button>
+        <Grid></Grid>        
+    </DockPanel>
 </UserControl>
