@@ -6,6 +6,8 @@ using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.DataAccess;
 using SimpleQuizCreator.Models;
 using SimpleQuizCreator.Services;
+using Prism.Services.Dialogs;
+using SimpleQuizCreator.ViewModels;
 
 namespace SimpleQuizCreator
 {
@@ -26,6 +28,8 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IQuizService, QuizService>();
             containerRegistry.RegisterSingleton<IQuizGenerator, QuizGenerator>();
             containerRegistry.RegisterSingleton<IWindowView, QuizWindow>();
+
+            containerRegistry.RegisterDialog<QuizDialog, QuizDialogViewModel>();
         }
     }
 }
