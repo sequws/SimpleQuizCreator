@@ -1,24 +1,54 @@
 ﻿<UserControl x:Class="SimpleQuizCreator.Views.QuizDialog"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:prism="http://prismlibrary.com/"             
+             xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Width="800" Height="460">        
+             Width="800" Height="460">
         <TabControl SelectedIndex="{Binding SelectedIndex}">
             <TabItem Header="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="{Binding QuizName}"></TextBlock>
                     <TextBlock Text="{Binding SelectedIndex}"></TextBlock>
                     <Button Content="StarQuiz" Command="{Binding StartQuizCommand}"></Button>
-                </StackPanel>                
+                </StackPanel>
             </TabItem>
             <TabItem Header="2">
-
+            <DockPanel>
+                <Label DockPanel.Dock="Top" Content="QuestionNumber" HorizontalAlignment="Center"></Label>
+                <StatusBar DockPanel.Dock="Bottom" Height="22">
+                    <StatusBarItem Content="Time"></StatusBarItem>
+                    <Separator></Separator>
+                    <StatusBarItem Content="0/0" />
+                </StatusBar>
+                <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Height="32">
+                    <Button Content="Next" Width="120" Margin="10 2 "></Button>
+                </StackPanel>
+                <ListView></ListView>
+            </DockPanel>
             </TabItem>
             <TabItem Header="3" >
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Button Content="Close" Command="{Binding CloseDialogCommand}"></Button>
-                </StackPanel>                
-            </TabItem>
+            <DockPanel>
+                <Label DockPanel.Dock="Top" Content="Quiz finished!" Margin="20" FontSize="24" HorizontalContentAlignment="Center"></Label>
+                <StackPanel DockPanel.Dock="Top" x:Name="FinishResultStackPanel" >
+                    <Label x:Name="FinishPointsLabel" HorizontalContentAlignment="Center" FontSize="20">0</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Label Content="Your score:"  FontSize="24"></Label>
+                        
+                        <Label x:Name="FinishScoreLabel" FontSize="24" FontWeight="Bold">%</Label>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Bottom"></StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Button Grid.Row="1"  Content="Close quiz" Height="32" Width="200" Margin="2" Command="{Binding CloseDialogCommand}"></Button>
+
+                </Grid>
+            </DockPanel>
+        </TabItem>
         </TabControl>
 </UserControl>
