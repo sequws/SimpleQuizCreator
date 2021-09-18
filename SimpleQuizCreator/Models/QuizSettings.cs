@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Prism.Mvvm;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace SimpleQuizCreator.Models
         Custom                  //  
     }
 
-    public class QuizSettings
+    public class QuizSettings : BindableBase
     {
         public bool TimeRescriction { get; set; } = false;
         public bool AllowReturn { get; set; } = false;
@@ -34,7 +35,14 @@ namespace SimpleQuizCreator.Models
         public bool ShowScore { get; set; } = false;
 
         // Questions
-        public byte QuestionLimit { get; set; } = 30;
+        //public int QuestionLimit { get; set; } = 30;
+        private int _QuestionLimit = 30;
+        public int QuestionLimit
+        {
+            get { return _QuestionLimit; }
+            set { SetProperty(ref _QuestionLimit, value); }
+        }
+
         public byte AutogenerateAnswers { get; set; } = 4;
     }
 }

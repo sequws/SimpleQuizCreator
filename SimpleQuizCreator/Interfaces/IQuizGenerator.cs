@@ -9,7 +9,7 @@ namespace SimpleQuizCreator.Interfaces
 {
     interface IQuizGenerator
     {
-        void GenerateNewQuiz(Quiz quiz);
-        Question GetNextQuestion();
+        void GenerateNewQuiz(Quiz quiz, QuizSettings settings);
+        
     }
 }

@@ -6,6 +6,7 @@ using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -15,6 +16,13 @@ namespace SimpleQuizCreator.ViewModels
         IWindowView _windowView;
         IQuizService _quizService;
         public List<Quiz> ListOfQuizzes { get; set; }
+
+        private QuizSettings quizSettings = new QuizSettings();
+        public QuizSettings QuizSettings
+        {
+            get { return quizSettings; }
+            set { SetProperty(ref quizSettings, value); }
+        }
 
         private Quiz _selectedQuiz = null;
         public Quiz SelectedQuiz
@@ -37,7 +45,15 @@ namespace SimpleQuizCreator.ViewModels
 
         void ExecuteOpenQuizWindow()
         {
-            //_windowView.Open();
+            if (SelectedQuiz == null)
+                return;
+
+            if( QuizSettings.QuestionLimit > SelectedQuiz.QuestionAmount)
+            {
+                MessageBox.Show("The selected number of questions is greater than the pool of questions in the quiz", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                QuizSettings.QuestionLimit = SelectedQuiz.QuestionAmount;
+                return;
+            }
 
             var dialogParams = new DialogParameters();
             dialogParams.Add("quiz", SelectedQuiz);
