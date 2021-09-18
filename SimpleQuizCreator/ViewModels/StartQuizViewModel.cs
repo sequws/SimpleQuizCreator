@@ -39,8 +39,12 @@ namespace SimpleQuizCreator.ViewModels
         {
             //_windowView.Open();
 
-            _dialogService.ShowDialog("QuizDialog", null, r =>
+            var dialogParams = new DialogParameters();
+            dialogParams.Add("quiz", SelectedQuiz);
+
+            _dialogService.ShowDialog("QuizDialog", dialogParams , r =>
             {
+                var scoreRes = r.Parameters.GetValue<double>("score");
             });
         }
 

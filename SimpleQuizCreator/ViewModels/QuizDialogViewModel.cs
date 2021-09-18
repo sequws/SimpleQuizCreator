@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,10 @@ namespace SimpleQuizCreator.ViewModels
 
         void ExecuteCloseDialogCommand()
         {
-            RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
+            var resParams = new DialogParameters();
+            resParams.Add("score", 88.2);
+
+            RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
         }
 
         public QuizDialogViewModel()
@@ -39,7 +43,8 @@ namespace SimpleQuizCreator.ViewModels
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
-            
+            Quiz quiz = parameters.GetValue<Quiz>("quiz");
+            var title = quiz.Name;
         }
     }
 }
