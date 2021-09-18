@@ -22,6 +22,29 @@ namespace SimpleQuizCreator.ViewModels
             RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
         }
 
+        private DelegateCommand _startQuizCommand;
+        public DelegateCommand StartQuizCommand =>
+            _startQuizCommand ?? (_startQuizCommand = new DelegateCommand(ExecuteStardQuizCommand));
+
+        void ExecuteStardQuizCommand()
+        {
+            SelectedIndex++;
+        }
+
+        private int _selectedIndex = 0;
+        public int SelectedIndex
+        {
+            get { return _selectedIndex; }
+            set { SetProperty(ref _selectedIndex, value); }
+        }
+
+        private string _quizName = "Quiz";
+        public string QuizName
+        {
+            get { return _quizName; }
+            set { SetProperty(ref _quizName, value); }
+        }
+
         public QuizDialogViewModel()
         {
 
@@ -44,7 +67,7 @@ namespace SimpleQuizCreator.ViewModels
         public void OnDialogOpened(IDialogParameters parameters)
         {
             Quiz quiz = parameters.GetValue<Quiz>("quiz");
-            var title = quiz.Name;
+            QuizName = quiz.Name;
         }
     }
 }

@@ -3,9 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Width="800" Height="460">
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
-        <TextBlock Text="QuizDialog"></TextBlock>
-        <Button Content="Close" Command="{Binding CloseDialogCommand}"></Button>
-    </StackPanel>
+             Width="800" Height="460">        
+        <TabControl SelectedIndex="{Binding SelectedIndex}">
+            <TabItem Header="1">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding QuizName}"></TextBlock>
+                    <TextBlock Text="{Binding SelectedIndex}"></TextBlock>
+                    <Button Content="StarQuiz" Command="{Binding StartQuizCommand}"></Button>
+                </StackPanel>                
+            </TabItem>
+            <TabItem Header="2">
+
+            </TabItem>
+            <TabItem Header="3" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Content="Close" Command="{Binding CloseDialogCommand}"></Button>
+                </StackPanel>                
+            </TabItem>
+        </TabControl>
 </UserControl>
