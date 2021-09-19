@@ -5,16 +5,30 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d"            
              d:DesignHeight="450" d:DesignWidth="600" Background="AliceBlue">
 
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <Label Content="Select quiz"></Label>
-            <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" ></ComboBox>
-            <TextBox Width="40" Text="{Binding QuizSettings.QuestionLimit}"></TextBox>
+            <Label Content="Select quiz:" FontWeight="Bold" Margin="2"></Label>
+            <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"></ComboBox>
+            <Label Content="Score settings: " FontWeight="Bold"></Label>
+            <ComboBox Grid.Row="1" Margin="20, 5"></ComboBox>
+            <Label Content="Quiz settings: " FontWeight="Bold"></Label>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Number of questions: "></Label>
+                <TextBox Width="60" Margin="2" Text="{Binding QuizSettings.QuestionLimit}"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Number of auto-generated answers: "></Label>
+                <TextBox Width="60" Margin="2" Text="0"></TextBox>
+            </StackPanel>
         </StackPanel>
-        <Button DockPanel.Dock="Bottom"  Width="120" Content="Start Quiz" Command="{Binding OpenQuizWindow}"></Button>
-        <Grid></Grid>        
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button DockPanel.Dock="Bottom" Content="Start Quiz" Command="{Binding OpenQuizWindow}"
+                   Width="200" Height="25" Background="LightSalmon" FontWeight="Bold"></Button>
+        </Grid>
+
     </DockPanel>
 </UserControl>
