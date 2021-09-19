@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace SimpleQuizCreator.ViewModels
 {
     public class QuizDialogViewModel : BindableBase, IDialogAware
     {
+        private readonly IScoreCalculator _scoreCalculator;
+
         #region commands
         private DelegateCommand _closeDialogCommand;
         public DelegateCommand CloseDialogCommand =>
@@ -49,6 +52,7 @@ namespace SimpleQuizCreator.ViewModels
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
+                _scoreCalculator.CalculateResult( Quiz);
             }
         }
 
@@ -85,9 +89,9 @@ namespace SimpleQuizCreator.ViewModels
 
         #endregion
 
-        public QuizDialogViewModel()
+        public QuizDialogViewModel(IScoreCalculator calculationStrategy)
         {
-
+            _scoreCalculator = calculationStrategy;
         }
 
         #region IDialogAware

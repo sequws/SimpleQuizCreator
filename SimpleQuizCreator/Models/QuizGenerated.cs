@@ -24,7 +24,8 @@ namespace SimpleQuizCreator.Models
 
         private Question _activeQuestion;
         public Question ActiveQuestion { 
-            get {
+            get 
+            {
                 if(ActiveQuestionNumber < QuestionsNumber)
                 {
                     return Questions[ActiveQuestionNumber];
@@ -36,7 +37,8 @@ namespace SimpleQuizCreator.Models
                     return Questions[QuestionsNumber - 1];
                 }              
             }
-            set {
+            set 
+            {
                  SetProperty(ref _activeQuestion, value); 
             }            
         }
