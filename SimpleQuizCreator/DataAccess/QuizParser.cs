@@ -15,9 +15,19 @@ namespace SimpleQuizCreator.DataAccess
 
         public QuizParser()
         {
-            
+
         }
 
+        /// <summary>
+        /// Iterate over all lines:
+        /// - skip empty lines
+        /// - skip lines starts of '#' (comment)
+        /// - if line starts by '[q]' or '[Q]' add new question
+        /// - each line between question is answer
+        /// - line starts by '[*]' is correct answer
+        /// /// </summary>
+        /// <param name="input">All line of file</param>
+        /// <returns></returns>
         public override bool TryParse(List<string> input)
         {
             ClearData();
@@ -30,17 +40,17 @@ namespace SimpleQuizCreator.DataAccess
 
             foreach (var line in input)
             {
-                if (string.IsNullOrWhiteSpace(line))
+                if (string.IsNullOrWhiteSpace(line)) // skip empty lines
                 {
                     continue;
                 }
                 var trimmedLine = line.Trim();
-                if (trimmedLine.StartsWith("#"))
+                if (trimmedLine.StartsWith("#"))    // skip comments 
                 {
                     continue;
                 }
 
-                if (trimmedLine.StartsWith("[q]") || trimmedLine.StartsWith("[Q]"))
+                if (trimmedLine.StartsWith("[q]") || trimmedLine.StartsWith("[Q]")) // add new question
                 {
                     questionNumber++;
                     answerCounter = 0;
@@ -50,7 +60,7 @@ namespace SimpleQuizCreator.DataAccess
                     lastQuestion = question;
                     parsedQuiz.Questions.Add(question);
                 }
-                else if (trimmedLine.StartsWith("[*]"))
+                else if (trimmedLine.StartsWith("[*]")) // add correct answer to active question
                 {
                     goodAnswer++;
                     Answer answer = new Answer
@@ -82,6 +92,25 @@ namespace SimpleQuizCreator.DataAccess
                     }
                 }
             }
+
+            ValidateQuiz();
+
+            if (ErrorCounter == 0)
+            {
+                parsedQuiz.CorrectlyLoaded = true;
+            }
+            else
+            {
+                parsedQuiz.CorrectlyLoaded = false;
+                parsedQuiz.Errors = Errors;
+                res = false;
+            }
+
+            return res;
+        }
+
+        private void ValidateQuiz()
+        {
             if (parsedQuiz.QuestionAmount == 0)
             {
                 AddError("No questions in the quiz!");
@@ -102,17 +131,6 @@ namespace SimpleQuizCreator.DataAccess
                     AddError($"Question: {question.QuestionText} - has more than 9 answers!");
                 }
             }
-            if (ErrorCounter == 0)
-            {
-                parsedQuiz.CorrectlyLoaded = true;
-            }
-            else
-            {
-                parsedQuiz.CorrectlyLoaded = false;
-                parsedQuiz.Errors = Errors;
-                res = false;
-            }
-            return res;
         }
 
         public Quiz GetData()
