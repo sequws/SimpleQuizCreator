@@ -14,5 +14,10 @@ namespace SimpleQuizCreator.Models
         public int GoodAnswersCount => Answers.Where(x => x.IsCorrect).Count();
 
         public int AnswersCount => Answers.Count();
+
+        public override string ToString()
+        {
+            return $"{QuestionText}... [{AnswersCount}]";
+        }
     }
 }

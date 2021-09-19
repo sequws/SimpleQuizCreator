@@ -57,6 +57,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeData\FakeQuizFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuizGeneratorTests.cs" />
     <Compile Include="QuizParserTests.cs" />

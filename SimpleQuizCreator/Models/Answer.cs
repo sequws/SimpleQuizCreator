@@ -1,4 +1,6 @@
-﻿namespace SimpleQuizCreator.Models
+﻿using System.Linq;
+
+namespace SimpleQuizCreator.Models
 {
     public class Answer
     {
@@ -6,5 +8,10 @@
         public bool IsSelected { get; set; } = false;
 
         public string AnswerText { get; set; }
+
+        public override string ToString()
+        {
+            return $"{(IsCorrect ? "[*]" : "")} - {AnswerText}...";
+        }
     }
 }
