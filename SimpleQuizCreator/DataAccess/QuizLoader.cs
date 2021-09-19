@@ -14,7 +14,6 @@ namespace SimpleQuizCreator.DataAccess
     {
         public QuizLoader() : base("quizzes")
         {
-            Console.WriteLine("Loader Created!");
         }
 
         public List<string> GetFiles()

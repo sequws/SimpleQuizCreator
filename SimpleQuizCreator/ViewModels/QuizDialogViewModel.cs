@@ -30,6 +30,7 @@ namespace SimpleQuizCreator.ViewModels
         void ExecuteStardQuizCommand()
         {
             SelectedIndex++;
+            ActiveQuestion = Quiz.ActiveQuestion;
         }
 
         private DelegateCommand _nextQuestionCommand;
@@ -39,10 +40,13 @@ namespace SimpleQuizCreator.ViewModels
         void ExecuteNextQuestionCommand()
         {
             Quiz.ActiveQuestionNumber++;
-            if(Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber)
+            ActiveQuestion = Quiz.ActiveQuestion;
+
+            if (Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber-1)
             {
                 NextQuestionButtonCaption = "Finish";
-            } else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
+            } 
+            else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
             }
@@ -72,6 +76,13 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _quiz, value); }
         }
 
+        private Question _activeQuestion;
+        public Question ActiveQuestion
+        {
+            get { return _activeQuestion; }
+            set { SetProperty(ref _activeQuestion, value); }
+        }
+
         #endregion
 
         public QuizDialogViewModel()
@@ -79,7 +90,7 @@ namespace SimpleQuizCreator.ViewModels
 
         }
 
-        public string Title => "Quiz Dialog";
+        public string Title => "Quiz Time!";
 
         public event Action<IDialogResult> RequestClose;
 

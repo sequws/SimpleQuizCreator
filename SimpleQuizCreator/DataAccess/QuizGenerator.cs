@@ -15,14 +15,13 @@ namespace SimpleQuizCreator.DataAccess
     /// </summary>
     public class QuizGenerator : IQuizGenerator
     {
-        QuizGenerated generated = new QuizGenerated();
-        QuizSettings _quizSettings;
+        QuizGenerated generated;
 
         public void GenerateNewQuiz(Quiz quiz, QuizSettings settings)
         {
+            generated = new QuizGenerated();
             generated.Name = quiz.Name;
-            _quizSettings = settings;
-
+            generated.QuizSettings = settings;            
 
             var tmpQuestion = quiz.GetDeepCopy().Questions;
             tmpQuestion.ShuffleInPlaceList();
@@ -31,7 +30,7 @@ namespace SimpleQuizCreator.DataAccess
                 q.Answers.ShuffleInPlaceList();
             }
 
-            generated.Questions = tmpQuestion.Take(_quizSettings.QuestionLimit).ToList();
+            generated.Questions = tmpQuestion.Take(settings.QuestionLimit).ToList();
         }
 
         public QuizGenerated GetQuiz()

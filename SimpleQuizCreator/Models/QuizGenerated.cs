@@ -8,8 +8,6 @@ namespace SimpleQuizCreator.Models
     {
         public string Name { get; set; }
         public List<Question> Questions = new List<Question>();
-        public Question ActiveQuestion { get; set; }
-        //public int ActiveQuestionNumber { get; set; } = 0;
 
         private int _activeQuestionNumber = 0;
         public int ActiveQuestionNumber
@@ -23,5 +21,25 @@ namespace SimpleQuizCreator.Models
 
         public QuizSettings QuizSettings {get; set; }
         public int QuestionsNumber => Questions.Count;
+
+        private Question _activeQuestion;
+        public Question ActiveQuestion { 
+            get {
+                if(ActiveQuestionNumber < QuestionsNumber)
+                {
+                    return Questions[ActiveQuestionNumber];
+                } 
+                else
+                {
+                    TestFinished = true;
+                    // todo: repair this hack!
+                    return Questions[QuestionsNumber - 1];
+                }              
+            }
+            set {
+                 SetProperty(ref _activeQuestion, value); 
+            }            
+        }
     }
 }
+
