@@ -1,4 +1,5 @@
-﻿using SimpleQuizCreator.Interfaces;
+﻿using SimpleQuizCreator.Helpers;
+using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
@@ -22,14 +23,15 @@ namespace SimpleQuizCreator.DataAccess
             generated.Name = quiz.Name;
             _quizSettings = settings;
 
-            generated.Questions = PrepareQuestions(quiz.GetDeepCopy().Questions);
-        }
 
+            var tmpQuestion = quiz.GetDeepCopy().Questions;
+            tmpQuestion.ShuffleInPlaceList();
+            foreach(var q in tmpQuestion)
+            {
+                q.Answers.ShuffleInPlaceList();
+            }
 
-        private static List<T> PrepareQuestions<T>(IList<T> originalList)
-        {
-            List<T> res = originalList.OrderBy(x => Guid.NewGuid()).ToList();
-            return res;
+            generated.Questions = tmpQuestion.Take(_quizSettings.QuestionLimit).ToList();
         }
 
         public QuizGenerated GetQuiz()

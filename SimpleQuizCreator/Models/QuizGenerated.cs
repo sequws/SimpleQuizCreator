@@ -17,6 +17,6 @@ namespace SimpleQuizCreator.Models
         public bool TestFinished { get; private set; } = false;
         public bool TestStarted { get; private set; } = false;
 
-        private QuizSettings _quizSettings;
+        public QuizSettings QuizSettings {get; set; }
     }
 }

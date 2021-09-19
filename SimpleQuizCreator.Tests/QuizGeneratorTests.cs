@@ -1,7 +1,9 @@
 ﻿using SimpleQuizCreator.DataAccess;
+using SimpleQuizCreator.Helpers;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using SimpleQuizCreator.Tests.FakeData;
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
@@ -21,6 +23,21 @@ namespace SimpleQuizCreator.Tests
                 ShowScore = false
             };
         }
+
+        [Fact]
+        public void GenerateNewQuiz_ShuffleQuestion()
+        {
+            // Arrange
+            var listOfQuestion = new List<int>() { 0, 1, 2, 3, 4, 5 };
+            
+            var shuffleList = listOfQuestion.ShuffleList();
+            var areListEqual = listOfQuestion.SequenceEqualsIgnoreOrder(shuffleList);
+
+            // Assert
+            Assert.True(areListEqual);
+            Assert.Equal(listOfQuestion.Count, shuffleList.Count);
+        }
+
 
         [Fact]
         public void GenerateNewQuiz_ConstAnswer()
@@ -73,7 +90,7 @@ namespace SimpleQuizCreator.Tests
 
             var quest5answers = res.Questions.Where(x => x.QuestionText == "Question 5").FirstOrDefault().GoodAnswersCount;
 
-            Assert.True(res.Questions.Count == 5);
+            Assert.Equal(3, res.Questions.Count);
             Assert.Equal(4, quest5answers);
         }
 

@@ -67,6 +67,7 @@
     <Compile Include="DataAccess\QuizGenerator.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
+    <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IQuizGenerator.cs" />
