@@ -1,12 +1,18 @@
-﻿using System.Linq;
+﻿using Prism.Mvvm;
+using System.Linq;
 
 namespace SimpleQuizCreator.Models
 {
-    public class Answer
+    public class Answer : BindableBase
     {
-        public bool IsCorrect { get; set; }
-        public bool IsSelected { get; set; } = false;
+        private bool _isSelected;
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set { SetProperty(ref _isSelected, value); }
+        }
 
+        public bool IsCorrect { get; set; }
         public string AnswerText { get; set; }
 
         public override string ToString()

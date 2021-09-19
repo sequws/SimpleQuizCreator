@@ -90,6 +90,8 @@ namespace SimpleQuizCreator.ViewModels
 
         }
 
+        #region IDialogAware
+
         public string Title => "Quiz Time!";
 
         public event Action<IDialogResult> RequestClose;
@@ -108,5 +110,7 @@ namespace SimpleQuizCreator.ViewModels
         {
             Quiz = parameters.GetValue<QuizGenerated>("quiz");
         }
+
+        #endregion
     }
 }
