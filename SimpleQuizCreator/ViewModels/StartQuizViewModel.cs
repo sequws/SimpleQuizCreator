@@ -13,8 +13,9 @@ namespace SimpleQuizCreator.ViewModels
     public class StartQuizViewModel : BindableBase
     {
         private readonly IDialogService _dialogService;
-        IWindowView _windowView;
-        IQuizService _quizService;
+        private readonly IQuizGenerator _quizGenerator;
+        private readonly IWindowView _windowView;
+        private readonly IQuizService _quizService;
         public List<Quiz> ListOfQuizzes { get; set; }
 
         private QuizSettings quizSettings = new QuizSettings();
@@ -35,11 +36,12 @@ namespace SimpleQuizCreator.ViewModels
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
 
-        public StartQuizViewModel(IWindowView windowView, IQuizService quizService, IDialogService dialogService)
+        public StartQuizViewModel(IWindowView windowView, IQuizService quizService, IDialogService dialogService, IQuizGenerator quizGenerator)
         {
             _windowView = windowView;
             _quizService = quizService;
             _dialogService = dialogService;
+            _quizGenerator = quizGenerator;
             ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes());
         }
 
@@ -54,6 +56,9 @@ namespace SimpleQuizCreator.ViewModels
                 QuizSettings.QuestionLimit = SelectedQuiz.QuestionAmount;
                 return;
             }
+
+            _quizGenerator.GenerateNewQuiz(SelectedQuiz, QuizSettings);
+            var generatedQuiz = _quizGenerator.GetQuiz();
 
             var dialogParams = new DialogParameters();
             dialogParams.Add("quiz", SelectedQuiz);

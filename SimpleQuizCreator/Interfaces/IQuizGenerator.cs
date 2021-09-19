@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.Interfaces
 {
-    interface IQuizGenerator
+    public interface IQuizGenerator
     {
         void GenerateNewQuiz(Quiz quiz, QuizSettings settings);
-        
+        QuizGenerated GetQuiz();
     }
 }
