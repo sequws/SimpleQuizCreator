@@ -1,4 +1,4 @@
-﻿using SimpleQuizCreator.DataAccess;
+﻿using SimpleQuizCreator.Common;
 using SimpleQuizCreator.Helpers;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
