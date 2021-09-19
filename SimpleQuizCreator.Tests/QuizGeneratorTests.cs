@@ -39,6 +39,29 @@ namespace SimpleQuizCreator.Tests
         }
 
         [Fact]
+        public void GenerateNewQuiz_CheckDeepCopy()
+        {
+            IQuizGenerator _quizGenerator = new QuizGenerator();
+            Quiz quiz = FakeQuizFactory.NewQuiz3questions3asnwers();
+            settings = new QuizSettings { QuestionLimit = 3, AutogenerateAnswers = 4 };
+
+            _quizGenerator.GenerateNewQuiz(quiz, settings);
+            var res = _quizGenerator.GetQuiz();
+
+            var quest1ans1 = quiz.Questions[0].Answers[0].AnswerText;
+            var resQuest1 = res.Questions.Where(x => x.QuestionText == quiz.Questions[0].QuestionText).FirstOrDefault();
+            var resQuest1ans1 = resQuest1.Answers.Where(x => x.AnswerText == quest1ans1).FirstOrDefault().AnswerText;                       
+            
+            string pattern = "XXXXX";
+            quiz.Questions[0].Answers[0].AnswerText = pattern;
+            var asnswerExists = res.Questions.SelectMany(x => x.Answers).Where(y => y.AnswerText.Equals(pattern)).Count();
+
+            Assert.Equal(quest1ans1, resQuest1ans1);
+            Assert.Equal(0, asnswerExists);
+            Assert.True(res.Questions.Count == 3);
+        }
+
+        [Fact]
         public void GenerateNewQuiz_VariableAnswerNumber()
         {
             IQuizGenerator _quizGenerator = new QuizGenerator();

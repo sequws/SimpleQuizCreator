@@ -22,7 +22,7 @@ namespace SimpleQuizCreator.DataAccess
             generated.Name = quiz.Name;
             _quizSettings = settings;
 
-            generated.Questions = PrepareQuestions(quiz.Questions);
+            generated.Questions = PrepareQuestions(quiz.GetDeepCopy().Questions);
         }
 
 

@@ -16,5 +16,32 @@ namespace SimpleQuizCreator.Models
         public bool CorrectlyLoaded { get; internal set; }
 
         public Quiz() {}
+
+        public Quiz GetDeepCopy()
+        {
+            Quiz copyQuiz = new Quiz();
+            copyQuiz.CorrectlyLoaded = CorrectlyLoaded;
+            copyQuiz.Errors = new List<string>(Errors);
+            copyQuiz.Name = Name;
+
+            foreach (Question question in Questions)
+            {
+                Question copyQuestion = new Question();
+                foreach (Answer answer in question.Answers)
+                {
+                    copyQuestion.Answers.Add(new Answer()
+                    {
+                        IsSelected = answer.IsSelected,
+                        IsCorrect = answer.IsCorrect,
+                        AnswerText = answer.AnswerText
+                    });
+                }
+
+                copyQuestion.QuestionText = question.QuestionText;
+                copyQuiz.Questions.Add(copyQuestion);
+            }
+
+            return copyQuiz;
+        }
     }
 }
