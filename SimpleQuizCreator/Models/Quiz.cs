@@ -43,5 +43,10 @@ namespace SimpleQuizCreator.Models
 
             return copyQuiz;
         }
+
+        public override string ToString()
+        {
+            return $"{Name} [{QuestionAmount}]";
+        }
     }
 }

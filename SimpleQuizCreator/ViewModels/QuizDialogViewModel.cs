@@ -10,6 +10,7 @@ namespace SimpleQuizCreator.ViewModels
 {
     public class QuizDialogViewModel : BindableBase, IDialogAware
     {
+        #region commands
         private DelegateCommand _closeDialogCommand;
         public DelegateCommand CloseDialogCommand =>
             _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(ExecuteCloseDialogCommand));
@@ -31,6 +32,32 @@ namespace SimpleQuizCreator.ViewModels
             SelectedIndex++;
         }
 
+        private DelegateCommand _nextQuestionCommand;
+        public DelegateCommand NextQuestionCommand =>
+            _nextQuestionCommand ?? (_nextQuestionCommand = new DelegateCommand(ExecuteNextQuestionCommand));
+
+        void ExecuteNextQuestionCommand()
+        {
+            Quiz.ActiveQuestionNumber++;
+            if(Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber)
+            {
+                NextQuestionButtonCaption = "Finish";
+            } else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
+            {
+                SelectedIndex++;
+            }
+        }
+
+        #endregion
+
+        #region properties
+        private string _nextQuestionButtonCaption = "Next";
+        public string NextQuestionButtonCaption
+        {
+            get { return _nextQuestionButtonCaption; }
+            set { SetProperty(ref _nextQuestionButtonCaption, value); }
+        }
+
         private int _selectedIndex = 0;
         public int SelectedIndex
         {
@@ -38,12 +65,14 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _selectedIndex, value); }
         }
 
-        private string _quizName = "Quiz";
-        public string QuizName
+        private QuizGenerated _quiz;
+        public QuizGenerated Quiz
         {
-            get { return _quizName; }
-            set { SetProperty(ref _quizName, value); }
+            get { return _quiz; }
+            set { SetProperty(ref _quiz, value); }
         }
+
+        #endregion
 
         public QuizDialogViewModel()
         {
@@ -66,8 +95,7 @@ namespace SimpleQuizCreator.ViewModels
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
-            Quiz quiz = parameters.GetValue<Quiz>("quiz");
-            QuizName = quiz.Name;
+            Quiz = parameters.GetValue<QuizGenerated>("quiz");
         }
     }
 }

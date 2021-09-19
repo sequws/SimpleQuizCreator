@@ -61,7 +61,7 @@ namespace SimpleQuizCreator.ViewModels
             var generatedQuiz = _quizGenerator.GetQuiz();
 
             var dialogParams = new DialogParameters();
-            dialogParams.Add("quiz", SelectedQuiz);
+            dialogParams.Add("quiz", generatedQuiz);
 
             _dialogService.ShowDialog("QuizDialog", dialogParams , r =>
             {

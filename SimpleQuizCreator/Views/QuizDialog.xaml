@@ -4,12 +4,26 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Width="800" Height="460">
-        <TabControl SelectedIndex="{Binding SelectedIndex}">
-            <TabItem Header="1">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="Test">
+            <Setter Property="FontSize" Value="18"/>
+            <!--<Setter Property="Foreground" Value="#4E87D4"/>-->
+            <Setter Property="FontFamily" Value="Trebuchet MS"/>
+            <Setter Property="Margin" Value="0,10,10,10"/>
+        </Style>
+    </UserControl.Resources>
+    <TabControl SelectedIndex="{Binding SelectedIndex}" x:Name="MainTabControl">
+        <TabItem Header="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="{Binding QuizName}"></TextBlock>
-                    <TextBlock Text="{Binding SelectedIndex}"></TextBlock>
-                    <Button Content="StarQuiz" Command="{Binding StartQuizCommand}"></Button>
+                    <TextBlock Text="{Binding Quiz.Name}" FontSize="24" HorizontalAlignment="Center"></TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBlock Style="{StaticResource Test}" Text="The test consists of "></TextBlock>
+                    <TextBlock Style="{StaticResource Test}" Text="{Binding Quiz.QuestionsNumber}"></TextBlock>
+                <TextBlock Style="{StaticResource Test}" Text="  questions"></TextBlock>
+                </StackPanel>
+                
+                    <Button Content="StarQuiz" Command="{Binding StartQuizCommand}"
+                            Width="300" Height="40"  Background="CornflowerBlue" FontWeight="Bold" FontSize="14"></Button>
                 </StackPanel>
             </TabItem>
             <TabItem Header="2">
@@ -18,10 +32,16 @@
                 <StatusBar DockPanel.Dock="Bottom" Height="22">
                     <StatusBarItem Content="Time"></StatusBarItem>
                     <Separator></Separator>
-                    <StatusBarItem Content="0/0" />
+                    <StatusBarItem>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Quiz.ActiveQuestionNumber}"></TextBlock>
+                            <TextBlock  Text="/"></TextBlock>
+                            <TextBlock Text="{Binding Quiz.QuestionsNumber}"></TextBlock>
+                        </StackPanel>
+                    </StatusBarItem>
                 </StatusBar>
                 <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Height="32">
-                    <Button Content="Next" Width="120" Margin="10 2 "></Button>
+                    <Button Content="{Binding NextQuestionButtonCaption}" Width="120" Margin="10 2" Command="{Binding NextQuestionCommand}"></Button>
                 </StackPanel>
                 <ListView></ListView>
             </DockPanel>

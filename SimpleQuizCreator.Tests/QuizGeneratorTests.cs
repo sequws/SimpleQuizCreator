@@ -83,14 +83,14 @@ namespace SimpleQuizCreator.Tests
         {
             IQuizGenerator _quizGenerator = new QuizGenerator();
             Quiz quiz = FakeQuizFactory.NewQuiz5questionsRandomAsnwers();
-            settings = new QuizSettings { QuestionLimit = 3, AutogenerateAnswers = 4 };
+            settings = new QuizSettings { QuestionLimit = 5, AutogenerateAnswers = 4 };
 
             _quizGenerator.GenerateNewQuiz(quiz, settings);
             var res = _quizGenerator.GetQuiz();
 
             var quest5answers = res.Questions.Where(x => x.QuestionText == "Question 5").FirstOrDefault().GoodAnswersCount;
 
-            Assert.Equal(3, res.Questions.Count);
+            Assert.Equal(5, res.Questions.Count);
             Assert.Equal(4, quest5answers);
         }
 

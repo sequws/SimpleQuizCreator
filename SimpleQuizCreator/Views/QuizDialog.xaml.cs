@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace SimpleQuizCreator.Views
 {
@@ -10,6 +11,11 @@ namespace SimpleQuizCreator.Views
         public QuizDialog()
         {
             InitializeComponent();
+
+            // Hide tabs headers 
+            Style s = new Style();
+            s.Setters.Add(new Setter(UIElement.VisibilityProperty, Visibility.Collapsed));
+            MainTabControl.ItemContainerStyle = s;
         }
     }
 }
