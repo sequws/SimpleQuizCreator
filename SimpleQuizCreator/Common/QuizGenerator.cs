@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleQuizCreator.DataAccess
+namespace SimpleQuizCreator.Common
 {
     /// <summary>
     /// Generate new quiz using settings

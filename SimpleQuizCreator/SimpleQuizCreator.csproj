@@ -64,11 +64,12 @@
     <Compile Include="Abstractions\ErrorCollector.cs" />
     <Compile Include="Abstractions\Loader.cs" />
     <Compile Include="Abstractions\Parser.cs" />
+    <Compile Include="Common\GlobalEnums.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
-    <Compile Include="DataAccess\QuizGenerator.cs" />
+    <Compile Include="Common\QuizGenerator.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
-    <Compile Include="DataAccess\ScoreCalculator.cs" />
+    <Compile Include="Common\ScoreCalculator.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Interfaces\ICalculationStrategy.cs" />
     <Compile Include="Interfaces\ILoader.cs" />

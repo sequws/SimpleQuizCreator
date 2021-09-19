@@ -6,8 +6,8 @@ using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.DataAccess;
 using SimpleQuizCreator.Models;
 using SimpleQuizCreator.Services;
-using Prism.Services.Dialogs;
 using SimpleQuizCreator.ViewModels;
+using SimpleQuizCreator.Common;
 
 namespace SimpleQuizCreator
 {

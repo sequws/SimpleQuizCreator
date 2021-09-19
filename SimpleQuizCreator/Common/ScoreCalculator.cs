@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleQuizCreator.DataAccess
+namespace SimpleQuizCreator.Common
 {
     public class ScoreCalculator : IScoreCalculator
     {
@@ -17,6 +17,13 @@ namespace SimpleQuizCreator.DataAccess
         public ScoreResult CalculateResult(QuizGenerated quizGenerated)
         {
             throw new NotImplementedException();
+        }
+
+        private ICalculationStrategy GetCalculationStrategy()
+        {
+            ICalculationStrategy calculationStrategy = null;
+
+            return calculationStrategy;
         }
     }
 }
