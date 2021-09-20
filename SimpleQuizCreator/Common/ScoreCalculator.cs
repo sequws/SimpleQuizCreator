@@ -10,18 +10,27 @@ namespace SimpleQuizCreator.Common
 {
     public class ScoreCalculator : IScoreCalculator
     {
+        QuizGenerated _quizGenerated;
+
         public ScoreCalculator()
         {                
         }
 
         public ScoreResult CalculateResult(QuizGenerated quizGenerated)
         {
-            throw new NotImplementedException();
+            ScoreResult score = new ScoreResult();
+            _quizGenerated = quizGenerated;
+
+            score.AllGoodAnswers = quizGenerated.Questions.SelectMany(x => x.Answers).Where(y => y.IsCorrect).Count();
+
+            return score;
         }
 
         private ICalculationStrategy GetCalculationStrategy()
         {
             ICalculationStrategy calculationStrategy = null;
+
+
 
             return calculationStrategy;
         }

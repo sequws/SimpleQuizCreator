@@ -13,7 +13,7 @@ namespace SimpleQuizCreator.Tests
     public class ScoreCalculatorTests
     {
         [Fact]
-        public void GenerateNewQuiz_ShuffleQuestion()
+        public void CalculateResult_AllGoodAnswer()
         {
             // Arrange
             QuizSettings settings = new QuizSettings
@@ -50,9 +50,11 @@ namespace SimpleQuizCreator.Tests
 
             // Act
             IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
 
             // Assert - green
-            Assert.Throws<NotImplementedException>(() => scoreCalculator.CalculateResult(quiz));
+            //Assert.Throws<NotImplementedException>(() => scoreCalculator.CalculateResult(quiz));
+            Assert.Equal(3, score.AllGoodAnswers);
         }
     }
 }
