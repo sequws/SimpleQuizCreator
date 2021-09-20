@@ -109,5 +109,28 @@ namespace SimpleQuizCreator.Tests.FakeData
 
             return quiz;
         }
+
+
+        public static Quiz NewQuizWithOnlyOneAnswers()
+        {
+            Quiz quiz = new Quiz
+            {
+                Errors = new List<string>(),
+                Name = "NewQuizWithOnlyOneAnswers",
+                Questions = new List<Question>()
+                {
+                    new Question { QuestionText = "Question 1", Answers = new List<Answer> {
+                        new Answer { AnswerText = "Answer Q1 - good", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 2", Answers = new List<Answer> {
+                        new Answer { AnswerText = "Answer Q2 - good", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 3", Answers = new List<Answer> {
+                        new Answer { AnswerText = "Answer Q3 - good", IsCorrect = true },
+                    }},
+                }
+            };
+            return quiz;
+        }
     }
 }
