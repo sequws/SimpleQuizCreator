@@ -21,12 +21,11 @@ namespace SimpleQuizCreator.Models
         public bool ShowScore { get; set; } = false;
 
         // Questions
-        //public int QuestionLimit { get; set; } = 30;
-        private int _QuestionLimit = 30;
+        private int _questionLimit = 30;
         public int QuestionLimit
         {
-            get { return _QuestionLimit; }
-            set { SetProperty(ref _QuestionLimit, value); }
+            get { return _questionLimit; }
+            set { SetProperty(ref _questionLimit, value); }
         }
 
         public byte AutogenerateAnswers { get; set; } = 4;

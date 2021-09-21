@@ -5,6 +5,6 @@ namespace SimpleQuizCreator.Interfaces
 {
     public interface ICalculationStrategy
     {
-        ScoreResult Calculate(List<Question> quizGenerated);
+        ScoreResult Calculate(List<Question> questions);
     }
 }

@@ -23,16 +23,29 @@ namespace SimpleQuizCreator.Common
 
             score.AllGoodAnswers = quizGenerated.Questions.SelectMany(x => x.Answers).Where(y => y.IsCorrect).Count();
 
+            ICalculationStrategy calculator = GetCalculationStrategy(quizGenerated.QuizSettings.ScoreType);
+
+            calculator.Calculate(_quizGenerated.Questions);
+
             return score;
         }
 
-        private ICalculationStrategy GetCalculationStrategy()
+        private ICalculationStrategy GetCalculationStrategy(ScoreType scoreType)
         {
-            ICalculationStrategy calculationStrategy = null;
+            switch( scoreType)
+            {
+                case ScoreType.OneGoodZeroBad:
+                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'OneGoodZeroBad'");
+                case ScoreType.OneGoodOneBad:
+                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'OneGoodOneBad'");
+                case ScoreType.AllGoodWithoutMinus:
+                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'AllGoodWithoutMinus'");
+                case ScoreType.AllGoodWithMinus:
+                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'NotImplementedException'");
 
-
-
-            return calculationStrategy;
+                default:
+                    throw new ArgumentException("There is no scoreType like this!", nameof( scoreType));                    
+            }
         }
     }
 }
