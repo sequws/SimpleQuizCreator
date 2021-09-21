@@ -30,9 +30,8 @@ namespace SimpleQuizCreator.Common.Calculator
                 res = (badSelected == 0 && goodSelected > 0) ? 1 : 0;
                 score.PointsScore += res;
             }
-            
 
-            //res.PointsScore = questions.Where(q => q.Answers.Where(a => a.IsCorrect && a.IsSelected).Any()).Count();
+            score.PercentScore = Math.Round(((double)score.PointsScore / (double)score.AllPosiblePoints)*100, 1);
 
             return score;
         }

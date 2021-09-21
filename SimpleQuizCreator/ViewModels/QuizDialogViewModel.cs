@@ -21,7 +21,7 @@ namespace SimpleQuizCreator.ViewModels
         void ExecuteCloseDialogCommand()
         {
             var resParams = new DialogParameters();
-            resParams.Add("score", 88.2);
+            resParams.Add("score", QuizResult);
 
             RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
         }
@@ -52,7 +52,7 @@ namespace SimpleQuizCreator.ViewModels
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
-                _scoreCalculator.CalculateResult( Quiz);
+                QuizResult = _scoreCalculator.CalculateResult( Quiz);
             }
         }
 
@@ -85,6 +85,13 @@ namespace SimpleQuizCreator.ViewModels
         {
             get { return _activeQuestion; }
             set { SetProperty(ref _activeQuestion, value); }
+        }
+
+        private ScoreResult _quizResult;
+        public ScoreResult QuizResult
+        {
+            get { return _quizResult; }
+            set { SetProperty(ref _quizResult, value); }
         }
 
         #endregion

@@ -65,7 +65,9 @@ namespace SimpleQuizCreator.ViewModels
 
             _dialogService.ShowDialog("QuizDialog", dialogParams , r =>
             {
-                var scoreRes = r.Parameters.GetValue<double>("score");
+                var scoreRes = r.Parameters.GetValue<ScoreResult>("score");
+
+                // todo: Save results to database or file
             });
         }
 
