@@ -14,7 +14,7 @@ namespace SimpleQuizCreator.Common
 
     public enum ScoreType
     {
-        OneGoodZeroBad,         //  1pts for good answer, no minus points for bad answer
+        OneGoodZeroBad,         //  1pts for good answer, no minus points for bad answer, or lack answer
         OneGoodOneBad,          //  1pts for good answer, -1pts points for bad answer
         AllGoodWithoutMinus,    //  1pts for all good answers checked, zero otherwise
         AllGoodWithMinus,       //  1pts for all good answers checked, -1pts otherwise

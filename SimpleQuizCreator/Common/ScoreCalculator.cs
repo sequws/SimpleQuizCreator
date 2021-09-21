@@ -1,4 +1,5 @@
-﻿using SimpleQuizCreator.Interfaces;
+﻿using SimpleQuizCreator.Common.Calculator;
+using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
@@ -10,22 +11,14 @@ namespace SimpleQuizCreator.Common
 {
     public class ScoreCalculator : IScoreCalculator
     {
-        QuizGenerated _quizGenerated;
-
         public ScoreCalculator()
         {                
         }
 
         public ScoreResult CalculateResult(QuizGenerated quizGenerated)
         {
-            ScoreResult score = new ScoreResult();
-            _quizGenerated = quizGenerated;
-
-            score.AllGoodAnswers = quizGenerated.Questions.SelectMany(x => x.Answers).Where(y => y.IsCorrect).Count();
-
             ICalculationStrategy calculator = GetCalculationStrategy(quizGenerated.QuizSettings.ScoreType);
-
-            calculator.Calculate(_quizGenerated.Questions);
+            ScoreResult score = calculator.Calculate(quizGenerated.Questions);
 
             return score;
         }
@@ -35,7 +28,7 @@ namespace SimpleQuizCreator.Common
             switch( scoreType)
             {
                 case ScoreType.OneGoodZeroBad:
-                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'OneGoodZeroBad'");
+                    return new OneGoodZeroBadCalcStrategy();
                 case ScoreType.OneGoodOneBad:
                     throw new NotImplementedException($"There is no implementation of calculation strategy for 'OneGoodOneBad'");
                 case ScoreType.AllGoodWithoutMinus:
