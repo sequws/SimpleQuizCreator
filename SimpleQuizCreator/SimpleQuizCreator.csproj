@@ -64,6 +64,7 @@
     <Compile Include="Abstractions\ErrorCollector.cs" />
     <Compile Include="Abstractions\Loader.cs" />
     <Compile Include="Abstractions\Parser.cs" />
+    <Compile Include="Common\Calculator\OneGoodOneBadCalcStrategy.cs" />
     <Compile Include="Common\GlobalEnums.cs" />
     <Compile Include="Common\Calculator\OneGoodZeroBadCalcStrategy.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />

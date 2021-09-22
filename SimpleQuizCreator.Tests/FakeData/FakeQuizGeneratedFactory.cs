@@ -10,7 +10,7 @@ namespace SimpleQuizCreator.Tests.FakeData
 {
     public static class FakeQuizGeneratedFactory
     {
-        public static QuizGenerated GenerateClearWithAllGoodNoSelected()
+        public static QuizGenerated Clear_NoSelected()
         {
             QuizGenerated quiz = new QuizGenerated
             {
@@ -37,7 +37,7 @@ namespace SimpleQuizCreator.Tests.FakeData
             return quiz;
         }
 
-        public static QuizGenerated GenerateAllGoodAnswersSelected()
+        public static QuizGenerated AllGoodAnswersSelected()
         {
             QuizGenerated quiz = new QuizGenerated
             {
@@ -66,7 +66,7 @@ namespace SimpleQuizCreator.Tests.FakeData
 
 
 
-        public static QuizGenerated GenerateAllGoodAnswersSelectedWithOneBad()
+        public static QuizGenerated AllGoodAnswersSelected_OneBad()
         {
             QuizGenerated quiz = new QuizGenerated
             {
