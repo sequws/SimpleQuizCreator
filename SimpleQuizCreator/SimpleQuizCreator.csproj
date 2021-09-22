@@ -67,6 +67,7 @@
     <Compile Include="Common\Calculator\OneGoodOneBadCalcStrategy.cs" />
     <Compile Include="Common\GlobalEnums.cs" />
     <Compile Include="Common\Calculator\OneGoodZeroBadCalcStrategy.cs" />
+    <Compile Include="Common\Calculator\OneGoodOneBadOneNoCalcStrategy.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
