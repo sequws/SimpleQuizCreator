@@ -92,5 +92,50 @@ namespace SimpleQuizCreator.Tests.FakeData
             };
             return quiz;
         }
+
+        /// <summary>
+        /// Generate custom quiz
+        /// </summary>
+        /// <param name="question">number of question</param>
+        /// <param name="answers">number of answers in each question</param>
+        /// <param name="goodAnswers">first {X} answers in each question will be marked as good </param>
+        /// <returns></returns>
+        public static QuizGenerated GenerateClearQuiz(int questionNr =3, byte answersNr = 3, byte goodAnswersNr = 1, bool selectAllCorrect=false)
+        {
+            QuizGenerated genQuiz = new QuizGenerated();
+
+            QuizSettings settings = new QuizSettings
+            {
+                AllowReturn = false,
+                AutogenerateAnswers = answersNr,
+                QuestionLimit = questionNr,
+                ScoreType = ScoreType.Custom,
+            };
+
+            genQuiz.QuizSettings = settings;
+
+            for (int x = 0; x< questionNr; x++)
+            {
+                var question = new Question();
+                question.QuestionText = $"Question {x + 1}";
+
+                for (int y = 0; y < answersNr; y++)
+                {
+                    var answer = new Answer();
+                    answer.AnswerText = $"Answer {y + 1}";
+
+                    if(y < goodAnswersNr)
+                    {
+                        answer.AnswerText += " - good";
+                        answer.IsCorrect = true;
+                        answer.IsSelected = selectAllCorrect;
+                    }
+                    question.Answers.Add(answer);
+                }
+                genQuiz.Questions.Add(question);
+            }
+
+            return genQuiz;
+        }
     }
 }

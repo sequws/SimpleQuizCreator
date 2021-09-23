@@ -80,7 +80,7 @@ namespace SimpleQuizCreator.Tests
 
         #endregion
 
-        #region
+        #region OneGoodOneBad
 
         [Fact]
         public void CalculateResult_OneGoodOneBad_NoSelected()
@@ -174,7 +174,7 @@ namespace SimpleQuizCreator.Tests
 
         #endregion
 
-        #region
+        #region OneGoodOneBadOneNo
 
         [Fact]
         public void CalculateResult_OneGoodOneBadOneNo_NoSelected()
@@ -262,6 +262,96 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(-3, score.PointsScore);
+        }
+
+        #endregion
+
+        #region AllGoodWithoutMinus
+
+        [Fact]
+        public void CalculateResult_AllGoodWithoutMinus_NoSelected()
+        {
+            // Arrange
+            QuizSettings settings = new QuizSettings
+            {
+                AllowReturn = false,
+                AutogenerateAnswers = 4,
+                QuestionLimit = 3,
+                ScoreType = ScoreType.AllGoodWithoutMinus,
+            };
+
+            var quiz = FakeQuizGeneratedFactory.Clear_NoSelected();
+            quiz.QuizSettings = settings;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(3, score.AllGoodAnswers);
+            Assert.Equal(0, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_AllGoodWithoutMinus_AllGoodSelected()
+        {
+            QuizSettings settings = new QuizSettings
+            {
+                AllowReturn = false,
+                AutogenerateAnswers = 4,
+                QuestionLimit = 3,
+                ScoreType = ScoreType.AllGoodWithoutMinus,
+            };
+
+            var quiz = FakeQuizGeneratedFactory.AllGoodAnswersSelected();
+            quiz.QuizSettings = settings;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(3, score.AllGoodAnswers);
+            Assert.Equal(3, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_MultiAnswer_AllGoodSelected()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5,4,2,true);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithoutMinus;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(5, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_MultiAnswer_NoneSelected()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithoutMinus;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(0, score.PointsScore);
+        }
+
+
+        [Fact]
+        public void CalculateResult_MultiAnswer_3correct2mistakes()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2,true);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithoutMinus;
+
+            quiz.Questions[3].Answers[1].IsSelected = false;
+            quiz.Questions[4].Answers[1].IsSelected = false;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(3, score.PointsScore);
         }
 
         #endregion
