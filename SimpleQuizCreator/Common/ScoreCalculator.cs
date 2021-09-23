@@ -34,7 +34,7 @@ namespace SimpleQuizCreator.Common
                 case ScoreType.OneGoodOneBadOneNo:
                     return new OneGoodOneBadOneNoCalcStrategy();
                 case ScoreType.AllGoodWithoutMinus:
-                    throw new NotImplementedException($"There is no implementation of calculation strategy for 'AllGoodWithoutMinus'");
+                    return new AllGoodWithoutMinusCalcStrategy();
                 case ScoreType.AllGoodWithMinus:
                     throw new NotImplementedException($"There is no implementation of calculation strategy for 'NotImplementedException'");
 
