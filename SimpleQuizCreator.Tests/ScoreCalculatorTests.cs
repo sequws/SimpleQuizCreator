@@ -339,7 +339,7 @@ namespace SimpleQuizCreator.Tests
 
 
         [Fact]
-        public void CalculateResult_MultiAnswer_3correct2mistakes()
+        public void CalculateResult_MultiAnswer_3correct2incomplete()
         {
             var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2,true);
             quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithoutMinus;
@@ -353,6 +353,73 @@ namespace SimpleQuizCreator.Tests
             Assert.Equal(10, score.AllGoodAnswers);
             Assert.Equal(3, score.PointsScore);
         }
+
+        #endregion
+
+        #region AllGoodWithMinus
+
+        [Fact]
+        public void CalculateResult_AllGoodWithMinus_NoneSelected()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithMinus;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(-5, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_AllGoodWithMinus_AllGoodSelected()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2,true);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithMinus;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(5, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_AllGoodWithMinus_3correct2incomplete()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2, true);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithMinus;
+
+            quiz.Questions[3].Answers[1].IsSelected = false;
+            quiz.Questions[4].Answers[1].IsSelected = false;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(1, score.PointsScore);
+        }
+
+        [Fact]
+        public void CalculateResult_AllGoodWithMinus_2correct2incomplete1mistake()
+        {
+            var quiz = FakeQuizGeneratedFactory.GenerateClearQuiz(5, 4, 2, true);
+            quiz.QuizSettings.ScoreType = ScoreType.AllGoodWithMinus;
+
+            quiz.Questions[2].Answers[1].IsSelected = false;
+            quiz.Questions[3].Answers[1].IsSelected = false;
+            quiz.Questions[4].Answers[0].IsSelected = false;
+            quiz.Questions[4].Answers[1].IsSelected = false;            
+            quiz.Questions[4].Answers[2].IsSelected = true;
+
+            IScoreCalculator scoreCalculator = new ScoreCalculator();
+            var score = scoreCalculator.CalculateResult(quiz);
+
+            Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(-1, score.PointsScore);
+        }
+
+
 
         #endregion
     }
