@@ -29,8 +29,15 @@ namespace SimpleQuizCreator.ViewModels
         public Quiz SelectedQuiz
         {
             get { return _selectedQuiz; }
-            set { SetProperty(ref _selectedQuiz, value); }
+            set { SetProperty(ref _selectedQuiz, value); 
+                if(QuizSettings.QuestionLimit > _selectedQuiz.QuestionAmount)
+                {
+                    QuizSettings.QuestionLimit = _selectedQuiz.QuestionAmount;
+                }
+            }
         }
+
+        public ScoreTypeListViewModel ScoreTypeList { get; set; } = new ScoreTypeListViewModel();
 
         private DelegateCommand _openQuizWindow;
         public DelegateCommand OpenQuizWindow =>
@@ -56,6 +63,8 @@ namespace SimpleQuizCreator.ViewModels
                 QuizSettings.QuestionLimit = SelectedQuiz.QuestionAmount;
                 return;
             }
+
+            QuizSettings.ScoreType = ScoreTypeList.SelectedType.Type;
 
             _quizGenerator.GenerateNewQuiz(SelectedQuiz, QuizSettings);
             var generatedQuiz = _quizGenerator.GetQuiz();

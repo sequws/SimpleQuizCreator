@@ -90,10 +90,12 @@
     <Compile Include="Models\QuizGenerated.cs" />
     <Compile Include="Models\QuizSettings.cs" />
     <Compile Include="Models\ScoreResult.cs" />
+    <Compile Include="Models\ScoreTypeComboItem.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="ViewModels\QuizDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
+    <Compile Include="ViewModels\ScoreTypeListViewModel.cs" />
     <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\QuizDialog.xaml.cs">
       <DependentUpon>QuizDialog.xaml</DependentUpon>
