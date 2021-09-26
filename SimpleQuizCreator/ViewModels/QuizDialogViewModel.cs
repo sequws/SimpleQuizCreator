@@ -53,6 +53,7 @@ namespace SimpleQuizCreator.ViewModels
             {
                 SelectedIndex++;
                 QuizResult = _scoreCalculator.CalculateResult( Quiz);
+                QuizResult.QuizName = Quiz.Name;
             }
         }
 

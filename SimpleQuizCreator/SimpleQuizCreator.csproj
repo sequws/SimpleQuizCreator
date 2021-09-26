@@ -75,12 +75,14 @@
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Common\ScoreCalculator.cs" />
+    <Compile Include="DataAccess\ResultRepository.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Interfaces\ICalculationStrategy.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IQuizGenerator.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
+    <Compile Include="Interfaces\IResultRepository.cs" />
     <Compile Include="Interfaces\IScoreCalculator.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -89,6 +91,7 @@
     <Compile Include="Models\QuizFile.cs" />
     <Compile Include="Models\QuizGenerated.cs" />
     <Compile Include="Models\QuizSettings.cs" />
+    <Compile Include="Models\ScoreResultEntity.cs" />
     <Compile Include="Models\ScoreResult.cs" />
     <Compile Include="Models\ScoreTypeComboItem.cs" />
     <Compile Include="Services\QuizService.cs" />
