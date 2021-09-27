@@ -8,13 +8,16 @@ namespace SimpleQuizCreator.Models
 {
     public class ScoreResultEntity
     {
+        public int Id { get; set; }
+        public string QuizName { get; set; }
         public string Type { get; set; }
-        public int AllGoodAnswers { get; set; }
+        public DateTime? Date { get; set; }
         public int QuestionAmount { get; set; }
         public int AllPosiblePoints { get; set; }
+        public int AllGoodAnswers { get; set; }
         public int PointsScore { get; set; }
         public double PercentScore { get; set; }
-        public DateTime? Date { get; set; }
-        public string QuizName { get; set; }
+        
+        
     }
 }
