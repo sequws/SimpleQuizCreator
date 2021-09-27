@@ -34,6 +34,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(0, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         [Fact]
@@ -55,6 +56,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(3, score.PointScore);            
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
         [Fact]
@@ -76,6 +78,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(2, score.PointScore);
+            Assert.Equal(66.67, score.PercentScore, 1);
         }
 
         #endregion
@@ -102,6 +105,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(0, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         [Fact]
@@ -123,6 +127,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(3, score.PointScore);
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
 
@@ -145,6 +150,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(1, score.PointScore);
+            Assert.Equal(33.33, score.PercentScore, 1);
         }
 
 
@@ -170,6 +176,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(-2, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         #endregion
@@ -196,6 +203,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(-3, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         [Fact]
@@ -217,6 +225,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(3, score.PointScore);
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
         [Fact]
@@ -238,6 +247,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(1, score.PointScore);
+            Assert.Equal(33.33, score.PercentScore, 1);
         }
 
         [Fact]
@@ -262,6 +272,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(-3, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         #endregion
@@ -288,6 +299,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(0, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         [Fact]
@@ -309,6 +321,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(3, score.AllGoodAnswers);
             Assert.Equal(3, score.PointScore);
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
         [Fact]
@@ -321,7 +334,9 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(5, score.QuestionAmount);
             Assert.Equal(5, score.PointScore);
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
         [Fact]
@@ -335,6 +350,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(10, score.AllGoodAnswers);
             Assert.Equal(0, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
 
@@ -351,7 +367,9 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(5, score.QuestionAmount);
             Assert.Equal(3, score.PointScore);
+            Assert.Equal(60, score.PercentScore, 1);
         }
 
         #endregion
@@ -369,6 +387,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(10, score.AllGoodAnswers);
             Assert.Equal(-5, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
         [Fact]
@@ -382,6 +401,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(10, score.AllGoodAnswers);
             Assert.Equal(5, score.PointScore);
+            Assert.Equal(100, score.PercentScore, 1);
         }
 
         [Fact]
@@ -397,7 +417,9 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
+            Assert.Equal(5, score.QuestionAmount);
             Assert.Equal(1, score.PointScore);
+            Assert.Equal(20, score.PercentScore, 1);
         }
 
         [Fact]
@@ -417,6 +439,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.Equal(10, score.AllGoodAnswers);
             Assert.Equal(-1, score.PointScore);
+            Assert.Equal(0, score.PercentScore, 1);
         }
 
 

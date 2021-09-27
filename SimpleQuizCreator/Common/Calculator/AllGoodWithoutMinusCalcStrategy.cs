@@ -28,7 +28,7 @@ namespace SimpleQuizCreator.Common.Calculator
             }
 
             score.PercentScore = Math.Round(
-                ((double)score.PointScore >= 0 ? score.PointScore : 0 / (double)score.AllPosiblePoints) * 100, 1);
+                ((double)(score.PointScore >= 0 ? score.PointScore : 0) / (double)score.AllPosiblePoints) * 100, 1);
 
             return score;
         }
