@@ -15,7 +15,7 @@ namespace SimpleQuizCreator.Models
         public int QuestionAmount { get; set; }
         public int AllPosiblePoints { get; set; }
         public int AllGoodAnswers { get; set; }
-        public int PointsScore { get; set; }
+        public int PointScore { get; set; }
         public double PercentScore { get; set; }
         
         

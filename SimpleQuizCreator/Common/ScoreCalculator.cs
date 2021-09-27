@@ -19,6 +19,7 @@ namespace SimpleQuizCreator.Common
         {
             ICalculationStrategy calculator = GetCalculationStrategy(quizGenerated.QuizSettings.ScoreType);
             ScoreResult score = calculator.Calculate(quizGenerated.Questions);
+            score.Date = DateTime.UtcNow;
 
             return score;
         }

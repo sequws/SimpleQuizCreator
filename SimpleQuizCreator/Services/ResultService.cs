@@ -34,7 +34,7 @@ namespace SimpleQuizCreator.Services
                     QuestionAmount = result.QuestionAmount,
                     AllPosiblePoints = result.AllPosiblePoints,
                     AllGoodAnswers = result.AllGoodAnswers,
-                    PointsScore = result.PointsScore,
+                    PointScore = result.PointScore,
                     PercentScore = result.PercentScore
                 });
             }
@@ -52,7 +52,7 @@ namespace SimpleQuizCreator.Services
                 QuestionAmount = result.QuestionAmount,
                 AllPosiblePoints = result.AllPosiblePoints,
                 AllGoodAnswers = result.AllGoodAnswers,
-                PointsScore = result.PointsScore,
+                PointScore = result.PointScore,
                 PercentScore = result.PercentScore
             });
 

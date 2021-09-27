@@ -24,13 +24,13 @@ namespace SimpleQuizCreator.DataAccess
             {
                 try
                 {
-                    con.Execute("insert into History " +
+                    con.Execute("insert into HistoryResult " +
                         "(QuizName, Type, Date, " +
                         "QuestionAmount, AllPosiblePoints, AllGoodAnswers, " +
-                        "PointsScore, PercentScore  ) values " +
+                        "PointScore, PercentScore  ) values " +
                         "(@QuizName, @Type, @Date," +
                         "@QuestionAmount, @AllPosiblePoints, @AllGoodAnswers," +
-                        "@PointsScore, @PercentScore )", scoreResult);
+                        "@PointScore, @PercentScore )", scoreResult);
                     return true;
                 } 
                 catch (Exception e)
@@ -45,7 +45,7 @@ namespace SimpleQuizCreator.DataAccess
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var result = con.Query<ScoreResultEntity>("select * from History", new DynamicParameters());
+                var result = con.Query<ScoreResultEntity>("select * from HistoryResult", new DynamicParameters());
                 return result.ToList();
             }
         }

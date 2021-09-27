@@ -83,6 +83,7 @@
     <Compile Include="Interfaces\IQuizGenerator.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
     <Compile Include="Interfaces\IResultRepository.cs" />
+    <Compile Include="Interfaces\IResultService.cs" />
     <Compile Include="Interfaces\IScoreCalculator.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Models\Answer.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="Models\ScoreResult.cs" />
     <Compile Include="Models\ScoreTypeComboItem.cs" />
     <Compile Include="Services\QuizService.cs" />
+    <Compile Include="Services\ResultService.cs" />
     <Compile Include="ViewModels\QuizDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />

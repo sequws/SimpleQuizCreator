@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.Interfaces
 {
-    interface IResultService
+    public interface IResultService
     {
         IEnumerable<ScoreResult> GetAllResult();
         bool SaveResult(ScoreResult result);

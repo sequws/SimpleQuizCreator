@@ -13,9 +13,10 @@ namespace SimpleQuizCreator.ViewModels
     public class StartQuizViewModel : BindableBase
     {
         private readonly IDialogService _dialogService;
-        private readonly IQuizGenerator _quizGenerator;
-        private readonly IWindowView _windowView;
+        private readonly IQuizGenerator _quizGenerator;        
         private readonly IQuizService _quizService;
+        private readonly IResultService _resultService;
+
         public List<Quiz> ListOfQuizzes { get; set; }
 
         private QuizSettings quizSettings = new QuizSettings();
@@ -43,12 +44,15 @@ namespace SimpleQuizCreator.ViewModels
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
 
-        public StartQuizViewModel(IWindowView windowView, IQuizService quizService, IDialogService dialogService, IQuizGenerator quizGenerator)
+        public StartQuizViewModel(IQuizService quizService, 
+            IDialogService dialogService, 
+            IQuizGenerator quizGenerator, 
+            IResultService resultService)
         {
-            _windowView = windowView;
             _quizService = quizService;
             _dialogService = dialogService;
             _quizGenerator = quizGenerator;
+            _resultService = resultService;
             ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes());
             if(ListOfQuizzes.Count > 0)
             {
@@ -81,6 +85,7 @@ namespace SimpleQuizCreator.ViewModels
                 var scoreRes = r.Parameters.GetValue<ScoreResult>("score");
 
                 // todo: Save results to database or file
+                var saveRes = _resultService.SaveResult(scoreRes);
             });
         }
 

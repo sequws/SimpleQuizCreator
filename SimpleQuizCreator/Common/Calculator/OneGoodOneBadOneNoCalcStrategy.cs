@@ -24,11 +24,11 @@ namespace SimpleQuizCreator.Common.Calculator
 
                 res = (badSelected == 0 && goodSelected > 0) ? 1 : -1;
                 if (!anySelected) res = -1;
-                score.PointsScore += res;
+                score.PointScore += res;
             }
 
             score.PercentScore = Math.Round(
-                ((double)score.PointsScore >= 0 ? score.PointsScore : 0 / (double)score.AllPosiblePoints) * 100, 1);
+                ((double)score.PointScore >= 0 ? score.PointScore : 0 / (double)score.AllPosiblePoints) * 100, 1);
 
             return score;
         }

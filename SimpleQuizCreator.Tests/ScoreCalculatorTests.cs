@@ -33,7 +33,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(0, score.PointsScore);
+            Assert.Equal(0, score.PointScore);
         }
 
         [Fact]
@@ -54,7 +54,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(3, score.PointsScore);            
+            Assert.Equal(3, score.PointScore);            
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(2, score.PointsScore);
+            Assert.Equal(2, score.PointScore);
         }
 
         #endregion
@@ -101,7 +101,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(0, score.PointsScore);
+            Assert.Equal(0, score.PointScore);
         }
 
         [Fact]
@@ -122,7 +122,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(3, score.PointsScore);
+            Assert.Equal(3, score.PointScore);
         }
 
 
@@ -144,7 +144,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(1, score.PointsScore);
+            Assert.Equal(1, score.PointScore);
         }
 
 
@@ -169,7 +169,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(-2, score.PointsScore);
+            Assert.Equal(-2, score.PointScore);
         }
 
         #endregion
@@ -195,7 +195,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(-3, score.PointsScore);
+            Assert.Equal(-3, score.PointScore);
         }
 
         [Fact]
@@ -216,7 +216,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(3, score.PointsScore);
+            Assert.Equal(3, score.PointScore);
         }
 
         [Fact]
@@ -237,7 +237,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(1, score.PointsScore);
+            Assert.Equal(1, score.PointScore);
         }
 
         [Fact]
@@ -261,7 +261,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(-3, score.PointsScore);
+            Assert.Equal(-3, score.PointScore);
         }
 
         #endregion
@@ -287,7 +287,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(0, score.PointsScore);
+            Assert.Equal(0, score.PointScore);
         }
 
         [Fact]
@@ -308,7 +308,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(3, score.AllGoodAnswers);
-            Assert.Equal(3, score.PointsScore);
+            Assert.Equal(3, score.PointScore);
         }
 
         [Fact]
@@ -321,7 +321,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(5, score.PointsScore);
+            Assert.Equal(5, score.PointScore);
         }
 
         [Fact]
@@ -334,7 +334,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(0, score.PointsScore);
+            Assert.Equal(0, score.PointScore);
         }
 
 
@@ -351,7 +351,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(3, score.PointsScore);
+            Assert.Equal(3, score.PointScore);
         }
 
         #endregion
@@ -368,7 +368,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(-5, score.PointsScore);
+            Assert.Equal(-5, score.PointScore);
         }
 
         [Fact]
@@ -381,7 +381,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(5, score.PointsScore);
+            Assert.Equal(5, score.PointScore);
         }
 
         [Fact]
@@ -397,7 +397,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(1, score.PointsScore);
+            Assert.Equal(1, score.PointScore);
         }
 
         [Fact]
@@ -416,7 +416,7 @@ namespace SimpleQuizCreator.Tests
             var score = scoreCalculator.CalculateResult(quiz);
 
             Assert.Equal(10, score.AllGoodAnswers);
-            Assert.Equal(-1, score.PointsScore);
+            Assert.Equal(-1, score.PointScore);
         }
 
 
