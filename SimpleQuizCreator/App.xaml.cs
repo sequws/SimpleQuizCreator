@@ -31,6 +31,7 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IScoreCalculator, ScoreCalculator>();
 
             containerRegistry.RegisterSingleton<IResultRepository, ResultRepository>();
+            containerRegistry.RegisterSingleton<IResultService, ResultService>();
 
             containerRegistry.RegisterDialog<QuizDialog, QuizDialogViewModel>();
         }
