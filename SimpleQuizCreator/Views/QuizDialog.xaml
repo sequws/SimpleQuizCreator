@@ -65,7 +65,7 @@
                 <Label DockPanel.Dock="Top" Content="Quiz finished!" Margin="20" FontSize="24" HorizontalContentAlignment="Center"></Label>
                 <StackPanel DockPanel.Dock="Top" x:Name="FinishResultStackPanel" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Content="{Binding QuizResult.PointsScore}" FontSize="24" FontWeight="Bold"></Label>
+                        <Label Content="{Binding QuizResult.PointScore}" FontSize="24" FontWeight="Bold"></Label>
                         <Label Content=" of "  FontSize="24"></Label>
                         <Label Content="{Binding QuizResult.AllPosiblePoints}" FontSize="24" ></Label>
                         <Label Content="points"  FontSize="24"></Label>

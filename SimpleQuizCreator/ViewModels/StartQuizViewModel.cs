@@ -85,7 +85,10 @@ namespace SimpleQuizCreator.ViewModels
                 var scoreRes = r.Parameters.GetValue<ScoreResult>("score");
 
                 // todo: Save results to database or file
-                var saveRes = _resultService.SaveResult(scoreRes);
+                if(scoreRes != null)
+                {
+                    var saveRes = _resultService.SaveResult(scoreRes);
+                }
             });
         }
 
