@@ -6,7 +6,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True" Height="350" Width="525" 
         WindowStartupLocation="CenterScreen" Closed="Window_Closed" Icon="/SimpleQuizCreator;component/QuizIcon.ico" 
         Title="{Binding Title}"
-         MinWidth="500" MinHeight="300"
+         MinWidth="800" MinHeight="400"
         >
     <DockPanel Background="AliceBlue">
         <Menu Height="20" DockPanel.Dock="Top">

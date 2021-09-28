@@ -20,6 +20,8 @@ namespace SimpleQuizCreator.Common
             ICalculationStrategy calculator = GetCalculationStrategy(quizGenerated.QuizSettings.ScoreType);
             ScoreResult score = calculator.Calculate(quizGenerated.Questions);
             score.Date = DateTime.UtcNow;
+            score.QuizName = quizGenerated.Name;
+            score.Type = quizGenerated.QuizSettings.ScoreType;
 
             return score;
         }
