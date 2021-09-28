@@ -22,6 +22,7 @@
             <Button Content="HelloView" Margin="2" Height="30"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
             <Button Content="QuizListView" Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
             <Button Content="StartQuizView" FontWeight="Bold" Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
+            <Button Content="History"  Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="HistoryView"></Button>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </DockPanel>

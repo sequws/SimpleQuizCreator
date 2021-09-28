@@ -15,6 +15,7 @@ namespace SimpleQuizCreator.Views
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(HelloView));
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(QuizListView));
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(StartQuizView));
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(HistoryView));
         }
 
         private void Window_Closed(object sender, System.EventArgs e)
