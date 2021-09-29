@@ -25,6 +25,18 @@ namespace SimpleQuizCreator.ViewModels
             HistoryResult = _resultService.GetAllResult().ToList();
         }
 
+        private DelegateCommand _refreshCommand;
+        public DelegateCommand RefreshCommand =>
+            _refreshCommand ?? (_refreshCommand = new DelegateCommand(ExecuteRefreshCommand, CanExecuteRefreshCommand));
 
+        void ExecuteRefreshCommand()
+        {
+            HistoryResult = _resultService.GetAllResult().ToList();
+        }
+
+        bool CanExecuteRefreshCommand()
+        {
+            return true;
+        }
     }
 }
