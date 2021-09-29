@@ -72,6 +72,7 @@
     <Compile Include="Common\Calculator\OneGoodOneBadOneNoCalcStrategy.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
+    <Compile Include="Converters\ScoreTypeToStringConverter.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Common\ScoreCalculator.cs" />
