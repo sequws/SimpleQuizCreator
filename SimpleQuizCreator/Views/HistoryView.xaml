@@ -17,6 +17,7 @@
             <Button Width="100" Margin="2" Content="Refresh" Command="{Binding RefreshCommand}"></Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding HistoryResult}"
+                  AlternatingRowBackground="LightGray"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"                  
                   AutoGenerateColumns="False">
