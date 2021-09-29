@@ -4,6 +4,7 @@
              xmlns:prism="http://prismlibrary.com/"             
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
@@ -11,6 +12,18 @@
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
             <Button Width="100" Margin="2" Content="Refresh" Command="{Binding RefreshCommand}"></Button>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding HistoryResult}"></DataGrid>
+        <DataGrid ItemsSource="{Binding HistoryResult}"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"                  
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuizName}" Binding="{Binding Path=QuizName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderScoreType}" Binding="{Binding Path=ScoreType}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderDate}" Binding="{Binding Path=Date}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuestionAmount}" Binding="{Binding Path=QuestionAmount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderPointScore}" Binding="{Binding Path=PointScore}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderPercentScore}" Binding="{Binding Path=PercentScore}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </DockPanel>
 </UserControl>

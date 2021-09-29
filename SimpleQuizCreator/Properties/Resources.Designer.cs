@@ -22,7 +22,7 @@ namespace SimpleQuizCreator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace SimpleQuizCreator.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SimpleQuizCreator.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace SimpleQuizCreator.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,9 +61,63 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string HeaderDate {
+            get {
+                return ResourceManager.GetString("HeaderDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Percent score.
+        /// </summary>
+        public static string HeaderPercentScore {
+            get {
+                return ResourceManager.GetString("HeaderPercentScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Point score.
+        /// </summary>
+        public static string HeaderPointScore {
+            get {
+                return ResourceManager.GetString("HeaderPointScore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question amount.
+        /// </summary>
+        public static string HeaderQuestionAmount {
+            get {
+                return ResourceManager.GetString("HeaderQuestionAmount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quiz name.
+        /// </summary>
+        public static string HeaderQuizName {
+            get {
+                return ResourceManager.GetString("HeaderQuizName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Score type.
+        /// </summary>
+        public static string HeaderScoreType {
+            get {
+                return ResourceManager.GetString("HeaderScoreType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QuizIcon {
+        public static System.Drawing.Bitmap QuizIcon {
             get {
                 object obj = ResourceManager.GetObject("QuizIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
