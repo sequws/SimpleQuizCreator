@@ -22,4 +22,10 @@ namespace SimpleQuizCreator.Common
         Custom                  //  
     }
 
+    public enum Language
+    {
+        EN,
+        PL,
+        UKR
+    }
 }
