@@ -1,0 +1,63 @@
+[Q]Grenada
+Harare
+Helsinki
+[*]Saint George's
+Nay Pyi Taw
+
+[Q]Peru
+P'yŏngyang
+Palikir
+Madrid
+[*]Lima
+
+[Q]Indonesia
+Minsk
+[*]Jakarta
+Ankara
+Maputo
+
+[Q]The Bahamas
+Copenhagen
+Cairo
+Bairiki, Ambo, and Betio
+[*]Nassau
+
+[Q]Portugal
+Caracas
+Ottawa
+[*]Lisbon
+Buenos Aires
+
+[Q]Spain
+[*]Madrid
+Dushanbe
+Bucharest
+San Marino
+
+[Q]Haiti
+Wellington
+Lima
+Havana
+[*]Port-au-Prince
+
+[Q]Germany
+[*]Berlin
+Yaren district
+Port-au-Prince
+Athens
+
+[Q]France
+Libreville
+[*]Paris
+Castries
+New Delhi
+
+[Q]Uzbekistan
+Sanaa
+Nay Pyi Taw
+[*]Tashkent
+Porto-Novo
+
+
+
+
