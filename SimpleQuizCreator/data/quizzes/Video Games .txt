@@ -1,0 +1,52 @@
+[Q]As early as 1950, it was proposed that computers could be programmed to play chess.
+[*]True
+False
+
+[Q]The game Spacewar! began in 1962 as a public display for visitors to the Brookhaven National Laboratory in New York.
+True
+[*]False
+
+[Q]Spacewar! inspired engineering student Nolan Bushnell to create the next big computer game: Snake.
+True
+[*]False
+
+[Q]Several historically important games were originally developed as “after hours” amusements by technical students and staff, and functioned as technology demonstrations.
+[*]True
+False
+
+[Q]Soon after it was founded, video game corporation Atari received a contract to develop an electronic version of Ping-Pong.
+True
+[*]False
+
+[Q]Atari created the “coin-op” game industry that became perhaps the main source for innovative electronic games well into the 1980s.
+[*]True
+False
+
+[Q]In 1966 Ralph Baer designed circuitry to display and control moving dots on a television screen, leading to the simple chase game Fox and Hounds. 
+[*]True
+False
+
+[Q]Before Atari had the chance, Ralph Baer and his team created an at-home version of Pong, which previously existed only as a coin-operated game.
+True
+[*]False
+
+[Q]Home video games experienced a sharp decline by 1983, with consumer backlash about the games’ unpredictability at an all-time high.
+[*]True
+False
+
+[Q]One of the first computer games based on the text, networking, and other capabilities available in academic laboratory computers was Hunt the Wumpus.
+[*]True
+False
+
+[Q]Most video games were not equipped to run on home computers until the late 1990s.
+True
+[*]False
+
+[Q]In the 1980s, Nintendo and Sega introduced a new generation of video game consoles with graphics that equaled or exceeded the capabilities of personal computers.
+[*]True
+False
+
+[Q]Sega was the first to introduce battery-powered storage cartridges that enabled players to save games in progress so that they could later continue playing right where they had left off. 
+True
+[*]False
+
