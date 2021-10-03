@@ -61,6 +61,51 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hello!.
+        /// </summary>
+        public static string ButtonHelloContent {
+            get {
+                return ResourceManager.GetString("ButtonHelloContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to History.
+        /// </summary>
+        public static string ButtonHistoryContent {
+            get {
+                return ResourceManager.GetString("ButtonHistoryContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quiz list.
+        /// </summary>
+        public static string ButtonQuizListContent {
+            get {
+                return ResourceManager.GetString("ButtonQuizListContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string ButtonRefreshContent {
+            get {
+                return ResourceManager.GetString("ButtonRefreshContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start new quiz!.
+        /// </summary>
+        public static string ButtonStartQuizContent {
+            get {
+                return ResourceManager.GetString("ButtonStartQuizContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date.
         /// </summary>
         public static string HeaderDate {
@@ -111,6 +156,15 @@ namespace SimpleQuizCreator.Properties {
         public static string HeaderScoreType {
             get {
                 return ResourceManager.GetString("HeaderScoreType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to List of quizzes:.
+        /// </summary>
+        public static string LabelQuizListContent {
+            get {
+                return ResourceManager.GetString("LabelQuizListContent", resourceCulture);
             }
         }
         

@@ -14,7 +14,7 @@
     </UserControl.Resources>
     <DockPanel >
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="30">
-            <Button Width="100" Margin="2" Content="Refresh" Command="{Binding RefreshCommand}"></Button>
+            <Button Width="100" Margin="2" Content="{x:Static p:Resources.ButtonRefreshContent}" Command="{Binding RefreshCommand}"></Button>
         </StackPanel>
         <DataGrid ItemsSource="{Binding HistoryResult}"
                   AlternatingRowBackground="LightGray"
