@@ -10,11 +10,11 @@
         >
     <DockPanel Background="AliceBlue">
         <Menu Height="20" DockPanel.Dock="Top">
-            <MenuItem Header="File">
+            <MenuItem Header="{x:Static p:Resources.MenuItemFile}">
                 <MenuItem Header="Save settings"></MenuItem>
                 <MenuItem  Header="Close"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Help">
+            <MenuItem Header="{x:Static p:Resources.MenuItemHelp}">
                 <MenuItem Header="About SimpleQuizCreator"></MenuItem>
             </MenuItem>
         </Menu>
