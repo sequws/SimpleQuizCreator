@@ -8,6 +8,7 @@ using SimpleQuizCreator.Models;
 using SimpleQuizCreator.Services;
 using SimpleQuizCreator.ViewModels;
 using SimpleQuizCreator.Common;
+using System.Threading;
 
 namespace SimpleQuizCreator
 {
@@ -18,6 +19,7 @@ namespace SimpleQuizCreator
     {
         protected override Window CreateShell()
         {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pl-PL");
             return Container.Resolve<MainWindow>();
         }
 

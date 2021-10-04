@@ -214,7 +214,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FIle.
+        ///   Looks up a localized string similar to File.
         /// </summary>
         public static string MenuItemFile {
             get {
