@@ -232,6 +232,60 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Finish.
+        /// </summary>
+        public static string QuizDialogFinishText {
+            get {
+                return ResourceManager.GetString("QuizDialogFinishText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next.
+        /// </summary>
+        public static string QuizDialogNexQuestionText {
+            get {
+                return ResourceManager.GetString("QuizDialogNexQuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question:.
+        /// </summary>
+        public static string QuizDialogQuestionText {
+            get {
+                return ResourceManager.GetString("QuizDialogQuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The test consist of {0} questions.
+        /// </summary>
+        public static string QuizDialogQuizInfoText {
+            get {
+                return ResourceManager.GetString("QuizDialogQuizInfoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start quiz.
+        /// </summary>
+        public static string QuizDialogStartQuizText {
+            get {
+                return ResourceManager.GetString("QuizDialogStartQuizText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time:.
+        /// </summary>
+        public static string QuizDialogTimeText {
+            get {
+                return ResourceManager.GetString("QuizDialogTimeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap QuizIcon {

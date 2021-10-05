@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="SimpleQuizCreator.Views.QuizDialog"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:p="clr-namespace:SimpleQuizCreator.Properties" 
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:Converters="clr-namespace:SimpleQuizCreator.Converters"
@@ -18,24 +19,20 @@
         <TabItem Header="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock Text="{Binding Quiz.Name}" FontSize="24" HorizontalAlignment="Center"></TextBlock>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                <TextBlock Style="{StaticResource Test}" Text="The test consists of "></TextBlock>
-                    <TextBlock Style="{StaticResource Test}" Text="{Binding Quiz.QuestionsNumber}"></TextBlock>
-                <TextBlock Style="{StaticResource Test}" Text="  questions"></TextBlock>
-                </StackPanel>
-                
-                    <Button Content="StarQuiz" Command="{Binding StartQuizCommand}"
+                    <TextBlock Text="{Binding QuizInfoText}" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+
+                <Button Content="{x:Static p:Resources.QuizDialogStartQuizText}" Command="{Binding StartQuizCommand}"
                             Width="300" Height="40"  Background="CornflowerBlue" FontWeight="Bold" FontSize="14"></Button>
                 </StackPanel>
             </TabItem>
             <TabItem Header="2">
             <DockPanel>
-                <Label DockPanel.Dock="Top" Content="Question:" HorizontalAlignment="Center"></Label>
+                <Label DockPanel.Dock="Top" Content="{x:Static p:Resources.QuizDialogQuestionText}" HorizontalAlignment="Center"></Label>
                 <Grid DockPanel.Dock="Top" Height="50">
                     <Label Content="{Binding ActiveQuestion.QuestionText}"></Label>
                 </Grid>
                 <StatusBar DockPanel.Dock="Bottom" Height="22">
-                    <StatusBarItem Content="Time"></StatusBarItem>
+                    <StatusBarItem Content="{x:Static p:Resources.QuizDialogTimeText}"></StatusBarItem>
                     <Separator></Separator>
                     <StatusBarItem>
                         <StackPanel Orientation="Horizontal">

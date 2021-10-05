@@ -3,9 +3,13 @@ using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
+using SimpleQuizCreator.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
+using System.Windows;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -47,7 +51,7 @@ namespace SimpleQuizCreator.ViewModels
 
             if (Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber-1)
             {
-                NextQuestionButtonCaption = "Finish";
+                NextQuestionButtonCaption = rm.GetString("QuizDialogFinishText");
             } 
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
@@ -59,11 +63,18 @@ namespace SimpleQuizCreator.ViewModels
         #endregion
 
         #region properties
-        private string _nextQuestionButtonCaption = "Next";
+        private string _nextQuestionButtonCaption = "_next_";
         public string NextQuestionButtonCaption
         {
             get { return _nextQuestionButtonCaption; }
             set { SetProperty(ref _nextQuestionButtonCaption, value); }
+        }
+                
+        private string _quizInfoText;
+        public string QuizInfoText
+        {
+            get { return _quizInfoText; }
+            set { SetProperty(ref _quizInfoText, value); }
         }
 
         private int _selectedIndex = 0;
@@ -96,9 +107,12 @@ namespace SimpleQuizCreator.ViewModels
 
         #endregion
 
+        ResourceManager rm = new ResourceManager(typeof(SimpleQuizCreator.Properties.Resources));
+
         public QuizDialogViewModel(IScoreCalculator calculationStrategy)
         {
             _scoreCalculator = calculationStrategy;
+            NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
         }
 
         #region IDialogAware
@@ -120,6 +134,8 @@ namespace SimpleQuizCreator.ViewModels
         public void OnDialogOpened(IDialogParameters parameters)
         {
             Quiz = parameters.GetValue<QuizGenerated>("quiz");
+
+            QuizInfoText = string.Format(rm.GetString("QuizDialogQuizInfoText"), Quiz.QuizSettings.QuestionLimit);
         }
 
         #endregion
