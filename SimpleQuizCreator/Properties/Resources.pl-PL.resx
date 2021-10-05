@@ -174,17 +174,29 @@
   <data name="MenuItemHelp" xml:space="preserve">
     <value>Pomoc</value>
   </data>
+  <data name="QuizDialogCloseQuiz" xml:space="preserve">
+    <value>Zamknij quiz</value>
+  </data>
   <data name="QuizDialogFinishText" xml:space="preserve">
     <value>Zakończ</value>
   </data>
   <data name="QuizDialogNexQuestionText" xml:space="preserve">
     <value>Następne</value>
   </data>
+  <data name="QuizDialogPercentScoreText" xml:space="preserve">
+    <value>Twój wynik:</value>
+  </data>
   <data name="QuizDialogQuestionText" xml:space="preserve">
     <value>Pytanie:</value>
   </data>
+  <data name="QuizDialogQuizFinished" xml:space="preserve">
+    <value>Quiz zakończony!</value>
+  </data>
   <data name="QuizDialogQuizInfoText" xml:space="preserve">
     <value>Test składa sie z {0} pytań</value>
+  </data>
+  <data name="QuizDialogScoreText" xml:space="preserve">
+    <value>Zdobyłeś {0} z {1} punktów</value>
   </data>
   <data name="QuizDialogStartQuizText" xml:space="preserve">
     <value>Rozpocznij quiz</value>

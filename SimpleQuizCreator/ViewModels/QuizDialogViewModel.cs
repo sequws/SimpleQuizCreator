@@ -57,12 +57,21 @@ namespace SimpleQuizCreator.ViewModels
             {
                 SelectedIndex++;
                 QuizResult = _scoreCalculator.CalculateResult( Quiz);
+                ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);
             }
         }
 
         #endregion
 
         #region properties
+
+        private string _scoreText;
+        public string ScoreText
+        {
+            get { return _scoreText; }
+            set { SetProperty(ref _scoreText, value); }
+        }
+
         private string _nextQuestionButtonCaption = "_next_";
         public string NextQuestionButtonCaption
         {

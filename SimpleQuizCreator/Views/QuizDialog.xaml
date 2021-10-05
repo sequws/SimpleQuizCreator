@@ -18,8 +18,8 @@
     <TabControl SelectedIndex="{Binding SelectedIndex}" x:Name="MainTabControl">
         <TabItem Header="1">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <TextBlock Text="{Binding Quiz.Name}" FontSize="24" HorizontalAlignment="Center"></TextBlock>
-                    <TextBlock Text="{Binding QuizInfoText}" FontSize="18" HorizontalAlignment="Center"></TextBlock>
+                    <TextBlock Text="{Binding Quiz.Name}" FontSize="24" HorizontalAlignment="Center" Margin="0 15"></TextBlock>
+                    <TextBlock Text="{Binding QuizInfoText}" FontSize="18" HorizontalAlignment="Center" Margin="0 10"></TextBlock>
 
                 <Button Content="{x:Static p:Resources.QuizDialogStartQuizText}" Command="{Binding StartQuizCommand}"
                             Width="300" Height="40"  Background="CornflowerBlue" FontWeight="Bold" FontSize="14"></Button>
@@ -59,16 +59,20 @@
             </TabItem>
             <TabItem Header="3" >
             <DockPanel>
-                <Label DockPanel.Dock="Top" Content="Quiz finished!" Margin="20" FontSize="24" HorizontalContentAlignment="Center"></Label>
-                <StackPanel DockPanel.Dock="Top" x:Name="FinishResultStackPanel" >
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label DockPanel.Dock="Top" Content="{x:Static p:Resources.QuizDialogQuizFinished}"  Margin="20" FontSize="24" HorizontalContentAlignment="Center"></Label>
+
+
+                <StackPanel DockPanel.Dock="Top" x:Name="FinishResultStackPanel" HorizontalAlignment="Center">
+                    <Label Content="{Binding ScoreText}" FontSize="20"></Label>
+                    <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Label Content="{Binding QuizResult.PointScore}" FontSize="24" FontWeight="Bold"></Label>
                         <Label Content=" of "  FontSize="24"></Label>
                         <Label Content="{Binding QuizResult.AllPosiblePoints}" FontSize="24" ></Label>
                         <Label Content="points"  FontSize="24"></Label>
                     </StackPanel>
+                    -->
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Label Content="Your score:"  FontSize="24"></Label>
+                        <Label Content="{x:Static p:Resources.QuizDialogPercentScoreText}"  FontSize="24"></Label>
                         <Label Content="{Binding QuizResult.PercentScore}"  FontWeight="Bold" FontSize="24"></Label>
                         <Label FontSize="24">%</Label>
                     </StackPanel>
@@ -81,7 +85,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
 
-                    <Button Grid.Row="1"  Content="Close quiz" Height="32" Width="200" Margin="2" Command="{Binding CloseDialogCommand}"></Button>
+                    <Button Grid.Row="1"  Content="{x:Static p:Resources.QuizDialogCloseQuiz}" Height="32" Width="200" Margin="2" Command="{Binding CloseDialogCommand}"></Button>
 
                 </Grid>
             </DockPanel>

@@ -232,6 +232,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close quiz.
+        /// </summary>
+        public static string QuizDialogCloseQuiz {
+            get {
+                return ResourceManager.GetString("QuizDialogCloseQuiz", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finish.
         /// </summary>
         public static string QuizDialogFinishText {
@@ -250,6 +259,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your score:.
+        /// </summary>
+        public static string QuizDialogPercentScoreText {
+            get {
+                return ResourceManager.GetString("QuizDialogPercentScoreText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Question:.
         /// </summary>
         public static string QuizDialogQuestionText {
@@ -259,11 +277,29 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quiz finished!.
+        /// </summary>
+        public static string QuizDialogQuizFinished {
+            get {
+                return ResourceManager.GetString("QuizDialogQuizFinished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The test consist of {0} questions.
         /// </summary>
         public static string QuizDialogQuizInfoText {
             get {
                 return ResourceManager.GetString("QuizDialogQuizInfoText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You scored {0} out of {1} points.
+        /// </summary>
+        public static string QuizDialogScoreText {
+            get {
+                return ResourceManager.GetString("QuizDialogScoreText", resourceCulture);
             }
         }
         
