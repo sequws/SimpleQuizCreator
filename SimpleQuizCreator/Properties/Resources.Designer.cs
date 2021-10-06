@@ -214,6 +214,24 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About SimpleQuizCreator.
+        /// </summary>
+        public static string MenuItemAbout {
+            get {
+                return ResourceManager.GetString("MenuItemAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string MenuItemClose {
+            get {
+                return ResourceManager.GetString("MenuItemClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File.
         /// </summary>
         public static string MenuItemFile {
@@ -228,6 +246,15 @@ namespace SimpleQuizCreator.Properties {
         public static string MenuItemHelp {
             get {
                 return ResourceManager.GetString("MenuItemHelp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save settings.
+        /// </summary>
+        public static string MenuItemSettings {
+            get {
+                return ResourceManager.GetString("MenuItemSettings", resourceCulture);
             }
         }
         

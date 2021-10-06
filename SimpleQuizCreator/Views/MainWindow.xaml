@@ -9,15 +9,23 @@
          MinWidth="800" MinHeight="400"
         >
     <DockPanel Background="AliceBlue">
-        <Menu Height="20" DockPanel.Dock="Top">
-            <MenuItem Header="{x:Static p:Resources.MenuItemFile}">
-                <MenuItem Header="Save settings"></MenuItem>
-                <MenuItem  Header="Close"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="{x:Static p:Resources.MenuItemHelp}">
-                <MenuItem Header="About SimpleQuizCreator"></MenuItem>
-            </MenuItem>
-        </Menu>
+        <DockPanel DockPanel.Dock="Top" Height="22" Margin="0">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" >
+                <ComboBox HorizontalAlignment="Right"  Width="60">
+                    <ComboBoxItem IsSelected="True">ENG</ComboBoxItem>
+                    <ComboBoxItem>PL</ComboBoxItem>
+                </ComboBox>                
+            </StackPanel>
+            <Menu Height="22">
+                <MenuItem Header="{x:Static p:Resources.MenuItemFile}" Margin="2">
+                    <MenuItem Header="{x:Static p:Resources.MenuItemSettings}"></MenuItem>
+                    <MenuItem  Header="{x:Static p:Resources.MenuItemClose}"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="{x:Static p:Resources.MenuItemHelp}" Margin="2">
+                    <MenuItem Header="{x:Static p:Resources.MenuItemAbout}"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="140" Background="Bisque">
             <Button Content="{x:Static p:Resources.ButtonHelloContent}" Margin="2" Height="30"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
             <Button Content="{x:Static p:Resources.ButtonQuizListContent}" Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>

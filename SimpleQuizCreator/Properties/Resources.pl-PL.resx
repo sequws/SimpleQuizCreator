@@ -168,11 +168,20 @@
   <data name="LabelScoreSettingsContnet" xml:space="preserve">
     <value>Ustawienia oceniania:</value>
   </data>
+  <data name="MenuItemAbout" xml:space="preserve">
+    <value>O SimpleQuizCreator</value>
+  </data>
+  <data name="MenuItemClose" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
   <data name="MenuItemFile" xml:space="preserve">
     <value>Plik</value>
   </data>
   <data name="MenuItemHelp" xml:space="preserve">
     <value>Pomoc</value>
+  </data>
+  <data name="MenuItemSettings" xml:space="preserve">
+    <value>Zapisz ustawienia</value>
   </data>
   <data name="QuizDialogCloseQuiz" xml:space="preserve">
     <value>Zamknij quiz</value>
