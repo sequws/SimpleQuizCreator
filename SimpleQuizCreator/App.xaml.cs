@@ -19,7 +19,7 @@ namespace SimpleQuizCreator
     {
         protected override Window CreateShell()
         {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pl-PL");
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("uk-UA");
             return Container.Resolve<MainWindow>();
         }
 

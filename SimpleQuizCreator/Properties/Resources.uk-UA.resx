@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ButtonHelloContent" xml:space="preserve">
+    <value>Привіт</value>
+  </data>
+  <data name="ButtonHistoryContent" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="ButtonQuizListContent" xml:space="preserve">
+    <value>Список квізів</value>
+  </data>
+  <data name="ButtonRefreshContent" xml:space="preserve">
+    <value>Оновити</value>
+  </data>
+  <data name="ButtonStartQuizContent" xml:space="preserve">
+    <value>Почати квіз</value>
+  </data>
+  <data name="HeaderDate" xml:space="preserve">
+    <value>Дата</value>
+  </data>
+  <data name="HeaderPercentScore" xml:space="preserve">
+    <value>Процент</value>
+  </data>
+  <data name="HeaderPointScore" xml:space="preserve">
+    <value>Пункти</value>
+  </data>
+  <data name="HeaderQuestionAmount" xml:space="preserve">
+    <value>Кількість питань</value>
+  </data>
+  <data name="HeaderQuizName" xml:space="preserve">
+    <value>Назва квізу</value>
+  </data>
+  <data name="HeaderScoreType" xml:space="preserve">
+    <value>Тип оцінювання</value>
+  </data>
+  <data name="LabelAutogeneratedContent" xml:space="preserve">
+    <value>Кількість авто-вигенерованих відповідей:</value>
+  </data>
+  <data name="LabelQuestionNumberContent" xml:space="preserve">
+    <value>Кількість питань:</value>
+  </data>
+  <data name="LabelQuizListContent" xml:space="preserve">
+    <value>Список квізів:</value>
+  </data>
+  <data name="LabelQuizSelectContent" xml:space="preserve">
+    <value>Вибрати квіз:</value>
+  </data>
+  <data name="LabelQuizSettingsContent" xml:space="preserve">
+    <value>Налаштування квізу:</value>
+  </data>
+  <data name="LabelScoreSettingsContnet" xml:space="preserve">
+    <value>Налаштування оцінювання:</value>
+  </data>
+  <data name="MenuItemAbout" xml:space="preserve">
+    <value>Про SimpleQuizCreator</value>
+  </data>
+  <data name="MenuItemClose" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="MenuItemFile" xml:space="preserve">
+    <value>Файл</value>
+  </data>
+  <data name="MenuItemHelp" xml:space="preserve">
+    <value>Допомога</value>
+  </data>
+  <data name="MenuItemSettings" xml:space="preserve">
+    <value>Записати налаштування</value>
+  </data>
+  <data name="QuizDialogCloseQuiz" xml:space="preserve">
+    <value>Закрити квіз</value>
+  </data>
+  <data name="QuizDialogFinishText" xml:space="preserve">
+    <value>Закінчити</value>
+  </data>
+  <data name="QuizDialogNexQuestionText" xml:space="preserve">
+    <value>Наступне</value>
+  </data>
+  <data name="QuizDialogPercentScoreText" xml:space="preserve">
+    <value>Твій результат:</value>
+  </data>
+  <data name="QuizDialogQuestionText" xml:space="preserve">
+    <value>Питання:</value>
+  </data>
+  <data name="QuizDialogQuizFinished" xml:space="preserve">
+    <value>Квіз закінчений!</value>
+  </data>
+  <data name="QuizDialogQuizInfoText" xml:space="preserve">
+    <value>Тест складається з  {0} питань</value>
+  </data>
+  <data name="QuizDialogScoreText" xml:space="preserve">
+    <value>Ти здобув {0} з {1} пунктів</value>
+  </data>
+  <data name="QuizDialogStartQuizText" xml:space="preserve">
+    <value>Почати квіз</value>
+  </data>
+  <data name="QuizDialogTimeText" xml:space="preserve">
+    <value>Час:</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="QuizIcon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        gg==
+</value>
+  </data>
+</root>
