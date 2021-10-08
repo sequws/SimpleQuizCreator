@@ -34,5 +34,53 @@ namespace SimpleQuizCreator.Properties {
                 this["AppLanguage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public double AppLeft {
+            get {
+                return ((double)(this["AppLeft"]));
+            }
+            set {
+                this["AppLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public double AppTop {
+            get {
+                return ((double)(this["AppTop"]));
+            }
+            set {
+                this["AppTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("800")]
+        public double AppWidth {
+            get {
+                return ((double)(this["AppWidth"]));
+            }
+            set {
+                this["AppWidth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public double AppHeight {
+            get {
+                return ((double)(this["AppHeight"]));
+            }
+            set {
+                this["AppHeight"] = value;
+            }
+        }
     }
 }
