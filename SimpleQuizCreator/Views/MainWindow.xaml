@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
-        prism:ViewModelLocator.AutoWireViewModel="True" Height="350" Width="525" 
-        WindowStartupLocation="CenterScreen" Closed="Window_Closed" Icon="/SimpleQuizCreator;component/QuizIcon.ico" 
+        prism:ViewModelLocator.AutoWireViewModel="True" 
+        WindowStartupLocation="CenterScreen" 
+        Closed="Window_Closed" Icon="/SimpleQuizCreator;component/QuizIcon.ico" 
         Title="{Binding Title}"
          MinWidth="800" MinHeight="400"
+        Width="{Binding AppWidth, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
+        Height="{Binding AppHeight, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
         >
     <DockPanel Background="AliceBlue">
         <DockPanel DockPanel.Dock="Top" Height="22" Margin="0">
@@ -18,7 +21,7 @@
             </StackPanel>
             <Menu Height="22">
                 <MenuItem Header="{x:Static p:Resources.MenuItemFile}" Margin="2">
-                    <MenuItem Header="{x:Static p:Resources.MenuItemSettings}"></MenuItem>
+                    <MenuItem Header="{x:Static p:Resources.MenuItemSettings}" Command="{Binding SaveSettingsCommand}"></MenuItem>
                     <MenuItem  Header="{x:Static p:Resources.MenuItemClose}"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="{x:Static p:Resources.MenuItemHelp}" Margin="2">

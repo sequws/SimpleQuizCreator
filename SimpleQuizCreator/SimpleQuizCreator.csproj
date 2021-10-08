@@ -73,12 +73,14 @@
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
     <Compile Include="Converters\ScoreTypeToStringConverter.cs" />
+    <Compile Include="DataAccess\MainSettings.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Common\ScoreCalculator.cs" />
     <Compile Include="DataAccess\ResultRepository.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Interfaces\ICalculationStrategy.cs" />
+    <Compile Include="Interfaces\IGlobalSettingService.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IQuizGenerator.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="Interfaces\IResultRepository.cs" />
     <Compile Include="Interfaces\IResultService.cs" />
     <Compile Include="Interfaces\IScoreCalculator.cs" />
+    <Compile Include="Interfaces\ISettings.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Models\Answer.cs" />
     <Compile Include="Models\Question.cs" />
@@ -106,6 +109,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Services\GlobalSettingService.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="Services\ResultService.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
@@ -209,7 +213,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>

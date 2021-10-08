@@ -5,6 +5,7 @@ using Prism.Mvvm;
 using Prism.Regions;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
+using System.Windows;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -20,20 +21,26 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
+        public int AppWidth { get; set; }
+        public int AppHeight { get; set; }
+
         IContainerExtension _container;
         IRegionManager _regionManager;
         IQuizService _quizService;
+        IGlobalSettingService _settingService;
 
         public DelegateCommand<string> NavigateCommand { get; set; }
 
         public MainWindowViewModel(IContainerExtension container,
             IRegionManager regionManager,
-            IQuizService quizService
+            IQuizService quizService,
+            IGlobalSettingService settingService
             )
         {
             _container = container;
             _regionManager = regionManager;
             _quizService = quizService;
+            _settingService = settingService;
 
             var quizzes = _quizService.GetAllQuizzes();
 
@@ -44,5 +51,24 @@ namespace SimpleQuizCreator.ViewModels
         {
             _regionManager.RequestNavigate("ContentRegion", uri);
         }
+
+        #region Commands
+
+        private DelegateCommand _saveSettingsCommand;
+        public DelegateCommand SaveSettingsCommand =>
+            _saveSettingsCommand ?? (_saveSettingsCommand = new DelegateCommand(ExecuteSaveSettingsCommand, CanExecuteSaveSettingsCommand));
+
+        void ExecuteSaveSettingsCommand()
+        {      
+            _settingService.Update("AppWidth", (double)AppWidth);
+            _settingService.Update("AppHeight", (double)AppHeight);
+        }
+
+        bool CanExecuteSaveSettingsCommand()
+        {
+            return true;
+        }
+
+        #endregion
     }
 }

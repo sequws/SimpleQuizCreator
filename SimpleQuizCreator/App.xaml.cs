@@ -36,6 +36,9 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IResultService, ResultService>();
 
             containerRegistry.RegisterDialog<QuizDialog, QuizDialogViewModel>();
+
+            containerRegistry.Register<ISettings, MainSettings>();
+            containerRegistry.RegisterSingleton<IGlobalSettingService, GlobalSettingService>();
         }
     }
 }
