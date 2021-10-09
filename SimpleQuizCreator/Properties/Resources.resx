@@ -129,6 +129,9 @@
   <data name="ButtonRefreshContent" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="ButtonSettingsContent" xml:space="preserve">
+    <value>Settings</value>
+  </data>
   <data name="ButtonStartQuizContent" xml:space="preserve">
     <value>Start new quiz!</value>
   </data>

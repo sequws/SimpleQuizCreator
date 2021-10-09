@@ -34,6 +34,7 @@
             <Button Content="{x:Static p:Resources.ButtonQuizListContent}" Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
             <Button Content="{x:Static p:Resources.ButtonStartQuizContent}" FontWeight="Bold" Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
             <Button Content="{x:Static p:Resources.ButtonHistoryContent}"  Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="HistoryView"></Button>
+            <Button Content="{x:Static p:Resources.ButtonSettingsContent}"  Margin="2" Height="30" Command="{Binding NavigateCommand}" CommandParameter="SettingsView"/>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </DockPanel>

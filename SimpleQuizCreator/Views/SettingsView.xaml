@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="SimpleQuizCreator.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <Label Content="{x:Static p:Resources.ButtonSettingsContent}" FontSize="36"></Label>
+    </Grid>
+</UserControl>

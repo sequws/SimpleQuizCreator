@@ -97,6 +97,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string ButtonSettingsContent {
+            get {
+                return ResourceManager.GetString("ButtonSettingsContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Start new quiz!.
         /// </summary>
         public static string ButtonStartQuizContent {
