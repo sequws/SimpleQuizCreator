@@ -35,3 +35,26 @@ file content:
     [*]-Octopus
     -Elephant
     -Whale
+
+#### An example with auto-generated answers. 
+
+If you want to create a quiz where all the data is related to one set, you can do it even easier. All you need to do is add the correct answer to each question. 
+Missing answers in the test will be generated automatically.
+You can select the number of generated answers before starting the quiz. 
+
+File: **Capitals.txt** (file in the quizzes folder) 
+
+    [q]Spain
+    [*]Madrid
+
+    [q]Poland
+    [*]Warsaw
+
+    [q]France
+    [*]Paris
+
+    [q]Germany
+    [*]Berlin
+
+    [q]Greece
+    [*]Athens
