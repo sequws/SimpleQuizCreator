@@ -366,5 +366,14 @@ namespace SimpleQuizCreator.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview.
+        /// </summary>
+        public static string QuizPreviewText {
+            get {
+                return ResourceManager.GetString("QuizPreviewText", resourceCulture);
+            }
+        }
     }
 }

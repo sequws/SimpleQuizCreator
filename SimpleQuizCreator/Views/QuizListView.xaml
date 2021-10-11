@@ -11,18 +11,30 @@
     <DockPanel>
         <Label DockPanel.Dock="Top" Content="{x:Static p:Resources.LabelQuizListContent}"></Label>
         <Grid>
-            <ListBox ItemsSource="{Binding ListOfQuizzes}">
-                <ListBox.ItemTemplate>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Margin="4">
+            <ItemsControl  ItemsSource="{Binding ListOfQuizzes}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>                        
+                            <WrapPanel ></WrapPanel>                                              
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Path=Name}"></TextBlock>
-                            <TextBlock Text=" - ("></TextBlock>
-                            <TextBlock Text="{Binding Path=Questions.Count}"></TextBlock>
-                            <TextBlock Text=")"></TextBlock>
-                        </StackPanel>                       
+                            <Border Margin="2" Padding="2" Background="AliceBlue"  BorderBrush="#FF000000" BorderThickness="2" CornerRadius="8">
+                                <DockPanel Background="AliceBlue" Height="120">
+                                    <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+                                    <Button DockPanel.Dock="Bottom" Content="{x:Static p:Resources.QuizPreviewText}"></Button>
+                                    <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}"></Label>
+                                    <Label Content="{Binding Questions.Count}"></Label>
+                                </DockPanel>
+                            </Border>
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </ItemsControl.ItemTemplate>           
+            </ItemsControl>
+            </ScrollViewer>
         </Grid>
     </DockPanel>
 </UserControl>
