@@ -45,13 +45,14 @@
                 <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" Height="32">
                     <Button Content="{Binding NextQuestionButtonCaption}" Width="120" Margin="10 2" Command="{Binding NextQuestionCommand}"></Button>
                 </StackPanel>
-                <ListView DataContext="{Binding ActiveQuestion}" ItemsSource="{Binding Answers}">
+                <ListView DataContext="{Binding ActiveQuestion}" ItemsSource="{Binding Answers}" Padding="10">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <CheckBox IsChecked="{Binding IsSelected}"></CheckBox>
-                                <TextBlock Text="{Binding AnswerText}"></TextBlock>
-                            </StackPanel>
+                            <CheckBox IsChecked="{Binding IsSelected}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding AnswerText}" ></Label>
+                                </StackPanel>
+                            </CheckBox>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>

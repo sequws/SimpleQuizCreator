@@ -229,6 +229,9 @@
     <PackageReference Include="Dapper">
       <Version>2.0.90</Version>
     </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>2.4.8</Version>
+    </PackageReference>
     <PackageReference Include="NLog">
       <Version>4.7.11</Version>
     </PackageReference>

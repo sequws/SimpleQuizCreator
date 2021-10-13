@@ -39,7 +39,7 @@
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button DockPanel.Dock="Bottom" 
                     Content="{x:Static p:Resources.ButtonStartQuizContent}" Command="{Binding OpenQuizWindow}"
-                    Width="200" Height="25" Background="LightSalmon" FontWeight="Bold"></Button>
+                    Width="200" Height="34" Background="LightSalmon" FontWeight="Bold"></Button>
         </Grid>
 
     </DockPanel>

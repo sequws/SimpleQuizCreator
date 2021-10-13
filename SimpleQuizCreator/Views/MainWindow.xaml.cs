@@ -1,4 +1,5 @@
-﻿using Prism.Regions;
+﻿using MahApps.Metro.Controls;
+using Prism.Regions;
 using System.Windows;
 
 namespace SimpleQuizCreator.Views
@@ -6,7 +7,7 @@ namespace SimpleQuizCreator.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : MetroWindow
     {
         public MainWindow(IRegionManager regionManager)
         {
