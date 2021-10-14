@@ -5,6 +5,7 @@
         xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
         prism:ViewModelLocator.AutoWireViewModel="True" 
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:mahc="http://metro.mahapps.com/winfx/xaml/controls"
         WindowStartupLocation="CenterScreen" 
         Closed="Window_Closed" Icon="/SimpleQuizCreator;component/QuizIcon.ico" 
         TitleCharacterCasing="Normal"
@@ -13,13 +14,15 @@
         Width="{Binding AppWidth, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
         Height="{Binding AppHeight, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"
         >
+    <mah:MetroWindow.Resources>
+    </mah:MetroWindow.Resources>
     <DockPanel Background="AliceBlue">
         <DockPanel DockPanel.Dock="Top" Height="32" Margin="0">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" >
                 <ComboBox HorizontalAlignment="Right"  Width="60">
                     <ComboBoxItem IsSelected="True">ENG</ComboBoxItem>
                     <ComboBoxItem>PL</ComboBoxItem>
-                </ComboBox>                
+                </ComboBox>
             </StackPanel>
             <Menu Height="32">
                 <MenuItem Header="{x:Static p:Resources.MenuItemFile}" Margin="2">
@@ -32,11 +35,16 @@
             </Menu>
         </DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="140" Background="Bisque">
-            <Button Content="{x:Static p:Resources.ButtonHelloContent}" Margin="2" Height="34"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
-            <Button Content="{x:Static p:Resources.ButtonQuizListContent}" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
-            <Button Content="{x:Static p:Resources.ButtonStartQuizContent}" FontWeight="Bold" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
-            <Button Content="{x:Static p:Resources.ButtonHistoryContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="HistoryView"></Button>
-            <Button Content="{x:Static p:Resources.ButtonSettingsContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="SettingsView"/>
+            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonHelloContent}" Margin="2" Height="34"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
+            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonQuizListContent}" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
+            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonStartQuizContent}" FontWeight="Bold" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
+            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonHistoryContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="HistoryView"></Button>
+            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonSettingsContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="SettingsView"/>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </DockPanel>
