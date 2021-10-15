@@ -4,6 +4,7 @@ using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace SimpleQuizCreator.ViewModels
@@ -12,12 +13,32 @@ namespace SimpleQuizCreator.ViewModels
     {
         IQuizService _quizService;
 
-        public List<Quiz> ListOfQuizzes { get; set; }
+        private ObservableCollection<Quiz> listOfQuizzes;
+
+        public ObservableCollection<Quiz> ListOfQuizzes
+        {
+            get { return listOfQuizzes; }
+            set { SetProperty(ref listOfQuizzes, value); }
+        }
 
         public QuizListViewModel(IQuizService quizService)
         {
             _quizService = quizService;
-            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes());
+            listOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes());
+        }
+
+        private DelegateCommand _refreshCommand;
+        public DelegateCommand RefreshCommand =>
+            _refreshCommand ?? (_refreshCommand = new DelegateCommand(ExecuteRefreshCommand, CanExecuteRefreshCommand));
+
+        void ExecuteRefreshCommand()
+        {
+            ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes());
+        }
+
+        bool CanExecuteRefreshCommand()
+        {
+            return true;
         }
     }
 }

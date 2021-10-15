@@ -23,12 +23,11 @@ namespace SimpleQuizCreator.Services
         {
             _quizLoader = quizLoader;
             _quizParser = quizParser;
-
-            LoadQuizzes();
         }
 
         private void LoadQuizzes()
         {
+            _listOfQuizzes.Clear();
             foreach (var quizFile in _quizLoader.LoadData())
             {
                 if (_quizParser.TryParse(quizFile.Lines))
@@ -43,7 +42,8 @@ namespace SimpleQuizCreator.Services
 
         public IEnumerable<Quiz> GetAllQuizzes()
         {
-            return new List<Quiz>( _listOfQuizzes);
+            LoadQuizzes();
+            return new List<Quiz>( _listOfQuizzes.OrderByDescending(x => x.CorrectlyLoaded));
         }
 
         public Quiz GetQuizByName(string name)

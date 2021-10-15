@@ -103,7 +103,7 @@ namespace SimpleQuizCreator.DataAccess
             {
                 parsedQuiz.CorrectlyLoaded = false;
                 parsedQuiz.Errors = Errors;
-                res = false;
+                res = true;// we want to show all quizzes with error, so we need return true
             }
 
             return res;

@@ -8,10 +8,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
              xmlns:mahc="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:Converters="clr-namespace:SimpleQuizCreator.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <Converters:BoolToColorConverter x:Key="BoolConverter" />
+        <Converters:BoolToVisibilityReverseConverter x:Key="BoolToVisReverse" />
+        <BooleanToVisibilityConverter x:Key="BoolToVis" />
+    </UserControl.Resources>
     <DockPanel>
-        <Label DockPanel.Dock="Top" Content="{x:Static p:Resources.LabelQuizListContent}" FontSize="14" FontWeight="Bold"></Label>
+        
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="40" Background="AliceBlue">
+            <Label Content="{x:Static p:Resources.LabelQuizListContent}" VerticalAlignment="Center" FontSize="14" FontWeight="Bold"></Label>
+            <Button Width="30" Height="30" Margin="20 0" 
+                    Foreground="Blue"
+                    Style="{DynamicResource MahApps.Styles.Button.Circle}"                    
+                    Command="{Binding RefreshCommand}">
+                <!--<iconPacks:Codicons Kind="DebugRestart" />-->
+                <iconPacks:Codicons Kind="Sync" />
+            </Button>
+        </StackPanel>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"></RowDefinition>
@@ -28,10 +45,12 @@
                             <Border Margin="5" Padding="2" Background="AliceBlue"  BorderBrush="#FF000000" BorderThickness="2" CornerRadius="8">
                                 <mah:Badged Badge="{Binding Questions.Count}">
                                     <DockPanel Background="AliceBlue" Height="120">
-                                        <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" FontWeight="Bold" HorizontalAlignment="Center"></Label>
-                                        <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="10"
+                                        <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" Foreground="{Binding CorrectlyLoaded, Converter={StaticResource BoolConverter}}"
+                                               FontWeight="Bold" HorizontalAlignment="Center"></Label>
+                                        <Label DockPanel.Dock="Top" Content="_Bledy_ (x)" Foreground="Red" Visibility="{Binding CorrectlyLoaded, Converter={StaticResource BoolToVisReverse}}"></Label>
+                                        <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="10"                                                
                                             DockPanel.Dock="Bottom" Content="{x:Static p:Resources.QuizPreviewText}"></Button>
-                                        <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}"></Label>
+                                        <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}"></Label>                                        
                                         <Label Content="{Binding Questions.Count}"></Label>
                                     </DockPanel>
                                 </mah:Badged>

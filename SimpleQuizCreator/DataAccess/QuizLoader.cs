@@ -52,6 +52,7 @@ namespace SimpleQuizCreator.DataAccess
 
             var parts = path.Split(new char[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
             name = parts[parts.Length - 1];
+            name = Path.GetFileNameWithoutExtension(name);
 
             return name;
         }
