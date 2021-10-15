@@ -23,7 +23,7 @@
                     <RowDefinition Height="30"></RowDefinition>
                     <RowDefinition ></RowDefinition>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="_Language_" VerticalAlignment="Center"></Label>
+                <Label Grid.Row="0" Grid.Column="0"  Content="{x:Static p:Resources.SettingsLanguageText}" VerticalAlignment="Center"></Label>
                 <ComboBox Grid.Row="0" Grid.Column="1" Margin="2"
                           ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}">
                     <ComboBox.ItemTemplate>
@@ -32,7 +32,7 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <Button Content="_Save_" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Width="120" Margin="2"
+                <Button Content="{x:Static p:Resources.MenuItemSettings}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Width="180" Margin="2"
                         Command="{Binding SaveSettingsCommand}"></Button>
             </Grid>
         </Grid>

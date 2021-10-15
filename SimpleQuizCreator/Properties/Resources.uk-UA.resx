@@ -249,4 +249,10 @@
         gg==
 </value>
   </data>
+  <data name="QuizPreviewText" xml:space="preserve">
+    <value>__PREVIEW__</value>
+  </data>
+  <data name="SettingsLanguageText" xml:space="preserve">
+    <value>__LANGUAGE__</value>
+  </data>
 </root>

@@ -252,4 +252,7 @@
   <data name="QuizPreviewText" xml:space="preserve">
     <value>Preview</value>
   </data>
+  <data name="SettingsLanguageText" xml:space="preserve">
+    <value>Language:</value>
+  </data>
 </root>

@@ -19,10 +19,10 @@
     <DockPanel Background="AliceBlue">
         <DockPanel DockPanel.Dock="Top" Height="32" Margin="0">
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" >
-                <ComboBox HorizontalAlignment="Right"  Width="60">
+                <!--<ComboBox HorizontalAlignment="Right"  Width="60">
                     <ComboBoxItem IsSelected="True">ENG</ComboBoxItem>
                     <ComboBoxItem>PL</ComboBoxItem>
-                </ComboBox>
+                </ComboBox>-->
             </StackPanel>
             <Menu Height="32">
                 <MenuItem Header="{x:Static p:Resources.MenuItemFile}" Margin="2">

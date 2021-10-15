@@ -375,5 +375,14 @@ namespace SimpleQuizCreator.Properties {
                 return ResourceManager.GetString("QuizPreviewText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language:.
+        /// </summary>
+        public static string SettingsLanguageText {
+            get {
+                return ResourceManager.GetString("SettingsLanguageText", resourceCulture);
+            }
+        }
     }
 }
