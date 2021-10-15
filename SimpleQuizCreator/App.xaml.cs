@@ -19,7 +19,9 @@ namespace SimpleQuizCreator
     {
         protected override Window CreateShell()
         {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("pl-PL");
+            var lang = SimpleQuizCreator.Properties.Settings.Default.AppLanguage;
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(lang);
+
             return Container.Resolve<MainWindow>();
         }
 

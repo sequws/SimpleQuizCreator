@@ -117,7 +117,7 @@
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
     <Compile Include="ViewModels\ScoreTypeListViewModel.cs" />
-    <Compile Include="ViewModels\SettingsViewViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
