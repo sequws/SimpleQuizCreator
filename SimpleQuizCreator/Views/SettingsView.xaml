@@ -9,11 +9,11 @@
             mc:Ignorable="d"
             d:DesignHeight="450" d:DesignWidth="600" Background="AliceBlue">
     <DockPanel>
-        <Label DockPanel.Dock="Top" Height="60" Content="{x:Static p:Resources.ButtonSettingsContent}" FontSize="36"></Label>
-        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Label DockPanel.Dock="Top" Height="60" Content="{x:Static p:Resources.ButtonSettingsContent}" FontSize="14" FontWeight="Bold"></Label>
+        <Grid HorizontalAlignment="Center">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="200"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>

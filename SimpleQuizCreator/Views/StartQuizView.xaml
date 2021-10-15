@@ -11,7 +11,7 @@
 
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <Label Content="{x:Static p:Resources.LabelQuizSelectContent}" FontWeight="Bold" Margin="2"></Label>
+            <Label Content="{x:Static p:Resources.LabelQuizSelectContent}" FontSize="14" FontWeight="Bold" Margin="2"></Label>
             <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"></ComboBox>
             <Label Content="{x:Static p:Resources.LabelScoreSettingsContnet}" FontWeight="Bold"></Label>
             <ComboBox Grid.Row="1" Margin="20, 5"
@@ -39,7 +39,7 @@
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button DockPanel.Dock="Bottom" 
                     Content="{x:Static p:Resources.ButtonStartQuizContent}" Command="{Binding OpenQuizWindow}"
-                    Width="200" Height="34" Background="LightSalmon" FontWeight="Bold"></Button>
+                    Width="200" Height="34" FontWeight="Bold"></Button>
         </Grid>
 
     </DockPanel>
