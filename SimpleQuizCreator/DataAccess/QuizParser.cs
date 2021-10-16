@@ -42,6 +42,7 @@ namespace SimpleQuizCreator.DataAccess
             {
                 if (string.IsNullOrWhiteSpace(line)) // skip empty lines
                 {
+                    lastQuestion = null;
                     continue;
                 }
                 var trimmedLine = line.Trim();

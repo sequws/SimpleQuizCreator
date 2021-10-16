@@ -117,6 +117,7 @@
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\QuizDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
+    <Compile Include="ViewModels\QuizPreviewDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
     <Compile Include="ViewModels\ScoreTypeListViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="Views\QuizListView.xaml.cs">
       <DependentUpon>QuizListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuizPreviewDialog.xaml.cs">
+      <DependentUpon>QuizPreviewDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\QuizWindow.xaml.cs">
       <DependentUpon>QuizWindow.xaml</DependentUpon>
@@ -169,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\QuizListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuizPreviewDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

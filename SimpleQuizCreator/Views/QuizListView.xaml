@@ -11,7 +11,8 @@
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:Converters="clr-namespace:SimpleQuizCreator.Converters"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="600">
+             d:DesignHeight="450" d:DesignWidth="600"
+             x:Name="QuizListControl">
     <UserControl.Resources>
         <Converters:BoolToColorConverter x:Key="BoolConverter" />
         <Converters:BoolToVisibilityReverseConverter x:Key="BoolToVisReverse" />
@@ -46,12 +47,13 @@
                                 <mah:Badged Badge="{Binding Questions.Count}">
                                     <DockPanel Background="AliceBlue" Height="120">
                                         <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" Foreground="{Binding CorrectlyLoaded, Converter={StaticResource BoolConverter}}"
-                                               FontWeight="Bold" HorizontalAlignment="Center"></Label>
-                                        <Label DockPanel.Dock="Top" Content="_Bledy_ (x)" Foreground="Red" Visibility="{Binding CorrectlyLoaded, Converter={StaticResource BoolToVisReverse}}"></Label>
-                                        <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="10"                                                
-                                            DockPanel.Dock="Bottom" Content="{x:Static p:Resources.QuizPreviewText}"></Button>
-                                        <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}"></Label>                                        
-                                        <Label Content="{Binding Questions.Count}"></Label>
+                                               FontWeight="Bold" HorizontalAlignment="Center" />
+                                        <Label DockPanel.Dock="Top" Content="_Bledy_ (x)" Foreground="Red" Visibility="{Binding CorrectlyLoaded , Converter={StaticResource BoolToVisReverse}}" />
+                                        <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="10"
+                                                DockPanel.Dock="Bottom" Content="{x:Static p:Resources.QuizPreviewText}"
+                                                Command="{Binding DataContext.OpenDialogCommand, ElementName=QuizListControl}" />
+                                        <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}" />
+                                        <Label Content="{Binding Questions.Count}" />
                                     </DockPanel>
                                 </mah:Badged>
                             </Border>

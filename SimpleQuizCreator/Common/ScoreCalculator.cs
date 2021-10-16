@@ -42,7 +42,7 @@ namespace SimpleQuizCreator.Common
                     return new AllGoodWithMinusCalcStrategy();
 
                 default:
-                    throw new ArgumentException("There is no scoreType like this!", nameof( scoreType));                    
+                    throw new ArgumentException("There is no scoreType like this!", nameof( scoreType));
             }
         }
     }
