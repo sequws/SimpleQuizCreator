@@ -46,22 +46,28 @@ namespace SimpleQuizCreator.ViewModels
             return true;
         }
 
-        private DelegateCommand _openDialogCommand;
-        public DelegateCommand OpenDialogCommand =>
-            _openDialogCommand ?? (_openDialogCommand = new DelegateCommand(ExecuteOpenDialogCmd, CanExecuteOpenDialogCmd));
+        private DelegateCommand<Quiz> _openDialogCommand;
+        public DelegateCommand<Quiz> OpenDialogCommand =>
+            _openDialogCommand ?? (_openDialogCommand = new DelegateCommand<Quiz>(ExecuteOpenDialogCmd, CanExecuteOpenDialogCmd));
 
-        void ExecuteOpenDialogCmd()
+        void ExecuteOpenDialogCmd(Quiz parameter)
         {
-            _dialogService.ShowDialog("QuizPreviewDialog", new DialogParameters(), res =>
+            if (parameter == null) return;
+
+            var dialogParams = new DialogParameters();
+            dialogParams.Add("quiz", parameter);
+
+            _dialogService.ShowDialog("QuizPreviewDialog", dialogParams, res =>
             {
 
             });
         }
 
-        bool CanExecuteOpenDialogCmd()
+        bool CanExecuteOpenDialogCmd(Quiz parameter)
         {
             return true;
         }
+
         #endregion
     }
 }

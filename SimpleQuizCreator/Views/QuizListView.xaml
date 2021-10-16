@@ -51,7 +51,8 @@
                                         <Label DockPanel.Dock="Top" Content="_Bledy_ (x)" Foreground="Red" Visibility="{Binding CorrectlyLoaded , Converter={StaticResource BoolToVisReverse}}" />
                                         <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="10"
                                                 DockPanel.Dock="Bottom" Content="{x:Static p:Resources.QuizPreviewText}"
-                                                Command="{Binding DataContext.OpenDialogCommand, ElementName=QuizListControl}" />
+                                                Command="{Binding DataContext.OpenDialogCommand, ElementName=QuizListControl}"
+                                                CommandParameter="{Binding}"/>
                                         <Label Content="{x:Static p:Resources.LabelQuestionNumberContent}" />
                                         <Label Content="{Binding Questions.Count}" />
                                     </DockPanel>
