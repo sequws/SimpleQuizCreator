@@ -53,7 +53,7 @@ namespace SimpleQuizCreator.ViewModels
             _dialogService = dialogService;
             _quizGenerator = quizGenerator;
             _resultService = resultService;
-            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes());
+            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.CorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
             {
                 SelectedQuiz = ListOfQuizzes.First();

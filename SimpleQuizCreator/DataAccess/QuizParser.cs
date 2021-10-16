@@ -89,7 +89,7 @@ namespace SimpleQuizCreator.DataAccess
                     }
                     else
                     {
-
+                        AddError($"The answer: {answer} - is not linked to the question!");
                     }
                 }
             }

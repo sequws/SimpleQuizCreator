@@ -36,11 +36,7 @@ namespace SimpleQuizCreator.DataAccess
             {
                 var name = GetQuizNameFromPath(file);
                 var dataLines = File.ReadAllLines(file);
-
-                if(dataLines.Count() > 0)
-                {
-                    res.Add(new QuizFile { FileName = file, Lines = dataLines.ToList(), Name = name });
-                }
+                res.Add(new QuizFile { FileName = file, Lines = dataLines.ToList(), Name = name });
             }
 
             return res;

@@ -25,7 +25,7 @@ namespace SimpleQuizCreator.Tests
             var res = _quizParser.TryParse(fakeFile);
 
             // Assert
-            Assert.False( res);
+            Assert.False( _quizParser.GetData().CorrectlyLoaded);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
         }
 
@@ -42,9 +42,10 @@ namespace SimpleQuizCreator.Tests
 
             var res = _quizParser.TryParse(fakeFile);
 
-            Assert.False(res);
-            Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
-            Assert.Equal("No questions in the quiz!", ((ErrorCollector)_quizParser).Errors[0]);
+            Assert.True(res);
+            Assert.False(_quizParser.GetData().CorrectlyLoaded);
+            Assert.Equal(4, ((ErrorCollector)_quizParser).ErrorCounter);
+            //Assert.Equal("No questions in the quiz!", ((ErrorCollector)_quizParser).Errors[0]);
         }
 
         [Fact]
@@ -60,7 +61,7 @@ namespace SimpleQuizCreator.Tests
 
             var res = _quizParser.TryParse(fakeFile);
 
-            Assert.False(res);
+            Assert.True(res);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
         }
 
@@ -82,7 +83,7 @@ namespace SimpleQuizCreator.Tests
 
             var res = _quizParser.TryParse(fakeFile);
 
-            Assert.False(res);
+            Assert.True(res);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.Equal($"Question: {question3} - has no answers!", ((ErrorCollector)_quizParser).Errors[0]);
         }
@@ -103,7 +104,8 @@ namespace SimpleQuizCreator.Tests
 
             var res = _quizParser.TryParse(fakeFile);
 
-            Assert.False(res);
+            Assert.True(res);
+            Assert.False(_quizParser.GetData().CorrectlyLoaded);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.Equal($"Question: {question} - has no correct answer!", ((ErrorCollector)_quizParser).Errors[0]);
         }
@@ -131,7 +133,8 @@ namespace SimpleQuizCreator.Tests
 
             var res = _quizParser.TryParse(fakeFile);
 
-            Assert.False(res);
+            Assert.True(res);
+            Assert.False(_quizParser.GetData().CorrectlyLoaded);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.Equal($"Question: {question} - has more than 9 answers!", ((ErrorCollector)_quizParser).Errors[0]);
         }
@@ -198,7 +201,8 @@ namespace SimpleQuizCreator.Tests
             Assert.True(res);
             Assert.Single(data.Questions);
             Assert.True(data.CorrectlyLoaded);
-            Assert.False(res2);
+            Assert.True(res2);
+            Assert.False(data2.CorrectlyLoaded);
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.False(data2.CorrectlyLoaded);
         }
