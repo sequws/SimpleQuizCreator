@@ -74,7 +74,6 @@ namespace SimpleQuizCreator.Common
                         }
                     }
                 }
-
             }
         }
 

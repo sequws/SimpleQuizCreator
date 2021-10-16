@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace SimpleQuizCreator.ViewModels
 {
     public class QuizPreviewDialogViewModel : BindableBase, IDialogAware
     {
+        IQuizPreviewGenerator _quizPreviewGenerator;
+
         private Quiz _quiz;
         public Quiz Quiz
         {
@@ -38,9 +41,9 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _previewText, value); }
         }
 
-        public QuizPreviewDialogViewModel()
+        public QuizPreviewDialogViewModel(IQuizPreviewGenerator quizPreviewGenerator)
         {
-
+            _quizPreviewGenerator = quizPreviewGenerator;
         }
 
         #region IDialogAware
@@ -61,11 +64,8 @@ namespace SimpleQuizCreator.ViewModels
         {
             Quiz = parameters.GetValue<Quiz>("quiz");
             QuizName = Quiz.Name;
-            PreviewText = @"### Hello! :D 
-Question:  
--ans1  
--ans2  
--ans3  ";
+            PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
+
             QuizQuestionAmount = $"[[Question amount: { Quiz.QuestionAmount}]]";
         }
         #endregion

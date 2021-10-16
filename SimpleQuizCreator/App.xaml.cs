@@ -42,6 +42,7 @@ namespace SimpleQuizCreator
 
             containerRegistry.Register<ISettings, MainSettings>();
             containerRegistry.RegisterSingleton<IGlobalSettingService, GlobalSettingService>();
+            containerRegistry.RegisterSingleton<IQuizPreviewGenerator, QuizPreviewGenerator>();
         }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="Common\GlobalEnums.cs" />
     <Compile Include="Common\Calculator\OneGoodZeroBadCalcStrategy.cs" />
     <Compile Include="Common\Calculator\OneGoodOneBadOneNoCalcStrategy.cs" />
+    <Compile Include="Common\QuizPreviewGenerator.cs" />
     <Compile Include="Converters\BoolToColorConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityReverseConverter.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IParser.cs" />
     <Compile Include="Interfaces\IQuizGenerator.cs" />
+    <Compile Include="Interfaces\IQuizPreviewGenerator.cs" />
     <Compile Include="Interfaces\IQuizService.cs" />
     <Compile Include="Interfaces\IResultRepository.cs" />
     <Compile Include="Interfaces\IResultService.cs" />
