@@ -17,8 +17,10 @@
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="__Close__" Command="{Binding CloseDialogCommand}" Margin="3"></Button>
         </StackPanel>
-        <mdxam:MarkdownScrollViewer Markdown="{Binding PreviewText}" 
+        <Grid x:Name="MainGrid">
+            <mdxam:MarkdownScrollViewer Markdown="{Binding PreviewText}" 
                VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"            
-               MaxWidth="800" Margin="10" />
+               Margin="10"  MaxWidth="800" Height="800"/>
+        </Grid>
     </DockPanel>
 </UserControl>

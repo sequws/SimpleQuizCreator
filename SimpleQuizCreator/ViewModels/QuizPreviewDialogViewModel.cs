@@ -64,9 +64,16 @@ namespace SimpleQuizCreator.ViewModels
         {
             Quiz = parameters.GetValue<Quiz>("quiz");
             QuizName = Quiz.Name;
-            PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
 
-            QuizQuestionAmount = $"[[Question amount: { Quiz.QuestionAmount}]]";
+            if( Quiz.CorrectlyLoaded)
+            {
+                QuizQuestionAmount = $"[[Question amount: { Quiz.QuestionAmount}]]";                
+            }
+            else
+            {
+                QuizQuestionAmount = $"[[Error amount: { Quiz.Errors.Count}]]";
+            }
+            PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
         }
         #endregion
 
