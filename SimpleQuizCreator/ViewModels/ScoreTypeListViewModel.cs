@@ -27,27 +27,27 @@ namespace SimpleQuizCreator.ViewModels
             scoreTypes.Add(new ScoreTypeComboItem
             {
                 Type = ScoreType.OneGoodZeroBad,
-                Desc = "OneGoodZeroBad desc"
+                Desc = "+1 for any good answer, 0 otherwise"
             });
             scoreTypes.Add(new ScoreTypeComboItem
             {
                 Type = ScoreType.OneGoodOneBad,
-                Desc = "OneGoodOneBad desc"
+                Desc = "+1 for any good answer, -1 for any bad answer, 0 otherwise"
             });
             scoreTypes.Add(new ScoreTypeComboItem
             {
                 Type = ScoreType.OneGoodOneBadOneNo,
-                Desc = "OneGoodOneBadOneNo desc"
+                Desc = "+1 for any good answer, -1 otherwise"
             });
             scoreTypes.Add(new ScoreTypeComboItem
             {
                 Type = ScoreType.AllGoodWithoutMinus,
-                Desc = "AllGoodWithoutMinus desc"
+                Desc = "+1 for all good answers, 0 otherwise"
             });
             scoreTypes.Add(new ScoreTypeComboItem
             {
                 Type = ScoreType.AllGoodWithMinus,
-                Desc = "AllGoodWithMinus desc"
+                Desc = "+1 for all good answers, -1 otherwise"
             });
 
             SelectedType = scoreTypes[0];
