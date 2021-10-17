@@ -20,18 +20,25 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref _quiz, value); }
         }
 
-        private string _quizName;
-        public string QuizName
+        private QuizGenerated _quizGenerated;
+        public QuizGenerated QuizGenerated
         {
-            get { return _quizName; }
-            set { SetProperty(ref _quizName, value); }
+            get { return _quizGenerated; }
+            set { SetProperty(ref _quizGenerated, value); }
         }
 
-        private string _quizQuesionAmount;
-        public string QuizQuestionAmount
+        private string _previewTitle;
+        public string PreviewTitle
         {
-            get { return _quizQuesionAmount; }
-            set { SetProperty(ref _quizQuesionAmount, value); }
+            get { return _previewTitle; }
+            set { SetProperty(ref _previewTitle, value); }
+        }
+
+        private string _previewSubtitle;
+        public string PreviewSubTitle
+        {
+            get { return _previewSubtitle; }
+            set { SetProperty(ref _previewSubtitle, value); }
         }
 
         private string _previewText;
@@ -62,18 +69,28 @@ namespace SimpleQuizCreator.ViewModels
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
-            Quiz = parameters.GetValue<Quiz>("quiz");
-            QuizName = Quiz.Name;
+            QuizGenerated = parameters.GetValue<QuizGenerated>("quizGenerated");
+            if(QuizGenerated != null)
+            {
+                PreviewTitle = "Preview: " + QuizGenerated.Name; //"Preview!";
+                PreviewText = _quizPreviewGenerator.GenerateResultPreview(QuizGenerated);
+            }
 
-            if( Quiz.CorrectlyLoaded)
+            Quiz = parameters.GetValue<Quiz>("quiz");
+            if (Quiz != null)
             {
-                QuizQuestionAmount = $"[[Question amount: { Quiz.QuestionAmount}]]";                
+                PreviewTitle = Quiz.Name;
+
+                if (Quiz.CorrectlyLoaded)
+                {
+                    PreviewSubTitle = $"[[Question amount: { Quiz.QuestionAmount}]]";
+                }
+                else
+                {
+                    PreviewSubTitle = $"[[Error amount: { Quiz.Errors.Count}]]";
+                }
+                PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
             }
-            else
-            {
-                QuizQuestionAmount = $"[[Error amount: { Quiz.Errors.Count}]]";
-            }
-            PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
         }
         #endregion
 

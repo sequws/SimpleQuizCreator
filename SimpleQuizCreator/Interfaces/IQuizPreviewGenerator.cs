@@ -10,5 +10,6 @@ namespace SimpleQuizCreator.Interfaces
     public interface IQuizPreviewGenerator
     {
         string GeneratePreview(Quiz quiz);
+        string GenerateResultPreview(QuizGenerated quizGenerated);
     }
 }

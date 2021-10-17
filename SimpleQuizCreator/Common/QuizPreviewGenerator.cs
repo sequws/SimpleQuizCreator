@@ -78,5 +78,14 @@ namespace SimpleQuizCreator.Common
             var result = input.Replace("*", "\\*");
             return result;
         }
+
+        public string GenerateResultPreview(QuizGenerated quizGenerated)
+        {
+            StringBuilder sb = new StringBuilder();
+
+
+
+            return sb.ToString();
+        }
     }
 }

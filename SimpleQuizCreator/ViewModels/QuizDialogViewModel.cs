@@ -16,52 +16,7 @@ namespace SimpleQuizCreator.ViewModels
     public class QuizDialogViewModel : BindableBase, IDialogAware
     {
         private readonly IScoreCalculator _scoreCalculator;
-
-        #region commands
-        private DelegateCommand _closeDialogCommand;
-        public DelegateCommand CloseDialogCommand =>
-            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(ExecuteCloseDialogCommand));
-
-        void ExecuteCloseDialogCommand()
-        {
-            var resParams = new DialogParameters();
-            resParams.Add("score", QuizResult);
-
-            RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
-        }
-
-        private DelegateCommand _startQuizCommand;
-        public DelegateCommand StartQuizCommand =>
-            _startQuizCommand ?? (_startQuizCommand = new DelegateCommand(ExecuteStardQuizCommand));
-
-        void ExecuteStardQuizCommand()
-        {
-            SelectedIndex++;
-            ActiveQuestion = Quiz.ActiveQuestion;
-        }
-
-        private DelegateCommand _nextQuestionCommand;
-        public DelegateCommand NextQuestionCommand =>
-            _nextQuestionCommand ?? (_nextQuestionCommand = new DelegateCommand(ExecuteNextQuestionCommand));
-
-        void ExecuteNextQuestionCommand()
-        {
-            Quiz.ActiveQuestionNumber++;
-            ActiveQuestion = Quiz.ActiveQuestion;
-
-            if (Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber-1)
-            {
-                NextQuestionButtonCaption = rm.GetString("QuizDialogFinishText");
-            } 
-            else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
-            {
-                SelectedIndex++;
-                QuizResult = _scoreCalculator.CalculateResult( Quiz);
-                ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);
-            }
-        }
-
-        #endregion
+        IDialogService _dialogService;
 
         #region properties
 
@@ -116,11 +71,12 @@ namespace SimpleQuizCreator.ViewModels
 
         #endregion
 
-        ResourceManager rm = new ResourceManager(typeof(SimpleQuizCreator.Properties.Resources));
+        ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
 
-        public QuizDialogViewModel(IScoreCalculator calculationStrategy)
+        public QuizDialogViewModel(IScoreCalculator calculationStrategy, IDialogService dialogService)
         {
             _scoreCalculator = calculationStrategy;
+            _dialogService = dialogService;
             NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
         }
 
@@ -148,5 +104,72 @@ namespace SimpleQuizCreator.ViewModels
         }
 
         #endregion
+
+        #region commands
+        private DelegateCommand _closeDialogCommand;
+        public DelegateCommand CloseDialogCommand =>
+            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(ExecuteCloseDialogCommand));
+
+        void ExecuteCloseDialogCommand()
+        {
+            var resParams = new DialogParameters();
+            resParams.Add("score", QuizResult);
+
+            RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
+        }
+
+        private DelegateCommand _startQuizCommand;
+        public DelegateCommand StartQuizCommand =>
+            _startQuizCommand ?? (_startQuizCommand = new DelegateCommand(ExecuteStardQuizCommand));
+
+        void ExecuteStardQuizCommand()
+        {
+            SelectedIndex++;
+            ActiveQuestion = Quiz.ActiveQuestion;
+        }
+
+        private DelegateCommand _nextQuestionCommand;
+        public DelegateCommand NextQuestionCommand =>
+            _nextQuestionCommand ?? (_nextQuestionCommand = new DelegateCommand(ExecuteNextQuestionCommand));
+
+        void ExecuteNextQuestionCommand()
+        {
+            Quiz.ActiveQuestionNumber++;
+            ActiveQuestion = Quiz.ActiveQuestion;
+
+            if (Quiz.ActiveQuestionNumber == Quiz.QuestionsNumber - 1)
+            {
+                NextQuestionButtonCaption = rm.GetString("QuizDialogFinishText");
+            }
+            else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
+            {
+                SelectedIndex++;
+                QuizResult = _scoreCalculator.CalculateResult(Quiz);
+                ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);
+            }
+        }
+
+        private DelegateCommand _showPreviewCommand;
+        public DelegateCommand ShowPreviewCommand =>
+            _showPreviewCommand ?? (_showPreviewCommand = new DelegateCommand(ExecuteShowPreviewCommand, CanExecuteShowPreviewCommand));
+
+        void ExecuteShowPreviewCommand()
+        {
+            var dialogParams = new DialogParameters();
+            dialogParams.Add("quizGenerated", Quiz);
+
+            _dialogService.ShowDialog("QuizPreviewDialog", dialogParams, res =>
+            {
+
+            });
+        }
+
+        bool CanExecuteShowPreviewCommand()
+        {
+            return true;
+        }
+
+        #endregion
+
     }
 }

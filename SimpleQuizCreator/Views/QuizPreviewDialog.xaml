@@ -8,11 +8,11 @@
              xmlns:mdxam="clr-namespace:MdXaml;assembly=MdXaml"
             mc:Ignorable="d"
             d:DesignHeight="450" d:DesignWidth="600"
-             MinWidth="400" MinHeight="600">
+             MinWidth="400" MinHeight="600"  MaxWidth="800" MaxHeight="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Top">
-            <Label Content="{Binding QuizName}" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold"></Label>
-            <Label Content="{Binding QuizQuestionAmount}" HorizontalContentAlignment="Center" FontWeight="Bold"></Label>
+            <Label Content="{Binding PreviewTitle}" HorizontalContentAlignment="Center" FontSize="20" FontWeight="Bold"></Label>
+            <Label Content="{Binding PreviewSubTitle}" HorizontalContentAlignment="Center" FontWeight="Bold"></Label>
         </StackPanel>
         <StackPanel DockPanel.Dock="Bottom" Height="40" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Content="__Close__" Command="{Binding CloseDialogCommand}" Margin="3"></Button>
@@ -20,7 +20,7 @@
         <Grid x:Name="MainGrid">
             <mdxam:MarkdownScrollViewer Markdown="{Binding PreviewText}" 
                VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"            
-               Margin="10"  MaxWidth="800" Height="800"/>
+               Margin="10" />
         </Grid>
     </DockPanel>
 </UserControl>
