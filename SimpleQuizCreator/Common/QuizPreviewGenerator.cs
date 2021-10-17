@@ -83,7 +83,33 @@ namespace SimpleQuizCreator.Common
         {
             StringBuilder sb = new StringBuilder();
 
+            int i = 0;
+            foreach (var question in quizGenerated.Questions)
+            {
+                i++;
+                sb.Append($"**Question {i}: ");
+                sb.Append(EscapeStringForMarkdown(question.QuestionText));
+                sb.AppendLine("**  ");
 
+                foreach (var answer in question.Answers)
+                {
+                    if(answer.IsSelected)
+                    {
+                        sb.Append(" **[x]**  ");
+                    }
+                    if (answer.IsCorrect)
+                    {                        
+                        sb.Append(" %{color:green} ");
+                    }
+                    else
+                    {
+                        sb.Append(" %{color:red} ");
+                    }
+                    sb.Append(EscapeStringForMarkdown(answer.AnswerText));
+                    sb.Append("%  \n");
+                }
+                sb.AppendLine("  \n");
+            }
 
             return sb.ToString();
         }

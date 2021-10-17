@@ -72,7 +72,9 @@ namespace SimpleQuizCreator.ViewModels
             QuizGenerated = parameters.GetValue<QuizGenerated>("quizGenerated");
             if(QuizGenerated != null)
             {
-                PreviewTitle = "Preview: " + QuizGenerated.Name; //"Preview!";
+                PreviewTitle = "[[Preview:]] " + QuizGenerated.Name;
+                PreviewSubTitle = "[[Score type: ]]" + QuizGenerated.QuizSettings.ScoreType.ToString();
+
                 PreviewText = _quizPreviewGenerator.GenerateResultPreview(QuizGenerated);
             }
 
