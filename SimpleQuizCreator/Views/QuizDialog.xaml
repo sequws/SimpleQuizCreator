@@ -31,7 +31,7 @@
                 <Grid DockPanel.Dock="Top" Height="50">
                     <Label Content="{Binding ActiveQuestion.QuestionText}"></Label>
                 </Grid>
-                <StatusBar DockPanel.Dock="Bottom" Height="22">
+                <StatusBar DockPanel.Dock="Bottom" Height="30" Foreground="DarkGray" FontSize="14" Background="Silver">
                     <StatusBarItem Content="{x:Static p:Resources.QuizDialogTimeText}"></StatusBarItem>
                     <Separator></Separator>
                     <StatusBarItem>
@@ -61,8 +61,6 @@
             <TabItem Header="3" >
             <DockPanel>
                 <Label DockPanel.Dock="Top" Content="{x:Static p:Resources.QuizDialogQuizFinished}"  Margin="20" FontSize="24" HorizontalContentAlignment="Center"></Label>
-
-
                 <StackPanel DockPanel.Dock="Top" x:Name="FinishResultStackPanel" HorizontalAlignment="Center">
                     <Label Content="{Binding ScoreText}" FontSize="20"></Label>
                     <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
