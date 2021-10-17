@@ -249,7 +249,19 @@
         gg==
 </value>
   </data>
+  <data name="QuizListErrorsContent" xml:space="preserve">
+    <value>__QUIZ LIST ERRORS__</value>
+  </data>
+  <data name="QuizPreviewErrorSubTitle" xml:space="preserve">
+    <value>__ERROR AMOUNT__</value>
+  </data>
+  <data name="QuizPreviewSubTitle" xml:space="preserve">
+    <value>__QUESTION AMOUNT__</value>
+  </data>
   <data name="QuizPreviewText" xml:space="preserve">
+    <value>__PREVIEW__</value>
+  </data>
+  <data name="QuizPreviewTitle" xml:space="preserve">
     <value>__PREVIEW__</value>
   </data>
   <data name="SettingsLanguageText" xml:space="preserve">

@@ -6,12 +6,14 @@ using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 
 namespace SimpleQuizCreator.ViewModels
 {
     public class QuizPreviewDialogViewModel : BindableBase, IDialogAware
     {
         IQuizPreviewGenerator _quizPreviewGenerator;
+        ResourceManager _resourceManager = new ResourceManager(typeof(Properties.Resources));
 
         private Quiz _quiz;
         public Quiz Quiz
@@ -72,24 +74,23 @@ namespace SimpleQuizCreator.ViewModels
             QuizGenerated = parameters.GetValue<QuizGenerated>("quizGenerated");
             if(QuizGenerated != null)
             {
-                PreviewTitle = "[[Preview:]] " + QuizGenerated.Name;
-                PreviewSubTitle = "[[Score type: ]]" + QuizGenerated.QuizSettings.ScoreType.ToString();
-
+                PreviewTitle = string.Format(_resourceManager.GetString("QuizPreviewTitle"), QuizGenerated.Name);
+                PreviewSubTitle = string.Format(_resourceManager.GetString("QuizPreviewSubTitle"), QuizGenerated.QuestionsNumber);
                 PreviewText = _quizPreviewGenerator.GenerateResultPreview(QuizGenerated);
             }
 
             Quiz = parameters.GetValue<Quiz>("quiz");
             if (Quiz != null)
             {
-                PreviewTitle = Quiz.Name;
+                PreviewTitle = string.Format(_resourceManager.GetString("QuizPreviewTitle"), Quiz.Name);
 
                 if (Quiz.CorrectlyLoaded)
                 {
-                    PreviewSubTitle = $"[[Question amount: { Quiz.QuestionAmount}]]";
+                    PreviewSubTitle = string.Format(_resourceManager.GetString("QuizPreviewSubTitle"), Quiz.QuestionAmount);
                 }
                 else
                 {
-                    PreviewSubTitle = $"[[Error amount: { Quiz.Errors.Count}]]";
+                    PreviewSubTitle = string.Format(_resourceManager.GetString("QuizPreviewErrorSubTitle"), Quiz.Errors.Count);
                 }
                 PreviewText = _quizPreviewGenerator.GeneratePreview(Quiz);
             }

@@ -368,11 +368,47 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Found errors: .
+        /// </summary>
+        public static string QuizListErrorsContent {
+            get {
+                return ResourceManager.GetString("QuizListErrorsContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error amount: {0}.
+        /// </summary>
+        public static string QuizPreviewErrorSubTitle {
+            get {
+                return ResourceManager.GetString("QuizPreviewErrorSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question amount: {0}.
+        /// </summary>
+        public static string QuizPreviewSubTitle {
+            get {
+                return ResourceManager.GetString("QuizPreviewSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Preview.
         /// </summary>
         public static string QuizPreviewText {
             get {
                 return ResourceManager.GetString("QuizPreviewText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preview: {0}.
+        /// </summary>
+        public static string QuizPreviewTitle {
+            get {
+                return ResourceManager.GetString("QuizPreviewTitle", resourceCulture);
             }
         }
         
