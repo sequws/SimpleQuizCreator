@@ -420,5 +420,14 @@ namespace SimpleQuizCreator.Properties {
                 return ResourceManager.GetString("SettingsLanguageText", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Min. number of questions to save history:.
+        /// </summary>
+        public static string SettingsMinQuestionText {
+            get {
+                return ResourceManager.GetString("SettingsMinQuestionText", resourceCulture);
+            }
+        }
     }
 }

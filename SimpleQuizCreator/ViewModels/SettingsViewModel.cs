@@ -17,6 +17,7 @@ namespace SimpleQuizCreator.ViewModels
 
     public class SettingsViewModel : BindableBase
     {
+        #region Properties
         ObservableCollection<LanguageComboData> languages = new ObservableCollection<LanguageComboData>();
         public ObservableCollection<LanguageComboData> Languages
         {
@@ -39,6 +40,14 @@ namespace SimpleQuizCreator.ViewModels
                 }                
             }
         }
+
+        private int historyMinQuestion;
+        public int HistoryMinQuestion
+        {
+            get { return historyMinQuestion; }
+            set { SetProperty(ref historyMinQuestion, value); }
+        }
+        #endregion
 
         IGlobalSettingService _settingService;
 
@@ -67,6 +76,8 @@ namespace SimpleQuizCreator.ViewModels
 
             var lang = (string)_settingService.Get("AppLanguage");
             SelectedLanguage = languages.FirstOrDefault(x => x.Code == lang);
+
+            HistoryMinQuestion = (int)_settingService.Get("HistoryMinQuestion");
         }
 
         private DelegateCommand _saveSettingsCommand;
@@ -78,6 +89,11 @@ namespace SimpleQuizCreator.ViewModels
             if(SelectedLanguage != null)
             {
                 _settingService.Update("AppLanguage", (string)SelectedLanguage.Code);
+            }
+            int val;
+            //if( int.TryParse(HistoryMinQuestion,out val)
+            {
+                _settingService.Update("HistoryMinQuestion", HistoryMinQuestion);
             }
         }
 

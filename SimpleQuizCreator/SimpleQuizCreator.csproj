@@ -76,11 +76,14 @@
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
     <Compile Include="Converters\ScoreTypeToStringConverter.cs" />
+    <Compile Include="Converters\StringToIntValueConverter.cs" />
     <Compile Include="DataAccess\MainSettings.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Common\ScoreCalculator.cs" />
     <Compile Include="DataAccess\ResultRepository.cs" />
+    <Compile Include="Extensions\EnumBindingExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
     <Compile Include="Interfaces\ICalculationStrategy.cs" />
     <Compile Include="Interfaces\IGlobalSettingService.cs" />
