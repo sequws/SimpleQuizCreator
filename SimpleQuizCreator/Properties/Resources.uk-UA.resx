@@ -267,4 +267,7 @@
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>__LANGUAGE__</value>
   </data>
+  <data name="SettingsMinQuestionText" xml:space="preserve">
+    <value>__MIN QUEST HISTORY__</value>
+  </data>
 </root>

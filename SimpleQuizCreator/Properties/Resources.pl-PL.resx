@@ -267,4 +267,7 @@
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>Język:</value>
   </data>
+  <data name="SettingsMinQuestionText" xml:space="preserve">
+    <value>Min. ilość pytań by zapisać historię:</value>
+  </data>
 </root>
