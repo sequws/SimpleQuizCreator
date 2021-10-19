@@ -93,7 +93,10 @@ namespace SimpleQuizCreator.ViewModels
             int val;
             //if( int.TryParse(HistoryMinQuestion,out val)
             {
-                _settingService.Update("HistoryMinQuestion", HistoryMinQuestion);
+                if(HistoryMinQuestion >= 0)
+                {
+                    _settingService.Update("HistoryMinQuestion", HistoryMinQuestion);
+                }
             }
         }
 

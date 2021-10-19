@@ -16,6 +16,7 @@ namespace SimpleQuizCreator.ViewModels
         private readonly IQuizGenerator _quizGenerator;        
         private readonly IQuizService _quizService;
         private readonly IResultService _resultService;
+        private readonly IGlobalSettingService _settingService;
 
         public List<Quiz> ListOfQuizzes { get; set; }
 
@@ -47,12 +48,14 @@ namespace SimpleQuizCreator.ViewModels
         public StartQuizViewModel(IQuizService quizService, 
             IDialogService dialogService, 
             IQuizGenerator quizGenerator, 
-            IResultService resultService)
+            IResultService resultService,
+            IGlobalSettingService settingService)
         {
             _quizService = quizService;
             _dialogService = dialogService;
             _quizGenerator = quizGenerator;
             _resultService = resultService;
+            _settingService = settingService;
             ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.CorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
             {
@@ -87,7 +90,11 @@ namespace SimpleQuizCreator.ViewModels
                 // todo: Save results to database or file
                 if(scoreRes != null)
                 {
-                    var saveRes = _resultService.SaveResult(scoreRes);
+                    var minQuestNum = (int)_settingService.Get("HistoryMinQuestion");
+                    if(generatedQuiz.QuestionsNumber >= minQuestNum)
+                    {
+                        _resultService.SaveResult(scoreRes);
+                    }
                 }
             });
         }
