@@ -59,12 +59,26 @@ namespace SimpleQuizCreator.ViewModels
             _saveSettingsCommand ?? (_saveSettingsCommand = new DelegateCommand(ExecuteSaveSettingsCommand, CanExecuteSaveSettingsCommand));
 
         void ExecuteSaveSettingsCommand()
-        {      
+        {
             _settingService.Update("AppWidth", (double)AppWidth);
             _settingService.Update("AppHeight", (double)AppHeight);
         }
 
         bool CanExecuteSaveSettingsCommand()
+        {
+            return true;
+        }
+
+        private DelegateCommand _closeCommand;
+        public DelegateCommand CloseCommand =>
+            _closeCommand ?? (_closeCommand = new DelegateCommand(ExecuteCloseCommand, CanExecuteCloseCommand));
+
+        void ExecuteCloseCommand()
+        {
+            App.Current.Shutdown();
+        }
+
+        bool CanExecuteCloseCommand()
         {
             return true;
         }

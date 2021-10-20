@@ -27,25 +27,26 @@
             <Menu Height="32">
                 <MenuItem Header="{x:Static p:Resources.MenuItemFile}" Margin="2">
                     <MenuItem Header="{x:Static p:Resources.MenuItemSettings}" Command="{Binding SaveSettingsCommand}"></MenuItem>
-                    <MenuItem  Header="{x:Static p:Resources.MenuItemClose}"></MenuItem>
+                    <MenuItem  Header="{x:Static p:Resources.MenuItemClose}" Command="{Binding CloseCommand}"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="{x:Static p:Resources.MenuItemHelp}" Margin="2">
                     <MenuItem Header="{x:Static p:Resources.MenuItemAbout}"></MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <StackPanel DockPanel.Dock="Left" Width="140" Background="Bisque">
-            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
-                    Content="{x:Static p:Resources.ButtonHelloContent}" Margin="2" Height="34"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>
-            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+        <DockPanel DockPanel.Dock="Left" Width="140" Background="Bisque">
+            <!--<Button DockPanel.Dock="Top" mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonHelloContent}" Margin="2" Height="34"  Command="{Binding NavigateCommand}" CommandParameter="HelloView"></Button>-->
+            <Button DockPanel.Dock="Top" mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
                     Content="{x:Static p:Resources.ButtonQuizListContent}" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="QuizListView"></Button>
-            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+            <Button DockPanel.Dock="Top" mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
                     Content="{x:Static p:Resources.ButtonStartQuizContent}" FontWeight="Bold" Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="StartQuizView"></Button>
-            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+            <Button DockPanel.Dock="Top" mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
                     Content="{x:Static p:Resources.ButtonHistoryContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="HistoryView"></Button>
-            <Button mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
-                    Content="{x:Static p:Resources.ButtonSettingsContent}"  Margin="2" Height="34" Command="{Binding NavigateCommand}" CommandParameter="SettingsView"/>
-        </StackPanel>
+            <Button DockPanel.Dock="Bottom" mahc:ControlsHelper.CornerRadius="8" mahc:ControlsHelper.ContentCharacterCasing="Normal" FontSize="12" 
+                    Content="{x:Static p:Resources.ButtonSettingsContent}"  Margin="2 10" Height="34" Command="{Binding NavigateCommand}" CommandParameter="SettingsView"/>
+            <Grid></Grid>
+        </DockPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion" />
     </DockPanel>
 </mah:MetroWindow>
