@@ -11,5 +11,6 @@ namespace SimpleQuizCreator.Interfaces
     {
         bool CreateResult(ScoreResultEntity scoreResult);
         IEnumerable<ScoreResultEntity> GetAllResult();
+        IEnumerable<ScoreResultEntity> GetResultByQuizName(string name);
     }
 }

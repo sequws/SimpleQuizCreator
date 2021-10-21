@@ -50,6 +50,16 @@ namespace SimpleQuizCreator.DataAccess
             }
         }
 
+        public IEnumerable<ScoreResultEntity> GetResultByQuizName(string name)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var parameters = new { quizName = name };
+                var result = con.Query<ScoreResultEntity>("SELECT * FROM HistoryResult WHERE QuizName = @quizName ORDER BY Date DESC", parameters);
+                return result.ToList();
+            }
+        }
+
         private static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

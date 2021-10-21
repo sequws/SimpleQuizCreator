@@ -31,7 +31,8 @@ namespace SimpleQuizCreator.ViewModels
 
         void ExecuteRefreshCommand()
         {
-            HistoryResult = _resultService.GetAllResult().ToList();
+            //HistoryResult = _resultService.GetAllResult().ToList();
+            HistoryResult = _resultService.GetResultByQuizName("Animals").ToList();
         }
 
         bool CanExecuteRefreshCommand()

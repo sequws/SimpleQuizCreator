@@ -42,6 +42,31 @@ namespace SimpleQuizCreator.Services
             return scoreResults;
         }
 
+        public IEnumerable<ScoreResult> GetResultByQuizName(string name)
+        {
+            var res = _resultRepository.GetResultByQuizName(name);
+            List<ScoreResult> scoreResults = new List<ScoreResult>();
+
+            foreach (var result in res)
+            {
+                Enum.TryParse(result.Type, out ScoreType scoreType);
+
+                scoreResults.Add(new ScoreResult
+                {
+                    QuizName = result.QuizName,
+                    Type = scoreType,
+                    Date = result.Date,
+                    QuestionAmount = result.QuestionAmount,
+                    AllPosiblePoints = result.AllPosiblePoints,
+                    AllGoodAnswers = result.AllGoodAnswers,
+                    PointScore = result.PointScore,
+                    PercentScore = result.PercentScore
+                });
+            }
+
+            return scoreResults;
+        }
+
         public bool SaveResult(ScoreResult result)
         {
             return _resultRepository.CreateResult(new ScoreResultEntity
