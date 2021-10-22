@@ -157,6 +157,7 @@ namespace SimpleQuizCreator.ViewModels
         {
             var dialogParams = new DialogParameters();
             dialogParams.Add("quizGenerated", Quiz);
+            dialogParams.Add("quizResult", QuizResult);
 
             _dialogService.ShowDialog("QuizPreviewDialog", dialogParams, res =>
             {

@@ -17,5 +17,11 @@ namespace SimpleQuizCreator.Models
         public int AllPosiblePoints { get; set; }
         public int PointScore { get; set; }
         public double PercentScore { get; set; }
+        public List<int> QuestionScore { get; set; }
+
+        public ScoreResult()
+        {
+            QuestionScore = new List<int>();
+        }
     }
 }

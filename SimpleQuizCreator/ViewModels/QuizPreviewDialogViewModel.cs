@@ -74,9 +74,11 @@ namespace SimpleQuizCreator.ViewModels
             QuizGenerated = parameters.GetValue<QuizGenerated>("quizGenerated");
             if(QuizGenerated != null)
             {
+                ScoreResult result = parameters.GetValue<ScoreResult>("quizResult");
+
                 PreviewTitle = string.Format(_resourceManager.GetString("QuizPreviewTitle"), QuizGenerated.Name);
                 PreviewSubTitle = string.Format(_resourceManager.GetString("QuizPreviewSubTitle"), QuizGenerated.QuestionsNumber);
-                PreviewText = _quizPreviewGenerator.GenerateResultPreview(QuizGenerated);
+                PreviewText = _quizPreviewGenerator.GenerateResultPreview(QuizGenerated, result);
             }
 
             Quiz = parameters.GetValue<Quiz>("quiz");

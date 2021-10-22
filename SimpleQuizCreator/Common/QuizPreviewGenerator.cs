@@ -79,17 +79,21 @@ namespace SimpleQuizCreator.Common
             return result;
         }
 
-        public string GenerateResultPreview(QuizGenerated quizGenerated)
+        public string GenerateResultPreview(QuizGenerated quizGenerated, ScoreResult scoreResult)
         {
             StringBuilder sb = new StringBuilder();
 
             int i = 0;
             foreach (var question in quizGenerated.Questions)
             {
+                var pts = scoreResult.QuestionScore[i];
+
                 i++;
                 sb.Append($"**Question {i}: ");
                 sb.Append(EscapeStringForMarkdown(question.QuestionText));
-                sb.AppendLine("**  ");
+                sb.Append(" %{color:blue} ");
+                sb.Append(pts);
+                sb.AppendLine("% **  ");
 
                 foreach (var answer in question.Answers)
                 {
