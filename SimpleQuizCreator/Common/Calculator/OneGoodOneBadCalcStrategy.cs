@@ -27,6 +27,7 @@ namespace SimpleQuizCreator.Common.Calculator
                 res = (badSelected == 0 && goodSelected > 0) ? 1 : -1;
                 if (!anySelected) res = 0;
                 score.PointScore += res;
+                score.QuestionScore.Add(res);
             }
 
             score.PercentScore = Math.Round(

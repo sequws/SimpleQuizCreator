@@ -22,9 +22,10 @@ namespace SimpleQuizCreator.Common.Calculator
                 var badSelected = question.Answers.Count(x => x.IsSelected && !x.IsCorrect);
                 var goodSelected = question.Answers.Count(x => x.IsSelected && x.IsCorrect);
                 var allGoods = question.Answers.Count(x => x.IsCorrect);
-                var allGoodSelected = (allGoods == goodSelected && badSelected == 0) ? 1 : 0;
+                var res = (allGoods == goodSelected && badSelected == 0) ? 1 : 0;
 
-                score.PointScore += allGoodSelected;
+                score.PointScore += res;
+                score.QuestionScore.Add(res);
             }
 
             score.PercentScore = Math.Round(

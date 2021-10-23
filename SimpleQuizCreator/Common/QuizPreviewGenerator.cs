@@ -115,7 +115,6 @@ namespace SimpleQuizCreator.Common
             return sb.ToString();
         }
 
-
         private string GetQuestionPoints(ScoreResult scoreResult, int questionNr)
         {
             var sb = new StringBuilder();
@@ -125,9 +124,19 @@ namespace SimpleQuizCreator.Common
             {
                 var pts = scoreResult.QuestionScore[questionNr];
 
-                sb.Append(" %{color:blue} ");
+                if (pts >= 0)
+                {
+                    sb.Append("%{color:blue} [");
+                } else
+                {
+                    sb.Append("%{color:red} [");
+                }
+                if(pts > 0)
+                {
+                    sb.Append("+");
+                }
                 sb.Append(pts);
-                sb.AppendLine("%  ");
+                sb.AppendLine("]%  ");
             }
             return sb.ToString();
         }
