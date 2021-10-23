@@ -87,7 +87,6 @@ namespace SimpleQuizCreator.ViewModels
             {
                 var scoreRes = r.Parameters.GetValue<ScoreResult>("score");
 
-                // todo: Save results to database or file
                 if(scoreRes != null)
                 {
                     var minQuestNum = (int)_settingService.Get("HistoryMinQuestion");

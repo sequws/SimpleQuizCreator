@@ -31,6 +31,7 @@ namespace SimpleQuizCreator.ViewModels
 
         void ExecuteRefreshCommand()
         {
+            // todo - add pagination, search bar
             //HistoryResult = _resultService.GetAllResult().ToList();
             HistoryResult = _resultService.GetResultByQuizName("Animals").ToList();
         }

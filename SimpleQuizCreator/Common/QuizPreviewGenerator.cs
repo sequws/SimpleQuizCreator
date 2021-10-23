@@ -86,14 +86,10 @@ namespace SimpleQuizCreator.Common
             int i = 0;
             foreach (var question in quizGenerated.Questions)
             {
-                var pts = scoreResult.QuestionScore[i];
-
-                i++;
                 sb.Append($"**Question {i}: ");
                 sb.Append(EscapeStringForMarkdown(question.QuestionText));
-                sb.Append(" %{color:blue} ");
-                sb.Append(pts);
-                sb.AppendLine("% **  ");
+                sb.Append(GetQuestionPoints(scoreResult, i));
+                sb.AppendLine("**  ");
 
                 foreach (var answer in question.Answers)
                 {
@@ -113,8 +109,26 @@ namespace SimpleQuizCreator.Common
                     sb.Append("%  \n");
                 }
                 sb.AppendLine("  \n");
+                i++;
             }
 
+            return sb.ToString();
+        }
+
+
+        private string GetQuestionPoints(ScoreResult scoreResult, int questionNr)
+        {
+            var sb = new StringBuilder();
+
+            if(scoreResult.QuestionScore.Count > 0 &&
+                scoreResult.QuestionScore.Count >= questionNr)
+            {
+                var pts = scoreResult.QuestionScore[questionNr];
+
+                sb.Append(" %{color:blue} ");
+                sb.Append(pts);
+                sb.AppendLine("%  ");
+            }
             return sb.ToString();
         }
     }
