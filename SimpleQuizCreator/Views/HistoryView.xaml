@@ -14,15 +14,16 @@
         <cv:ScoreTypeToStringConverter x:Key="DefaultScoreTypeConverter"></cv:ScoreTypeToStringConverter>
     </UserControl.Resources>
     <DockPanel >
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Height="40" Background="AliceBlue">
-            <Button Width="30" Height="30" Margin="20 0" 
+        <DockPanel DockPanel.Dock="Top" Height="40" Background="AliceBlue">
+            <Button DockPanel.Dock="Left" Width="30" Height="30" Margin="20 0" 
                     Foreground="Blue"
                     Style="{DynamicResource MahApps.Styles.Button.Circle}"                    
                     Command="{Binding RefreshCommand}">
                 <!--<iconPacks:Codicons Kind="DebugRestart" />-->
                 <iconPacks:Codicons Kind="Sync" />
             </Button>
-        </StackPanel>
+            <ComboBox Margin="5" ItemsSource="{Binding QuizNames}" SelectedItem="{Binding SelectedQuizName}"/>
+        </DockPanel>
         <DataGrid ItemsSource="{Binding HistoryResult}"
                   AlternatingRowBackground="LightGray"
                   CanUserAddRows="False"

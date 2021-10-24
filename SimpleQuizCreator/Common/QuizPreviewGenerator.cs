@@ -89,7 +89,7 @@ namespace SimpleQuizCreator.Common
                 sb.Append($"**Question {i}: ");
                 sb.Append(EscapeStringForMarkdown(question.QuestionText));
                 sb.Append(GetQuestionPoints(scoreResult, i));
-                sb.AppendLine("**  ");
+                sb.Append("**  ");
 
                 foreach (var answer in question.Answers)
                 {
