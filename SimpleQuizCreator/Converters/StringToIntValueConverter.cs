@@ -18,7 +18,7 @@ namespace SimpleQuizCreator.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            int ret = 0;
+            int ret;
             return int.TryParse((string)value, out ret) ? ret : 0;
         }
     }
