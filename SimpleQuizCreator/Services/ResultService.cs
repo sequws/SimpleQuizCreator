@@ -1,4 +1,5 @@
-﻿using SimpleQuizCreator.Common;
+﻿using AutoMapper;
+using SimpleQuizCreator.Common;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
@@ -12,75 +13,30 @@ namespace SimpleQuizCreator.Services
     public class ResultService : IResultService
     {
         IResultRepository _resultRepository;
+        private readonly IMapper _mapper;
 
-        public ResultService(IResultRepository resultRepository)
+        public ResultService(IResultRepository resultRepository, IMapper mapper)
         {
             _resultRepository = resultRepository;
+            _mapper = mapper;
         }
 
         public IEnumerable<ScoreResult> GetAllResult()
         {
             var res = _resultRepository.GetAllResult();
-            List<ScoreResult> scoreResults = new List<ScoreResult>();
-
-            foreach (var result in res)
-            {
-                Enum.TryParse(result.Type, out ScoreType scoreType);
-
-                scoreResults.Add( new ScoreResult { 
-                    QuizName = result.QuizName,
-                    Type = scoreType,
-                    Date = result.Date,
-                    QuestionAmount = result.QuestionAmount,
-                    AllPosiblePoints = result.AllPosiblePoints,
-                    AllGoodAnswers = result.AllGoodAnswers,
-                    PointScore = result.PointScore,
-                    PercentScore = result.PercentScore
-                });
-            }
-
-            return scoreResults;
+            return _mapper.Map<IEnumerable<ScoreResult>>(res);
         }
 
         public IEnumerable<ScoreResult> GetResultByQuizName(string name)
         {
             var res = _resultRepository.GetResultByQuizName(name);
-            List<ScoreResult> scoreResults = new List<ScoreResult>();
-
-            foreach (var result in res)
-            {
-                Enum.TryParse(result.Type, out ScoreType scoreType);
-
-                scoreResults.Add(new ScoreResult
-                {
-                    QuizName = result.QuizName,
-                    Type = scoreType,
-                    Date = result.Date,
-                    QuestionAmount = result.QuestionAmount,
-                    AllPosiblePoints = result.AllPosiblePoints,
-                    AllGoodAnswers = result.AllGoodAnswers,
-                    PointScore = result.PointScore,
-                    PercentScore = result.PercentScore
-                });
-            }
-
-            return scoreResults;
+            return _mapper.Map<IEnumerable<ScoreResult>>(res);
         }
 
         public bool SaveResult(ScoreResult result)
         {
-            return _resultRepository.CreateResult(new ScoreResultEntity
-            {
-                QuizName = result.QuizName,
-                Type = result.Type.ToString(),
-                Date = result.Date,
-                QuestionAmount = result.QuestionAmount,
-                AllPosiblePoints = result.AllPosiblePoints,
-                AllGoodAnswers = result.AllGoodAnswers,
-                PointScore = result.PointScore,
-                PercentScore = result.PercentScore
-            });
-
+            return _resultRepository.CreateResult(
+                _mapper.Map<ScoreResultEntity>(result));
         }
     }
 }

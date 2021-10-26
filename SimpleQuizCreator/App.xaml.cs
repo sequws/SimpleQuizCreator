@@ -9,6 +9,8 @@ using SimpleQuizCreator.Services;
 using SimpleQuizCreator.ViewModels;
 using SimpleQuizCreator.Common;
 using System.Threading;
+using AutoMapper;
+using SimpleQuizCreator.Mappings;
 
 namespace SimpleQuizCreator
 {
@@ -43,6 +45,8 @@ namespace SimpleQuizCreator
             containerRegistry.Register<ISettings, MainSettings>();
             containerRegistry.RegisterSingleton<IGlobalSettingService, GlobalSettingService>();
             containerRegistry.RegisterSingleton<IQuizPreviewGenerator, QuizPreviewGenerator>();
+
+            containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());
         }
     }
 }
