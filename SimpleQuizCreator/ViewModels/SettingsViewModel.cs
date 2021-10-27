@@ -74,6 +74,13 @@ namespace SimpleQuizCreator.ViewModels
                 Name = "Ukrainian"
             });
 
+            languages.Add(new LanguageComboData
+            {
+                Code = "ru-RU",
+                Abbrevation = "RUS",
+                Name = "Russian"
+            });
+
             var lang = (string)_settingService.Get("AppLanguage");
             SelectedLanguage = languages.FirstOrDefault(x => x.Code == lang);
 
@@ -90,14 +97,7 @@ namespace SimpleQuizCreator.ViewModels
             {
                 _settingService.Update("AppLanguage", (string)SelectedLanguage.Code);
             }
-            int val;
-            //if( int.TryParse(HistoryMinQuestion,out val)
-            {
-                if(HistoryMinQuestion >= 0)
-                {
-                    _settingService.Update("HistoryMinQuestion", HistoryMinQuestion);
-                }
-            }
+            _settingService.Update("HistoryMinQuestion", HistoryMinQuestion);
         }
 
         bool CanExecuteSaveSettingsCommand()

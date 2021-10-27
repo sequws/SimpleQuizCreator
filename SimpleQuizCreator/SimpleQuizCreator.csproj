@@ -107,6 +107,11 @@
     <Compile Include="Models\ScoreResultEntity.cs" />
     <Compile Include="Models\ScoreResult.cs" />
     <Compile Include="Models\ScoreTypeComboItem.cs" />
+    <Compile Include="Properties\Resources.ru-RU.Designer.cs">
+      <DependentUpon>Resources.ru-RU.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\Resources.uk-UA.Designer.cs">
       <DependentUpon>Resources.uk-UA.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -214,6 +219,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Resource Include="QuizIcon.ico" />
+    <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.uk-UA.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.uk-UA.Designer.cs</LastGenOutput>
