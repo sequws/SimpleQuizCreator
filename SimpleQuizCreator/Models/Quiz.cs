@@ -14,6 +14,7 @@ namespace SimpleQuizCreator.Models
 
         public List<string> Errors { get; set; } = new List<string>();
         public bool CorrectlyLoaded { get; internal set; }
+        public bool SingleAnswer => !Questions.Any(x => x.GoodAnswersCount > 1);
 
         public Quiz() {}
 

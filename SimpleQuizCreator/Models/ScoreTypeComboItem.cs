@@ -24,5 +24,11 @@ namespace SimpleQuizCreator.Models
             set { SetProperty(ref desc, value); }
         }
 
+        private bool singleAnswer;
+        public bool SingleAnswer
+        {
+            get { return singleAnswer; }
+            set { SetProperty(ref singleAnswer, value); }
+        }
     }
 }

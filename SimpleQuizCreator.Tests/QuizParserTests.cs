@@ -206,5 +206,82 @@ namespace SimpleQuizCreator.Tests
             Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
             Assert.False(data2.CorrectlyLoaded);
         }
+
+
+
+        [Fact]
+        public void TryParse_SingleAnswer()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            var question = "Single answer quiz";
+            List<string> fakeFile = new List<string>
+            {
+                $"[Q]{question}",
+                "-answer 1",
+                "-answer 2",
+                "[*]-answer 3",
+                "-answer 4"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var quiz = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.True(quiz.SingleAnswer);
+            Assert.True(quiz.CorrectlyLoaded);
+            Assert.Equal(0, ((ErrorCollector)_quizParser).ErrorCounter);            
+        }
+
+        [Fact]
+        public void TryParse_MultiAnswer()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            var question = "Single answer quiz";
+            List<string> fakeFile = new List<string>
+            {
+                $"[Q]{question}",
+                "[*]-answer 1",
+                "-answer 2",
+                "[*]-answer 3",
+                "-answer 4"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var quiz = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.False(quiz.SingleAnswer);
+            Assert.True(quiz.CorrectlyLoaded);
+            Assert.Equal(0, ((ErrorCollector)_quizParser).ErrorCounter);
+        }
+
+        [Fact]
+        public void TryParse_MultiAnswerMoreQuestions()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            var question = "Single answer quiz";
+            List<string> fakeFile = new List<string>
+            {
+                $"[Q]{question}",
+                "[*]-answer 1",
+                "-answer 2",
+                "[*]-answer 3",
+                "-answer 4",
+
+                $"[Q]{question}2",
+                "[*]-answer 1",
+                "-answer 2",
+                "-answer 3",
+                "-answer 4"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var quiz = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.False(quiz.SingleAnswer);
+            Assert.True(quiz.CorrectlyLoaded);
+            Assert.Equal(0, ((ErrorCollector)_quizParser).ErrorCounter);
+        }
     }
 }
