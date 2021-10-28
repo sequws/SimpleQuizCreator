@@ -15,8 +15,8 @@
             <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"/>
             <Label Content="{x:Static p:Resources.LabelScoreSettingsContnet}" FontWeight="Bold"/>
             <ComboBox Grid.Row="1" Margin="20, 5"
-                      ItemsSource="{Binding ScoreTypeList.ScoreTypes}"
-                      SelectedItem="{Binding ScoreTypeList.SelectedType}">
+                      ItemsSource="{Binding ScoreTypes}"
+                      SelectedItem="{Binding SelectedScoreType}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <TextBlock Text="{Binding Desc}"/>

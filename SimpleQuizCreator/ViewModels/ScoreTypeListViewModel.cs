@@ -10,17 +10,9 @@ using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.ViewModels
 {
-    public class ScoreTypeListViewModel : BindableBase
+    public class ScoreTypeListViewModel
     {
-        public ScoreTypeComboItem SelectedType { get; set; }
-
-        private ObservableCollection<ScoreTypeComboItem> scoreTypes = new ObservableCollection<ScoreTypeComboItem>();
-        public ObservableCollection<ScoreTypeComboItem> ScoreTypes
-        {
-            get { return scoreTypes; }
-            set { SetProperty(ref scoreTypes, value); }
-        }
-
+        private List<ScoreTypeComboItem> scoreTypes = new List<ScoreTypeComboItem>();
 
         public ScoreTypeListViewModel()
         {
@@ -54,8 +46,11 @@ namespace SimpleQuizCreator.ViewModels
                 SingleAnswer = false,
                 Desc = "+1 for all good answers, -1 otherwise"
             });
+        }
 
-            SelectedType = scoreTypes[0];
+        public List<ScoreTypeComboItem> GetPossibleScoreTypes(bool isSingleAnswer)
+        {
+            return new List<ScoreTypeComboItem>(scoreTypes.Where(x => x.SingleAnswer == isSingleAnswer));
         }
     }
 }

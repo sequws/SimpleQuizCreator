@@ -5,6 +5,7 @@ using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 
@@ -31,15 +32,33 @@ namespace SimpleQuizCreator.ViewModels
         public Quiz SelectedQuiz
         {
             get { return _selectedQuiz; }
-            set { SetProperty(ref _selectedQuiz, value); 
+            set
+            {
+                SetProperty(ref _selectedQuiz, value);
                 if(QuizSettings.QuestionLimit > _selectedQuiz.QuestionAmount)
                 {
                     QuizSettings.QuestionLimit = _selectedQuiz.QuestionAmount;
                 }
+                ScoreTypes = ScoreTypeList.GetPossibleScoreTypes(SelectedQuiz.SingleAnswer);
+                SelectedScoreType = ScoreTypes[0];
             }
         }
 
-        public ScoreTypeListViewModel ScoreTypeList { get; set; } = new ScoreTypeListViewModel();
+        private List<ScoreTypeComboItem> scoreTypes;
+        public List<ScoreTypeComboItem> ScoreTypes
+        {
+            get { return scoreTypes; }
+            set { SetProperty(ref scoreTypes, value); }
+        }
+
+        private ScoreTypeComboItem selectedScoreType;
+        public ScoreTypeComboItem SelectedScoreType
+        {
+            get { return selectedScoreType; }
+            set { SetProperty(ref selectedScoreType, value); }
+        }
+
+        public ScoreTypeListViewModel ScoreTypeList { get; } = new ScoreTypeListViewModel();
 
         private DelegateCommand _openQuizWindow;
         public DelegateCommand OpenQuizWindow =>
@@ -75,7 +94,7 @@ namespace SimpleQuizCreator.ViewModels
                 return;
             }
 
-            QuizSettings.ScoreType = ScoreTypeList.SelectedType.Type;
+            QuizSettings.ScoreType = SelectedScoreType.Type;
 
             _quizGenerator.GenerateNewQuiz(SelectedQuiz, QuizSettings);
             var generatedQuiz = _quizGenerator.GetQuiz();
