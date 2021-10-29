@@ -14,7 +14,7 @@ namespace SimpleQuizCreator.Common
     {
         public string GeneratePreview(Quiz quiz)
         {
-            if (quiz.CorrectlyLoaded)
+            if (quiz.IsCorrectlyLoaded)
             {
                 return GenerateCorrectQuizPreview(quiz);
             }

@@ -12,9 +12,7 @@ namespace SimpleQuizCreator.Models
     {
         public string QuestionText { get; set; }
         public List<Answer> Answers { get; set; } = new List<Answer>();
-
         public int GoodAnswersCount => Answers.Where(x => x.IsCorrect).Count();
-
         public int AnswersCount => Answers.Count();
 
         public override string ToString()

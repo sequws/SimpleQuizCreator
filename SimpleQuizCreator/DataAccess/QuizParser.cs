@@ -98,11 +98,11 @@ namespace SimpleQuizCreator.DataAccess
 
             if (ErrorCounter == 0)
             {
-                parsedQuiz.CorrectlyLoaded = true;
+                parsedQuiz.IsCorrectlyLoaded = true;
             }
             else
             {
-                parsedQuiz.CorrectlyLoaded = false;
+                parsedQuiz.IsCorrectlyLoaded = false;
                 parsedQuiz.Errors = Errors;
                 res = true;// we want to show all quizzes with error, so we need return true
             }

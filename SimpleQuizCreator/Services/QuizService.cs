@@ -43,7 +43,7 @@ namespace SimpleQuizCreator.Services
         public IEnumerable<Quiz> GetAllQuizzes()
         {
             LoadQuizzes();
-            return new List<Quiz>( _listOfQuizzes.OrderByDescending(x => x.CorrectlyLoaded));
+            return new List<Quiz>( _listOfQuizzes.OrderByDescending(x => x.IsCorrectlyLoaded));
         }
 
         public Quiz GetQuizByName(string name)

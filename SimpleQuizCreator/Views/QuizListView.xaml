@@ -46,9 +46,9 @@
                             <Border Margin="5" Padding="2" Background="AliceBlue"  BorderBrush="#FF000000" BorderThickness="2" CornerRadius="8">
                                 <mah:Badged Badge="{Binding Questions.Count}">
                                     <DockPanel Background="AliceBlue" Height="120">
-                                        <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" Foreground="{Binding CorrectlyLoaded, Converter={StaticResource BoolConverter}}"
+                                        <Label DockPanel.Dock="Top" Height="30" Content="{Binding Name}" Foreground="{Binding IsCorrectlyLoaded, Converter={StaticResource BoolConverter}}"
                                                FontWeight="Bold" HorizontalAlignment="Center" />
-                                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"  Visibility="{Binding CorrectlyLoaded , Converter={StaticResource BoolToVisReverse}}">
+                                        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"  Visibility="{Binding IsCorrectlyLoaded , Converter={StaticResource BoolToVisReverse}}">
                                             <Label  Content="{x:Static p:Resources.QuizListErrorsContent}" Foreground="Red" />
                                             <Label Content="{Binding Errors.Count}" Foreground="Red" FontWeight="Bold"></Label>
                                         </StackPanel>

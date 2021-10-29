@@ -39,7 +39,7 @@ namespace SimpleQuizCreator.ViewModels
                 {
                     QuizSettings.QuestionLimit = _selectedQuiz.QuestionAmount;
                 }
-                ScoreTypes = ScoreTypeList.GetPossibleScoreTypes(SelectedQuiz.SingleAnswer);
+                ScoreTypes = ScoreTypeList.GetPossibleScoreTypes(SelectedQuiz.IsSingleAnswer);
                 SelectedScoreType = ScoreTypes[0];
             }
         }
@@ -75,7 +75,7 @@ namespace SimpleQuizCreator.ViewModels
             _quizGenerator = quizGenerator;
             _resultService = resultService;
             _settingService = settingService;
-            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.CorrectlyLoaded));
+            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
             {
                 SelectedQuiz = ListOfQuizzes.First();

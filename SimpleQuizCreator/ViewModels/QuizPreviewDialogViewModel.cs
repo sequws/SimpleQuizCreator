@@ -86,7 +86,7 @@ namespace SimpleQuizCreator.ViewModels
             {
                 PreviewTitle = string.Format(_resourceManager.GetString("QuizPreviewTitle"), Quiz.Name);
 
-                if (Quiz.CorrectlyLoaded)
+                if (Quiz.IsCorrectlyLoaded)
                 {
                     PreviewSubTitle = string.Format(_resourceManager.GetString("QuizPreviewSubTitle"), Quiz.QuestionAmount);
                 }
