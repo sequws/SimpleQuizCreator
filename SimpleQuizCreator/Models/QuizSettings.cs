@@ -10,15 +10,14 @@ namespace SimpleQuizCreator.Models
 {
     public class QuizSettings : BindableBase
     {
-        public bool TimeRescriction { get; set; } = false;
-        public bool AllowReturn { get; set; } = false;
+        public bool IsTimeRestricted { get; set; } = false;
+        public bool IsReturnAllowed { get; set; } = false;
+        // Visibility
+        public bool IsTimeShown { get; set; } = false;
+        public bool IsScoreShown { get; set; } = false;
         // Scoring
         public QuizType Type { get; set; } = QuizType.SingleChoice;
         public ScoreType ScoreType { get; set; } = ScoreType.OneGoodZeroBad;
-
-        // Visibility
-        public bool ShowTime { get; set; } = false;
-        public bool ShowScore { get; set; } = false;
 
         // Questions
         private int _questionLimit = 30;

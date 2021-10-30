@@ -20,10 +20,10 @@ namespace SimpleQuizCreator.Tests
 
             settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
-                ShowScore = false
+                IsScoreShown = false
             };
         }
 

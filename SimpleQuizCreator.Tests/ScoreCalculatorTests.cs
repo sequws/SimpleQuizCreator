@@ -20,7 +20,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodZeroBad,
@@ -42,7 +42,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodZeroBad,
@@ -64,7 +64,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodZeroBad,
@@ -91,7 +91,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBad,
@@ -113,7 +113,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBad,
@@ -136,7 +136,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBad,
@@ -160,7 +160,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBad,
@@ -189,7 +189,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBadOneNo,
@@ -211,7 +211,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBadOneNo,
@@ -233,7 +233,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBadOneNo,
@@ -256,7 +256,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.OneGoodOneBadOneNo,
@@ -285,7 +285,7 @@ namespace SimpleQuizCreator.Tests
             // Arrange
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.AllGoodWithoutMinus,
@@ -307,7 +307,7 @@ namespace SimpleQuizCreator.Tests
         {
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = 4,
                 QuestionLimit = 3,
                 ScoreType = ScoreType.AllGoodWithoutMinus,

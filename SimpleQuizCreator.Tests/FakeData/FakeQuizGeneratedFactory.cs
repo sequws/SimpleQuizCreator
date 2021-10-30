@@ -106,7 +106,7 @@ namespace SimpleQuizCreator.Tests.FakeData
 
             QuizSettings settings = new QuizSettings
             {
-                AllowReturn = false,
+                IsReturnAllowed = false,
                 AutogenerateAnswers = answersNr,
                 QuestionLimit = questionNr,
                 ScoreType = ScoreType.Custom,
