@@ -41,6 +41,10 @@ namespace SimpleQuizCreator.ViewModels
                 }
                 ScoreTypes = ScoreTypeList.GetPossibleScoreTypes(SelectedQuiz.IsSingleAnswer);
                 SelectedScoreType = ScoreTypes[0];
+                if(IsSetToMaxQuetionEnable)
+                {
+                    QuizSettings.QuestionLimit = SelectedQuiz.QuestionAmount;
+                }
             }
         }
 
@@ -56,6 +60,19 @@ namespace SimpleQuizCreator.ViewModels
         {
             get { return selectedScoreType; }
             set { SetProperty(ref selectedScoreType, value); }
+        }
+
+        private bool isSetToMaxQuestionEnable;
+        public bool IsSetToMaxQuetionEnable
+        {
+            get { return isSetToMaxQuestionEnable; }
+            set { 
+                SetProperty(ref isSetToMaxQuestionEnable, value);
+                if(value)
+                {
+                    QuizSettings.QuestionLimit = SelectedQuiz.QuestionAmount;
+                }
+            }
         }
 
         public ScoreTypeListViewModel ScoreTypeList { get; } = new ScoreTypeListViewModel();
