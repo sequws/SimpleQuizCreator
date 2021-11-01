@@ -10,6 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Resources;
 using System.Windows;
+using System.Windows.Threading;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -17,6 +18,14 @@ namespace SimpleQuizCreator.ViewModels
     {
         private readonly IScoreCalculator _scoreCalculator;
         IDialogService _dialogService;
+        DispatcherTimer timer = new DispatcherTimer();
+
+        private int seconds;
+        public int Seconds
+        {
+            get { return seconds; }
+            set { SetProperty(ref seconds, value); }
+        }
 
         #region properties
 
@@ -78,6 +87,10 @@ namespace SimpleQuizCreator.ViewModels
             _scoreCalculator = calculationStrategy;
             _dialogService = dialogService;
             NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
+
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
         }
 
         #region IDialogAware
@@ -172,5 +185,9 @@ namespace SimpleQuizCreator.ViewModels
 
         #endregion
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Seconds++;
+        }
     }
 }
