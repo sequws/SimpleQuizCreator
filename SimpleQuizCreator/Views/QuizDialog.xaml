@@ -44,7 +44,13 @@
                        TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
 
                     <StatusBar DockPanel.Dock="Bottom" Height="30" Foreground="DarkGray" FontSize="14" Background="Silver">
-                        <StatusBarItem Content="{x:Static p:Resources.QuizDialogTimeText}"></StatusBarItem>
+                        <StatusBarItem>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{x:Static p:Resources.QuizDialogTimeText}"/>
+                                <TextBlock Text="{Binding Seconds}"/>
+                                <TextBlock Text="s"/>
+                            </StackPanel>
+                        </StatusBarItem>
                         <Separator></Separator>
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">

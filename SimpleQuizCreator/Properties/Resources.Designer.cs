@@ -349,7 +349,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time:.
+        ///   Looks up a localized string similar to Time: .
         /// </summary>
         public static string QuizDialogTimeText {
             get {
