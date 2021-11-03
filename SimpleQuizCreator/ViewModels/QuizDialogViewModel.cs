@@ -18,13 +18,15 @@ namespace SimpleQuizCreator.ViewModels
     {
         private readonly IScoreCalculator _scoreCalculator;
         IDialogService _dialogService;
-        DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer _timer = new DispatcherTimer();
 
-        private int seconds;
-        public int Seconds
+        private int _seconds;
+
+        private string elapsedTime;
+        public string ElapsedTime
         {
-            get { return seconds; }
-            set { SetProperty(ref seconds, value); }
+            get { return elapsedTime; }
+            set { SetProperty(ref elapsedTime, value); }
         }
 
         #region properties
@@ -88,9 +90,9 @@ namespace SimpleQuizCreator.ViewModels
             _dialogService = dialogService;
             NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
 
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
+            _timer.Tick += new EventHandler(Timer_Tick);
+            _timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Start();
         }
 
         #region IDialogAware
@@ -157,6 +159,7 @@ namespace SimpleQuizCreator.ViewModels
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
+                _timer.Stop();
                 QuizResult = _scoreCalculator.CalculateResult(Quiz);
                 ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);
             }
@@ -187,7 +190,9 @@ namespace SimpleQuizCreator.ViewModels
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            Seconds++;
+            _seconds++;
+            TimeSpan time = TimeSpan.FromSeconds(_seconds);
+            ElapsedTime = time.ToString(@"hh\:mm\:ss");
         }
     }
 }

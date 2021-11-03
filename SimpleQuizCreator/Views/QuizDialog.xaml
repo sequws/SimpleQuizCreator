@@ -47,8 +47,7 @@
                         <StatusBarItem>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{x:Static p:Resources.QuizDialogTimeText}"/>
-                                <TextBlock Text="{Binding Seconds}"/>
-                                <TextBlock Text="s"/>
+                                <TextBlock Text="{Binding ElapsedTime}"/>
                             </StackPanel>
                         </StatusBarItem>
                         <Separator></Separator>
