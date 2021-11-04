@@ -159,8 +159,9 @@ namespace SimpleQuizCreator.ViewModels
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
-                _timer.Stop();
+                _timer.Stop();                
                 QuizResult = _scoreCalculator.CalculateResult(Quiz);
+                QuizResult.TimeInSeconds = _seconds;
                 ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);
             }
         }

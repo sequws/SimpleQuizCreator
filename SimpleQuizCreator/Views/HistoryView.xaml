@@ -36,6 +36,7 @@
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuestionAmount}" Binding="{Binding Path=QuestionAmount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderPointScore}" Binding="{Binding Path=PointScore}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderPercentScore}" Binding="{Binding Path=PercentScore}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderTime}" Binding="{Binding Path=TimeInSeconds}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>
