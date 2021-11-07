@@ -25,6 +25,13 @@
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"                  
                   AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                    </Style>
+                </ResourceDictionary>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuizName}" Binding="{Binding Path=QuizName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderScoreType}" Binding="{Binding Path=Type}"></DataGridTextColumn>
