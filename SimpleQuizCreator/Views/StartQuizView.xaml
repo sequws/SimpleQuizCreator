@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"             
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SimpleQuizCreator.Views.StartQuizView"             
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SimpleQuizCreator.Views.StartQuizView"   
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d"            
              d:DesignHeight="450" d:DesignWidth="600" Background="AliceBlue">
@@ -19,7 +19,7 @@
                       SelectedItem="{Binding SelectedScoreType}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Text="{Binding Desc}"/>
+                        <TextBlock Text="{Binding Type}"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>

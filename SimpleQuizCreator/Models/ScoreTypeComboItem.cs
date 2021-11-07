@@ -17,13 +17,6 @@ namespace SimpleQuizCreator.Models
             set { SetProperty(ref type, value); }
         }
 
-        private string desc;
-        public string Desc
-        {
-            get { return desc; }
-            set { SetProperty(ref desc, value); }
-        }
-
         private bool isSingleAnswer;
         public bool IsSingleAnswer
         {

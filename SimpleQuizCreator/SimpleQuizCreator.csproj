@@ -64,6 +64,7 @@
     <Compile Include="Abstractions\ErrorCollector.cs" />
     <Compile Include="Abstractions\Loader.cs" />
     <Compile Include="Abstractions\Parser.cs" />
+    <Compile Include="Attributes\LocalizedDescriptionAttribute.cs" />
     <Compile Include="Common\Calculator\AllGoodWithMinusCalcStrategy.cs" />
     <Compile Include="Common\Calculator\AllGoodWithoutMinusCalcStrategy.cs" />
     <Compile Include="Common\Calculator\OneGoodOneBadCalcStrategy.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Common\QuizPreviewGenerator.cs" />
     <Compile Include="Converters\BoolToColorConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityReverseConverter.cs" />
+    <Compile Include="Converters\EnumDescriptionTypeConverter.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
     <Compile Include="Converters\ScoreTypeToStringConverter.cs" />
