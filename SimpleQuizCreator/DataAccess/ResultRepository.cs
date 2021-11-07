@@ -27,17 +27,17 @@ namespace SimpleQuizCreator.DataAccess
                     con.Execute("INSERT INTO HistoryResult " +
                         "(QuizName, Type, Date, " +
                         "QuestionAmount, AllPosiblePoints, AllGoodAnswers, " +
-                        "PointScore, PercentScore  ) VALUES " +
+                        "PointScore, PercentScore, TimeInSeconds) VALUES " +
                         "(@QuizName, @Type, @Date," +
                         "@QuestionAmount, @AllPosiblePoints, @AllGoodAnswers," +
-                        "@PointScore, @PercentScore )", scoreResult);
+                        "@PointScore, @PercentScore, @TimeInSeconds)", scoreResult);
                     return true;
-                } 
+                }
                 catch (Exception e)
                 {
                     logger.Error(e.Message);
                     return false;
-                }   
+                }
             }
         }
 
