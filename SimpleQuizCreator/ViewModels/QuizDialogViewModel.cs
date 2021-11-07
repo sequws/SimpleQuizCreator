@@ -1,6 +1,8 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Events;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using SimpleQuizCreator.Services;
@@ -18,9 +20,11 @@ namespace SimpleQuizCreator.ViewModels
     {
         private readonly IScoreCalculator _scoreCalculator;
         IDialogService _dialogService;
+        IEventAggregator _ea;
         DispatcherTimer _timer = new DispatcherTimer();
 
         private int _seconds;
+        private bool _isQuizFinished;
 
         private string elapsedTime;
         public string ElapsedTime
@@ -84,12 +88,16 @@ namespace SimpleQuizCreator.ViewModels
 
         ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
 
-        public QuizDialogViewModel(IScoreCalculator calculationStrategy, IDialogService dialogService)
+        public QuizDialogViewModel(
+            IScoreCalculator calculationStrategy, 
+            IDialogService dialogService,
+            IEventAggregator ea)
         {
             _scoreCalculator = calculationStrategy;
             _dialogService = dialogService;
-            NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
+            _ea = ea;
 
+            NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");            
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Start();
@@ -108,17 +116,24 @@ namespace SimpleQuizCreator.ViewModels
 
         public void OnDialogClosed()
         {
-            
+            SendQuizFinishMessage();
         }
 
         public void OnDialogOpened(IDialogParameters parameters)
         {
             Quiz = parameters.GetValue<QuizGenerated>("quiz");
-
             QuizInfoText = string.Format(rm.GetString("QuizDialogQuizInfoText"), Quiz.QuizSettings.QuestionLimit);
         }
 
         #endregion
+
+        private void SendQuizFinishMessage()
+        {
+            if (_isQuizFinished)
+            {
+                _ea.GetEvent<QuizFinishedEvent>().Publish(QuizResult);
+            }
+        }
 
         #region commands
         private DelegateCommand _closeDialogCommand;
@@ -127,10 +142,7 @@ namespace SimpleQuizCreator.ViewModels
 
         void ExecuteCloseDialogCommand()
         {
-            var resParams = new DialogParameters();
-            resParams.Add("score", QuizResult);
-
-            RequestClose?.Invoke(new DialogResult(ButtonResult.OK, resParams));
+            RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
         }
 
         private DelegateCommand _startQuizCommand;
@@ -159,7 +171,8 @@ namespace SimpleQuizCreator.ViewModels
             else if (Quiz.ActiveQuestionNumber >= Quiz.QuestionsNumber)
             {
                 SelectedIndex++;
-                _timer.Stop();                
+                _isQuizFinished = true;
+                _timer.Stop();
                 QuizResult = _scoreCalculator.CalculateResult(Quiz);
                 QuizResult.TimeInSeconds = _seconds;
                 ScoreText = string.Format(rm.GetString("QuizDialogScoreText"), QuizResult.PointScore, QuizResult.AllPosiblePoints);

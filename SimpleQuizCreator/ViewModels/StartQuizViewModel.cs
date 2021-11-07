@@ -1,6 +1,8 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Events;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
@@ -18,6 +20,7 @@ namespace SimpleQuizCreator.ViewModels
         private readonly IQuizService _quizService;
         private readonly IResultService _resultService;
         private readonly IGlobalSettingService _settingService;
+        private readonly IEventAggregator _ea;
 
         public List<Quiz> ListOfQuizzes { get; set; }
 
@@ -85,17 +88,34 @@ namespace SimpleQuizCreator.ViewModels
             IDialogService dialogService, 
             IQuizGenerator quizGenerator, 
             IResultService resultService,
-            IGlobalSettingService settingService)
+            IGlobalSettingService settingService,
+            IEventAggregator ea)
         {
             _quizService = quizService;
             _dialogService = dialogService;
             _quizGenerator = quizGenerator;
             _resultService = resultService;
             _settingService = settingService;
+            _ea = ea;
+
+            _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);
+
             ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
             {
                 SelectedQuiz = ListOfQuizzes.First();
+            }
+        }
+
+        private void QuizFinishReceived(ScoreResult scoreRes)
+        {
+            if (scoreRes != null)
+            {
+                var minQuestNum = (int)_settingService.Get("HistoryMinQuestion");
+                if (scoreRes.QuestionAmount >= minQuestNum)
+                {
+                    _resultService.SaveResult(scoreRes);
+                }
             }
         }
 
@@ -121,16 +141,6 @@ namespace SimpleQuizCreator.ViewModels
 
             _dialogService.ShowDialog("QuizDialog", dialogParams , r =>
             {
-                var scoreRes = r.Parameters.GetValue<ScoreResult>("score");
-
-                if(scoreRes != null)
-                {
-                    var minQuestNum = (int)_settingService.Get("HistoryMinQuestion");
-                    if(generatedQuiz.QuestionsNumber >= minQuestNum)
-                    {
-                        _resultService.SaveResult(scoreRes);
-                    }
-                }
             });
         }
 
