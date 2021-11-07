@@ -77,7 +77,6 @@
     <Compile Include="Converters\EnumDescriptionTypeConverter.cs" />
     <Compile Include="Converters\PlusOneConverter.cs" />
     <Compile Include="Common\QuizGenerator.cs" />
-    <Compile Include="Converters\ScoreTypeToStringConverter.cs" />
     <Compile Include="Converters\StringToIntValueConverter.cs" />
     <Compile Include="DataAccess\MainSettings.cs" />
     <Compile Include="DataAccess\QuizLoader.cs" />

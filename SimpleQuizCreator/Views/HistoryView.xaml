@@ -5,14 +5,10 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
-             xmlns:cv="clr-namespace:SimpleQuizCreator.Converters"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
-    <UserControl.Resources>
-        <cv:ScoreTypeToStringConverter x:Key="DefaultScoreTypeConverter"></cv:ScoreTypeToStringConverter>
-    </UserControl.Resources>
     <DockPanel >
         <DockPanel DockPanel.Dock="Top" Height="40" Background="AliceBlue">
             <Button DockPanel.Dock="Left" Width="30" Height="30" Margin="20 0" 
@@ -31,7 +27,7 @@
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuizName}" Binding="{Binding Path=QuizName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static p:Resources.HeaderScoreType}" Binding="{Binding Path=Type, Converter={StaticResource DefaultScoreTypeConverter}}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderScoreType}" Binding="{Binding Path=Type}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderDate}" Binding="{Binding Path=Date}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuestionAmount}" Binding="{Binding Path=QuestionAmount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderPointScore}" Binding="{Binding Path=PointScore}"></DataGridTextColumn>
