@@ -253,7 +253,7 @@
 </value>
   </data>
   <data name="QuizListErrorsContent" xml:space="preserve">
-    <value>Found errors: </value>
+    <value>[[Found errors: ]]</value>
   </data>
   <data name="QuizPreviewErrorSubTitle" xml:space="preserve">
     <value>[[Error amount: {0}]]</value>

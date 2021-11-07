@@ -127,13 +127,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\EnumResources.ru-RU.Designer.cs">
-      <DependentUpon>EnumResources.ru-RU.resx</DependentUpon>
+    <Compile Include="Resources\EnumResources.pl-PL.Designer.cs">
+      <DependentUpon>EnumResources.pl-PL.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\EnumResources.pl-PL.Designer.cs">
-      <DependentUpon>EnumResources.pl-PL.resx</DependentUpon>
+    <Compile Include="Resources\EnumResources.ru-RU.Designer.cs">
+      <DependentUpon>EnumResources.ru-RU.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -242,13 +242,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.uk-UA.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\EnumResources.ru-RU.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>EnumResources.ru-RU.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\EnumResources.pl-PL.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.pl-PL.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EnumResources.ru-RU.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResources.ru-RU.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\EnumResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

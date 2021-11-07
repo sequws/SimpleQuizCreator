@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AllGoodWithMinus" xml:space="preserve">
-    <value>Wielokrotny wybór - trudny</value>
+    <value>[[Wielokrotny wybór - trudny]]</value>
   </data>
   <data name="AllGoodWithoutMinus" xml:space="preserve">
-    <value>Wielokrotny wybór - średni</value>
+    <value>[[Wielokrotny wybór - średni]]</value>
   </data>
   <data name="OneGoodOneBad" xml:space="preserve">
-    <value>Pojedyncza odpowiedź - trudny</value>
+    <value>[[Pojedyncza odpowiedź - trudny]]</value>
   </data>
   <data name="OneGoodOneBadOneNo" xml:space="preserve">
-    <value>Pojedyncza odpowiedź - średni</value>
+    <value>[[Pojedyncza odpowiedź - średni]]</value>
   </data>
   <data name="OneGoodZeroBad" xml:space="preserve">
-    <value>Pojedyncza odpowiedź - prosty</value>
+    <value>[[Pojedyncza odpowiedź - prosty]]</value>
   </data>
 </root>
