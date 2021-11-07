@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Resources;
 
 namespace SimpleQuizCreator.ViewModels
 {
@@ -44,10 +45,11 @@ namespace SimpleQuizCreator.ViewModels
         {
             _resultService = resultService;
             HistoryResult = _resultService.GetAllResult().ToList();
-
             List<string> names = HistoryResult.Select(x => x.QuizName).Distinct().ToList();
 
-            QuizNames.Add("All");
+            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+
+            QuizNames.Add(rm.GetString("AllText"));
             QuizNames.AddRange(names);
             SelectedQuizName = QuizNames[0];
         }

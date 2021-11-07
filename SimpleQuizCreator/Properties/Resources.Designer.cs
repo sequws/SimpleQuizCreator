@@ -61,6 +61,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        public static string AllText {
+            get {
+                return ResourceManager.GetString("AllText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello!.
         /// </summary>
         public static string ButtonHelloContent {
@@ -436,6 +445,15 @@ namespace SimpleQuizCreator.Properties {
         public static string SettingsMinQuestionText {
             get {
                 return ResourceManager.GetString("SettingsMinQuestionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set to max.
+        /// </summary>
+        public static string SetToMaxText {
+            get {
+                return ResourceManager.GetString("SetToMaxText", resourceCulture);
             }
         }
     }
