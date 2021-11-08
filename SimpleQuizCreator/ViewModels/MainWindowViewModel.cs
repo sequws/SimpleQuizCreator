@@ -3,6 +3,7 @@ using Prism.Commands;
 using Prism.Ioc;
 using Prism.Mvvm;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System.Windows;
@@ -24,23 +25,26 @@ namespace SimpleQuizCreator.ViewModels
         public int AppWidth { get; set; }
         public int AppHeight { get; set; }
 
-        IContainerExtension _container;
-        IRegionManager _regionManager;
-        IQuizService _quizService;
-        IGlobalSettingService _settingService;
+        private readonly  IContainerExtension _container;
+        private readonly  IRegionManager _regionManager;
+        private readonly  IQuizService _quizService;
+        private readonly  IGlobalSettingService _settingService;
+        private readonly IDialogService _dialogService;
 
         public DelegateCommand<string> NavigateCommand { get; set; }
 
         public MainWindowViewModel(IContainerExtension container,
             IRegionManager regionManager,
             IQuizService quizService,
-            IGlobalSettingService settingService
+            IGlobalSettingService settingService,
+            IDialogService dialogService
             )
         {
             _container = container;
             _regionManager = regionManager;
             _quizService = quizService;
             _settingService = settingService;
+            _dialogService = dialogService;
 
             var quizzes = _quizService.GetAllQuizzes();
 
@@ -65,6 +69,23 @@ namespace SimpleQuizCreator.ViewModels
         }
 
         bool CanExecuteSaveSettingsCommand()
+        {
+            return true;
+        }
+
+        private DelegateCommand _showAboutDialogCommand;
+        public DelegateCommand ShowAboutDialogCommand =>
+            _showAboutDialogCommand ?? (_showAboutDialogCommand = new DelegateCommand(ExecuteShowAboutDialogCommand, CanExecuteShowAboutDialogCommand));
+
+        void ExecuteShowAboutDialogCommand()
+        {
+            _dialogService.ShowDialog("AboutDialog", new DialogParameters(), (res) =>
+             {
+
+             });
+        }
+
+        bool CanExecuteShowAboutDialogCommand()
         {
             return true;
         }
