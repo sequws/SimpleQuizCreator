@@ -9,7 +9,16 @@
             d:DesignHeight="300" d:DesignWidth="400"
              MinWidth="400"
              MinHeight="300">
-    <Grid>
-        <Label Content="About SimpleQuizCreator"></Label>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"></ColumnDefinition>
+            <ColumnDefinition Width="60*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image ></Image>
+        <StackPanel Grid.Column="1" >
+            <Label Content="SimpleQuizCreator v0.01" FontSize="18"></Label>
+            <Label Content="Author:"></Label>
+            <TextBlock></TextBlock>
+        </StackPanel>
     </Grid>
 </UserControl>
