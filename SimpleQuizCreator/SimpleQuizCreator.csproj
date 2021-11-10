@@ -97,6 +97,7 @@
     <Compile Include="Interfaces\IResultRepository.cs" />
     <Compile Include="Interfaces\IResultService.cs" />
     <Compile Include="Interfaces\IScoreCalculator.cs" />
+    <Compile Include="Interfaces\IScoreTypeService.cs" />
     <Compile Include="Interfaces\ISettings.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Mappings\AutoMapperConfig.cs" />
@@ -147,13 +148,13 @@
     <Compile Include="Services\GlobalSettingService.cs" />
     <Compile Include="Services\QuizService.cs" />
     <Compile Include="Services\ResultService.cs" />
+    <Compile Include="Services\ScoreTypeService.cs" />
     <Compile Include="ViewModels\AboutDialogViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\QuizDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizPreviewDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
-    <Compile Include="ViewModels\ScoreTypeListViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\AboutDialog.xaml.cs">

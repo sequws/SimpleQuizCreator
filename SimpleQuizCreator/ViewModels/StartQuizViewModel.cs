@@ -19,6 +19,7 @@ namespace SimpleQuizCreator.ViewModels
         private readonly IQuizGenerator _quizGenerator;        
         private readonly IQuizService _quizService;
         private readonly IResultService _resultService;
+        private readonly IScoreTypeService _scoreTypeService;
         private readonly IGlobalSettingService _settingService;
         private readonly IEventAggregator _ea;
 
@@ -42,7 +43,7 @@ namespace SimpleQuizCreator.ViewModels
                 {
                     QuizSettings.QuestionLimit = _selectedQuiz.QuestionAmount;
                 }
-                ScoreTypes = ScoreTypeList.GetPossibleScoreTypes(SelectedQuiz.IsSingleAnswer);
+                ScoreTypes = _scoreTypeService.GetPossibleScoreTypes(SelectedQuiz.IsSingleAnswer);
                 SelectedScoreType = ScoreTypes[0];
                 if(IsSetToMaxQuetionEnable)
                 {
@@ -78,8 +79,6 @@ namespace SimpleQuizCreator.ViewModels
             }
         }
 
-        public ScoreTypeListViewModel ScoreTypeList { get; } = new ScoreTypeListViewModel();
-
         private DelegateCommand _openQuizWindow;
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
@@ -89,6 +88,7 @@ namespace SimpleQuizCreator.ViewModels
             IQuizGenerator quizGenerator, 
             IResultService resultService,
             IGlobalSettingService settingService,
+            IScoreTypeService scoreTypeService,
             IEventAggregator ea)
         {
             _quizService = quizService;
@@ -96,6 +96,7 @@ namespace SimpleQuizCreator.ViewModels
             _quizGenerator = quizGenerator;
             _resultService = resultService;
             _settingService = settingService;
+            _scoreTypeService = scoreTypeService;
             _ea = ea;
 
             _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);

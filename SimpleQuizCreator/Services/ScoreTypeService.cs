@@ -1,15 +1,16 @@
 ﻿using SimpleQuizCreator.Common;
+using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleQuizCreator.ViewModels
+namespace SimpleQuizCreator.Services
 {
-    public class ScoreTypeListViewModel
+    public class ScoreTypeService : IScoreTypeService
     {
         private List<ScoreTypeComboItem> scoreTypes = new List<ScoreTypeComboItem>();
 
-        public ScoreTypeListViewModel()
+        public ScoreTypeService()
         {
             scoreTypes.Add(new ScoreTypeComboItem
             {
