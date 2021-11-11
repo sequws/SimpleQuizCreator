@@ -32,5 +32,19 @@ namespace SimpleQuizCreator.ViewModels
         {
             
         }
+
+        private DelegateCommand _closeCommand;
+        public DelegateCommand CloseCommand =>
+            _closeCommand ?? (_closeCommand = new DelegateCommand(ExecuteCloseCommand, CanExecuteCloseCommand));
+
+        void ExecuteCloseCommand()
+        {
+            RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
+        }
+
+        bool CanExecuteCloseCommand()
+        {
+            return true;
+        }
     }
 }
