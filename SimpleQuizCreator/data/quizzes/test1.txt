@@ -1,9 +1,15 @@
 [q]Question1:
 -ans1
 -ans2
-[*]-ans3
+[*]-ans3 - ok
 
 [q]Question2:
 -ans1
-[*]-ans2
+[*]-ans2 - ok
 -ans3
+
+[q]Question3:
+[*]-ans1 - ok
+-ans2
+-ans3
+

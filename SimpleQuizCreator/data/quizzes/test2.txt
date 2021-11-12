@@ -1,4 +1,4 @@
-[q]Question1:
+[qas]Question1:
 -ans1
 -ans2
 [*]-ans3 - ok
@@ -10,7 +10,7 @@
 -ans3
 [*]-ans4 - ok
 
-[q]Question2:
+[q]Question3:
 -ans1
 [*]-ans2 -ok
 -ans3
