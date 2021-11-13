@@ -6,12 +6,23 @@
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"             
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SimpleQuizCreator.Views.StartQuizView"   
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d"            
              d:DesignHeight="450" d:DesignWidth="600" Background="AliceBlue">
     <DockPanel Margin="20">
         <StackPanel DockPanel.Dock="Top">
-            <Label Content="{x:Static p:Resources.LabelQuizSelectContent}" FontSize="14" FontWeight="Bold" Margin="2"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{x:Static p:Resources.LabelQuizSelectContent}" FontSize="14" FontWeight="Bold" Margin="2"/>
+                <Button Width="30" Height="30" Margin="20 0" 
+                    Foreground="Blue"
+                    Style="{DynamicResource MahApps.Styles.Button.Circle}"                    
+                    Command="{Binding RefreshCommand}">
+                    <!--<iconPacks:Codicons Kind="DebugRestart" />-->
+                    <iconPacks:Codicons Kind="Sync" />
+                </Button>
+            </StackPanel>
+
             <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"/>
             <Label Content="{x:Static p:Resources.LabelScoreSettingsContnet}" FontWeight="Bold"/>
             <ComboBox Grid.Row="1" Margin="20, 5"

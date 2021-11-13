@@ -23,7 +23,13 @@ namespace SimpleQuizCreator.ViewModels
         private readonly IGlobalSettingService _settingService;
         private readonly IEventAggregator _ea;
 
-        public List<Quiz> ListOfQuizzes { get; set; }
+        private ObservableCollection<Quiz> listOfQuizzes;
+        public ObservableCollection<Quiz> ListOfQuizzes
+        {
+            get { return listOfQuizzes; }
+            set { SetProperty(ref listOfQuizzes, value); }
+        }
+
 
         private QuizSettings quizSettings = new QuizSettings();
         public QuizSettings QuizSettings
@@ -38,6 +44,7 @@ namespace SimpleQuizCreator.ViewModels
             get { return _selectedQuiz; }
             set
             {
+                if (value == null) return;
                 SetProperty(ref _selectedQuiz, value);
                 if(QuizSettings.QuestionLimit > _selectedQuiz.QuestionAmount)
                 {
@@ -83,6 +90,10 @@ namespace SimpleQuizCreator.ViewModels
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
 
+        private DelegateCommand _refreshCommad;
+        public DelegateCommand RefreshCommand =>
+            _refreshCommad ?? (_refreshCommad = new DelegateCommand(ExecuteRefreshCommand, CanExecuteRefreshCommand));
+
         public StartQuizViewModel(IQuizService quizService, 
             IDialogService dialogService, 
             IQuizGenerator quizGenerator, 
@@ -101,7 +112,7 @@ namespace SimpleQuizCreator.ViewModels
 
             _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);
 
-            ListOfQuizzes = new List<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
+            ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
             {
                 SelectedQuiz = ListOfQuizzes.First();
@@ -118,6 +129,21 @@ namespace SimpleQuizCreator.ViewModels
                     _resultService.SaveResult(scoreRes);
                 }
             }
+        }
+
+
+        void ExecuteRefreshCommand()
+        {
+            ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
+            if (ListOfQuizzes.Count > 0)
+            {
+                SelectedQuiz = ListOfQuizzes.First();
+            }
+        }
+
+        bool CanExecuteRefreshCommand()
+        {
+            return true;
         }
 
         void ExecuteOpenQuizWindow()
