@@ -90,10 +90,6 @@ namespace SimpleQuizCreator.ViewModels
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
 
-        private DelegateCommand _refreshCommad;
-        public DelegateCommand RefreshCommand =>
-            _refreshCommad ?? (_refreshCommad = new DelegateCommand(ExecuteRefreshCommand, CanExecuteRefreshCommand));
-
         public StartQuizViewModel(IQuizService quizService, 
             IDialogService dialogService, 
             IQuizGenerator quizGenerator, 
@@ -111,9 +107,20 @@ namespace SimpleQuizCreator.ViewModels
             _ea = ea;
 
             _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);
+            _ea.GetEvent<QuizListRefreshEvent>().Subscribe(QuizListRefreshReceived);
+
 
             ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
             if(ListOfQuizzes.Count > 0)
+            {
+                SelectedQuiz = ListOfQuizzes.First();
+            }
+        }
+
+        private void QuizListRefreshReceived()
+        {
+            ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
+            if (ListOfQuizzes.Count > 0)
             {
                 SelectedQuiz = ListOfQuizzes.First();
             }
@@ -129,21 +136,6 @@ namespace SimpleQuizCreator.ViewModels
                     _resultService.SaveResult(scoreRes);
                 }
             }
-        }
-
-
-        void ExecuteRefreshCommand()
-        {
-            ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes().Where(x => x.IsCorrectlyLoaded));
-            if (ListOfQuizzes.Count > 0)
-            {
-                SelectedQuiz = ListOfQuizzes.First();
-            }
-        }
-
-        bool CanExecuteRefreshCommand()
-        {
-            return true;
         }
 
         void ExecuteOpenQuizWindow()

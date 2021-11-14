@@ -1,6 +1,8 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
+using SimpleQuizCreator.Events;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
@@ -14,6 +16,7 @@ namespace SimpleQuizCreator.ViewModels
     {
         IQuizService _quizService;
         IDialogService _dialogService;
+        IEventAggregator _ea;
 
         private ObservableCollection<Quiz> listOfQuizzes;
 
@@ -23,10 +26,15 @@ namespace SimpleQuizCreator.ViewModels
             set { SetProperty(ref listOfQuizzes, value); }
         }
 
-        public QuizListViewModel(IQuizService quizService, IDialogService dialogService)
+        public QuizListViewModel(
+            IQuizService quizService, 
+            IDialogService dialogService,
+            IEventAggregator ea
+            )
         {
             _quizService = quizService;
             _dialogService = dialogService;
+            _ea = ea;
             listOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes());
         }
 
@@ -39,6 +47,7 @@ namespace SimpleQuizCreator.ViewModels
         void ExecuteRefreshCommand()
         {
             ListOfQuizzes = new ObservableCollection<Quiz>(_quizService.GetAllQuizzes());
+            _ea.GetEvent<QuizListRefreshEvent>().Publish();
         }
 
         bool CanExecuteRefreshCommand()

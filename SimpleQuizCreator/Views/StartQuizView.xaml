@@ -14,13 +14,6 @@
         <StackPanel DockPanel.Dock="Top">
             <StackPanel Orientation="Horizontal">
                 <Label Content="{x:Static p:Resources.LabelQuizSelectContent}" FontSize="14" FontWeight="Bold" Margin="2"/>
-                <Button Width="30" Height="30" Margin="20 0" 
-                    Foreground="Blue"
-                    Style="{DynamicResource MahApps.Styles.Button.Circle}"                    
-                    Command="{Binding RefreshCommand}">
-                    <!--<iconPacks:Codicons Kind="DebugRestart" />-->
-                    <iconPacks:Codicons Kind="Sync" />
-                </Button>
             </StackPanel>
 
             <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"/>

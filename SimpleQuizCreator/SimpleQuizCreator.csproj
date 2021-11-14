@@ -84,6 +84,7 @@
     <Compile Include="DataAccess\QuizParser.cs" />
     <Compile Include="Common\ScoreCalculator.cs" />
     <Compile Include="DataAccess\ResultRepository.cs" />
+    <Compile Include="Events\QuizListRefreshEvent.cs" />
     <Compile Include="Extensions\EnumBindingExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Helpers\CollectionHelper.cs" />
