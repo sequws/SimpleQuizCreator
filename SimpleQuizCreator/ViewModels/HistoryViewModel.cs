@@ -1,5 +1,7 @@
 ﻿using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
+using SimpleQuizCreator.Events;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
 using System;
@@ -7,12 +9,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Resources;
+using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.ViewModels
 {
     public class HistoryViewModel : BindableBase
     {
         private readonly IResultService _resultService;
+        private readonly IEventAggregator _ea;
 
         #region properties
         private string selectedQuizName;
@@ -41,17 +45,26 @@ namespace SimpleQuizCreator.ViewModels
         }
         #endregion
 
-        public HistoryViewModel(IResultService resultService)
+        public HistoryViewModel(IResultService resultService, IEventAggregator ea)
         {
             _resultService = resultService;
+            _ea = ea;
+
+            _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);
+
             HistoryResult = _resultService.GetAllResult().ToList();
             List<string> names = HistoryResult.Select(x => x.QuizName).Distinct().ToList();
 
             ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
-
             QuizNames.Add(rm.GetString("AllText"));
             QuizNames.AddRange(names);
             SelectedQuizName = QuizNames[0];
+        }
+
+        private void QuizFinishReceived(ScoreResult obj)
+        {
+            // todo - hack? waiting for database save operation
+            Task.Delay(1000).ContinueWith(t => RefreshData());
         }
 
         private DelegateCommand _refreshCommand;
