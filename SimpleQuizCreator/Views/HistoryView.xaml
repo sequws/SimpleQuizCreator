@@ -11,13 +11,7 @@
              d:DesignHeight="450" d:DesignWidth="600">
     <DockPanel >
         <DockPanel DockPanel.Dock="Top" Height="40" Background="AliceBlue">
-            <Button DockPanel.Dock="Left" Width="30" Height="30" Margin="20 0" 
-                    Foreground="Blue"
-                    Style="{DynamicResource MahApps.Styles.Button.Circle}"                    
-                    Command="{Binding RefreshCommand}">
-                <!--<iconPacks:Codicons Kind="DebugRestart" />-->
-                <iconPacks:Codicons Kind="Sync" />
-            </Button>
+
             <ComboBox Margin="5" ItemsSource="{Binding QuizNames}" SelectedItem="{Binding SelectedQuizName}"/>
         </DockPanel>
         <DataGrid ItemsSource="{Binding HistoryResult}"

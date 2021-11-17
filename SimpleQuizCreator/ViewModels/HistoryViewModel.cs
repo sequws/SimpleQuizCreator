@@ -67,20 +67,6 @@ namespace SimpleQuizCreator.ViewModels
             Task.Delay(1000).ContinueWith(t => RefreshData());
         }
 
-        private DelegateCommand _refreshCommand;
-        public DelegateCommand RefreshCommand =>
-            _refreshCommand ?? (_refreshCommand = new DelegateCommand(ExecuteRefreshCommand, CanExecuteRefreshCommand));
-
-        void ExecuteRefreshCommand()
-        {
-            RefreshData();
-        }
-
-        bool CanExecuteRefreshCommand()
-        {
-            return true;
-        }
-
         private void RefreshData()
         {
             // todo - add pagination, search bar
