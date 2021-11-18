@@ -376,6 +376,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Quiz time! :).
+        /// </summary>
+        public static string QuizDialogTitle {
+            get {
+                return ResourceManager.GetString("QuizDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap QuizIcon {

@@ -97,7 +97,9 @@ namespace SimpleQuizCreator.ViewModels
             _dialogService = dialogService;
             _ea = ea;
 
-            NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");            
+            Title = rm.GetString("QuizDialogTitle");
+            NextQuestionButtonCaption = rm.GetString("QuizDialogNexQuestionText");
+
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Interval = new TimeSpan(0, 0, 1);
             _timer.Start();
@@ -105,7 +107,7 @@ namespace SimpleQuizCreator.ViewModels
 
         #region IDialogAware
 
-        public string Title => "Quiz Time!";
+        public string Title { get;}
 
         public event Action<IDialogResult> RequestClose;
 

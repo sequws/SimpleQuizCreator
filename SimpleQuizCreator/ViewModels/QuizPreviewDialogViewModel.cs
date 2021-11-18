@@ -52,11 +52,12 @@ namespace SimpleQuizCreator.ViewModels
 
         public QuizPreviewDialogViewModel(IQuizPreviewGenerator quizPreviewGenerator)
         {
+            Title = _resourceManager.GetString("QuizPreviewText");
             _quizPreviewGenerator = quizPreviewGenerator;
         }
 
         #region IDialogAware
-        public string Title => "Quiz preview";
+        public string Title { get; }
 
         public event Action<IDialogResult> RequestClose;
 
