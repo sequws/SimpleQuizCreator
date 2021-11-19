@@ -61,6 +61,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Author: .
+        /// </summary>
+        public static string AboutDialogAuthor {
+            get {
+                return ResourceManager.GetString("AboutDialogAuthor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string AllText {
@@ -241,6 +250,16 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About SimpleQuizCreator.
         /// </summary>
         public static string MenuItemAbout {
@@ -381,16 +400,6 @@ namespace SimpleQuizCreator.Properties {
         public static string QuizDialogTitle {
             get {
                 return ResourceManager.GetString("QuizDialogTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap QuizIcon {
-            get {
-                object obj = ResourceManager.GetObject("QuizIcon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

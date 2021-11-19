@@ -8,8 +8,15 @@
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"  
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="400"
-             MinWidth="400"
-             MinHeight="300">
+             Width="400" Height="250">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterOwner" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="40*"></ColumnDefinition>
@@ -19,10 +26,14 @@
             <RowDefinition Height="80*"></RowDefinition>
             <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image ></Image>
+        <Image Source="/SimpleQuizCreator;component/Resources/Logo.png" Margin="5" ></Image>
         <StackPanel Grid.Column="1" >
-            <Label Content="SimpleQuizCreator v0.01" FontSize="18"></Label>
-            <Label Content="Author:"></Label>
+            <Label Content="SimpleQuizCreator" FontSize="20" FontWeight="Bold"></Label>
+            <Label Content="v0.01b" FontSize="12" FontStyle="Italic"></Label>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{x:Static p:Resources.AboutDialogAuthor}" FontWeight="Bold"></Label>
+                <Label Content="Kriss :)" />
+            </StackPanel>            
             <TextBlock></TextBlock>
         </StackPanel>
         <Button Grid.Row="1" Grid.ColumnSpan="2"  Width="100" Height="30"

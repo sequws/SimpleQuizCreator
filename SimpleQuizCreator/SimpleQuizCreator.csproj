@@ -250,6 +250,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="Resources\Logo.png" />
+    <Resource Include="QuizIcon.ico" />
     <EmbeddedResource Include="Resources\EnumResources.uk-UA.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.uk-UA.Designer.cs</LastGenOutput>
@@ -266,7 +268,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="QuizIcon.ico" />
     <EmbeddedResource Include="Properties\Resources.ru-RU.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ru-RU.Designer.cs</LastGenOutput>

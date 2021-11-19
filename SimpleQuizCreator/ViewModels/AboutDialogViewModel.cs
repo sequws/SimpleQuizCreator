@@ -4,17 +4,20 @@ using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 
 namespace SimpleQuizCreator.ViewModels
 {
     public class AboutDialogViewModel : BindableBase, IDialogAware
     {
+        ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+
         public AboutDialogViewModel()
         {
-
+            Title = Title = rm.GetString("MenuItemAbout");
         }
 
-        public string Title => "About SimpleQuizDialog";
+        public string Title { get; }
 
         public event Action<IDialogResult> RequestClose;
 
