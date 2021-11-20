@@ -85,7 +85,7 @@ namespace SimpleQuizCreator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int HistoryMinQuestion {
             get {
                 return ((int)(this["HistoryMinQuestion"]));
