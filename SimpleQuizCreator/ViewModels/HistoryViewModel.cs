@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
+using Prism.Regions;
 using SimpleQuizCreator.Events;
 using SimpleQuizCreator.Interfaces;
 using SimpleQuizCreator.Models;
@@ -13,10 +14,9 @@ using System.Threading.Tasks;
 
 namespace SimpleQuizCreator.ViewModels
 {
-    public class HistoryViewModel : BindableBase
+    public class HistoryViewModel : BindableBase, INavigationAware
     {
         private readonly IResultService _resultService;
-        private readonly IEventAggregator _ea;
 
         #region properties
         private string selectedQuizName;
@@ -45,12 +45,9 @@ namespace SimpleQuizCreator.ViewModels
         }
         #endregion
 
-        public HistoryViewModel(IResultService resultService, IEventAggregator ea)
+        public HistoryViewModel(IResultService resultService)
         {
             _resultService = resultService;
-            _ea = ea;
-
-            _ea.GetEvent<QuizFinishedEvent>().Subscribe(QuizFinishReceived);
 
             HistoryResult = _resultService.GetAllResult().ToList();
             List<string> names = HistoryResult.Select(x => x.QuizName).Distinct().ToList();
@@ -59,12 +56,6 @@ namespace SimpleQuizCreator.ViewModels
             QuizNames.Add(rm.GetString("AllText"));
             QuizNames.AddRange(names);
             SelectedQuizName = QuizNames[0];
-        }
-
-        private void QuizFinishReceived(ScoreResult obj)
-        {
-            // todo - hack? waiting for database save operation
-            Task.Delay(1000).ContinueWith(t => RefreshData());
         }
 
         private void RefreshData()
@@ -81,5 +72,22 @@ namespace SimpleQuizCreator.ViewModels
                 HistoryResult = _resultService.GetResultByQuizName(SelectedQuizName).ToList();
             }
         }
+
+        #region INavigationAware
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            RefreshData();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            
+        }
+        #endregion
     }
 }
