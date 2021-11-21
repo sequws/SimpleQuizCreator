@@ -156,6 +156,7 @@
     <Compile Include="ViewModels\QuizListViewModel.cs" />
     <Compile Include="ViewModels\QuizPreviewDialogViewModel.cs" />
     <Compile Include="ViewModels\QuizWindowViewModel.cs" />
+    <Compile Include="ViewModels\ScoreTypeDialogViewModel.cs" />
     <Compile Include="ViewModels\SettingsViewModel.cs" />
     <Compile Include="ViewModels\StartQuizViewModel.cs" />
     <Compile Include="Views\AboutDialog.xaml.cs">
@@ -175,6 +176,9 @@
     </Compile>
     <Compile Include="Views\QuizWindow.xaml.cs">
       <DependentUpon>QuizWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScoreTypeDialog.xaml.cs">
+      <DependentUpon>ScoreTypeDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsView.xaml.cs">
       <DependentUpon>SettingsView.xaml</DependentUpon>
@@ -224,6 +228,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\QuizWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScoreTypeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

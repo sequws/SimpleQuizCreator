@@ -90,6 +90,10 @@ namespace SimpleQuizCreator.ViewModels
         public DelegateCommand OpenQuizWindow =>
             _openQuizWindow ?? (_openQuizWindow = new DelegateCommand(ExecuteOpenQuizWindow, CanExecuteOpenQuizWindow));
 
+        private DelegateCommand _openScoreDialog;
+        public DelegateCommand OpenScoreDialogCommand =>
+            _openScoreDialog ?? (_openScoreDialog = new DelegateCommand(ExecuteOpenScoreDialogCommand));
+
         public StartQuizViewModel(IQuizService quizService, 
             IDialogService dialogService, 
             IQuizGenerator quizGenerator, 
@@ -167,5 +171,13 @@ namespace SimpleQuizCreator.ViewModels
         {
             return true;
         }
+
+        void ExecuteOpenScoreDialogCommand()
+        {
+            _dialogService.ShowDialog("ScoreTypeDialog", new DialogParameters(), r =>
+            {
+            });
+        }
+
     }
 }

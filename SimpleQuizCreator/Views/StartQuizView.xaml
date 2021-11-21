@@ -17,7 +17,15 @@
             </StackPanel>
 
             <ComboBox ItemsSource="{Binding ListOfQuizzes}" SelectedItem="{Binding SelectedQuiz}" Margin="20 5"/>
-            <Label Content="{x:Static p:Resources.LabelScoreSettingsContnet}" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="{x:Static p:Resources.LabelScoreSettingsContnet}" FontWeight="Bold"/>
+                <Button Width="22" Height="22" Margin="20 0"
+                    Foreground="Blue"
+                    Style="{DynamicResource MahApps.Styles.Button.Circle}"
+                    Command="{Binding OpenScoreDialogCommand}">
+                    <iconPacks:Codicons Kind="Question" />
+                </Button>
+            </StackPanel>
             <ComboBox Grid.Row="1" Margin="20, 5"
                       ItemsSource="{Binding ScoreTypes}"
                       SelectedItem="{Binding SelectedScoreType}">
