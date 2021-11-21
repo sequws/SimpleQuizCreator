@@ -7,6 +7,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
              xmlns:common="clr-namespace:SimpleQuizCreator.Common"
+             xmlns:conv="clr-namespace:SimpleQuizCreator.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600"             
              MinWidth="400" MinHeight="600"  MaxWidth="800" MaxHeight="800">
@@ -18,10 +19,23 @@
             <Setter Property="SizeToContent" Value="WidthAndHeight"/>
         </Style>
     </prism:Dialog.WindowStyle>
-    <DockPanel Background="AntiqueWhite">
-        <Label DockPanel.Dock="Top" FontSize="32" Content="TEST" HorizontalAlignment="Center"></Label>
+    <UserControl.Resources>
+        <common:ScoreType x:Key="SingleSimple">OneGoodZeroBad</common:ScoreType>
+        <Style TargetType="TextBlock" x:Key="testKey">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="14"></Setter>
+            <Setter Property="Margin" Value="0 20 0 0"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel Background="AliceBlue">
+        <Label DockPanel.Dock="Top" FontSize="16" Content="{x:Static p:Resources.ScoreTypeDialogText}" HorizontalAlignment="Center"></Label>
         <StackPanel Margin="20 0">
-            <TextBlock Text="{Binding Type}"/>
+            <!--<TextBlock Text="{StaticResource ResourceKey=SingleSimple}"/>-->
+            <TextBlock Text="{Binding SingleSimple}" Style="{StaticResource testKey}"/>
+            <TextBlock Text="{Binding SingleMedium}" Style="{StaticResource testKey}"/>
+            <TextBlock Text="{Binding SingleHard}" Style="{StaticResource testKey}"/>
+            <TextBlock Text="{Binding MultiSimple}" Style="{StaticResource testKey}"/>
+            <TextBlock Text="{Binding MultiHard}" Style="{StaticResource testKey}"/>            
         </StackPanel>
     </DockPanel>
 </UserControl>

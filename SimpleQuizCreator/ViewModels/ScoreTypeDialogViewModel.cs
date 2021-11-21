@@ -13,18 +13,16 @@ namespace SimpleQuizCreator.ViewModels
     {
         private readonly ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
 
-        private ScoreType type;
-        public ScoreType Type
-        {
-            get { return type; }
-            set { SetProperty(ref type, value); }
-        }
+        public ScoreType SingleSimple { get; } = ScoreType.OneGoodZeroBad;
+        public ScoreType SingleMedium { get; } = ScoreType.OneGoodOneBad;
+        public ScoreType SingleHard { get; } = ScoreType.OneGoodOneBadOneNo;
+        public ScoreType MultiSimple { get; } = ScoreType.AllGoodWithoutMinus;
+        public ScoreType MultiHard { get; } = ScoreType.AllGoodWithMinus;
 
         public ScoreTypeDialogViewModel()
         {
-            Title = "ScoreTypeDialogTitle";
-            Type = ScoreType.AllGoodWithMinus;
-        }
+            Title = rm.GetString("ScoreTypeDialogTitle");
+       }
 
 
 

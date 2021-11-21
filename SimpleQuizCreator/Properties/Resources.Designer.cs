@@ -449,6 +449,78 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeAllCorrectAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeAllCorrectAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeAllCorrectAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeAnyCorrectAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeAnyCorrectAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeAnyCorrectAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeAnyWrongAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeAnyWrongAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeAnyWrongAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeCorrectAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeCorrectAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeCorrectAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[How the quiz scoring works]].
+        /// </summary>
+        public static string ScoreTypeDialogText {
+            get {
+                return ResourceManager.GetString("ScoreTypeDialogText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[Score type explanation]].
+        /// </summary>
+        public static string ScoreTypeDialogTitle {
+            get {
+                return ResourceManager.GetString("ScoreTypeDialogTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeNoAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeNoAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeNoAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [[ScoreTypeWrongAnswerSelected]].
+        /// </summary>
+        public static string ScoreTypeWrongAnswerSelected {
+            get {
+                return ResourceManager.GetString("ScoreTypeWrongAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         public static string SettingsLanguageText {

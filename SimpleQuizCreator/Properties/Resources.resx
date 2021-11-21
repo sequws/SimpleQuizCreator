@@ -247,6 +247,30 @@
   <data name="QuizPreviewTitle" xml:space="preserve">
     <value>Preview: {0}</value>
   </data>
+  <data name="ScoreTypeAllCorrectAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeAllCorrectAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeAnyCorrectAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeAnyWrongAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeCorrectAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeCorrectAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeDialogText" xml:space="preserve">
+    <value>[[How the quiz scoring works]]</value>
+  </data>
+  <data name="ScoreTypeDialogTitle" xml:space="preserve">
+    <value>[[Score type explanation]]</value>
+  </data>
+  <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeNoAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
+    <value>[[ScoreTypeWrongAnswerSelected]]</value>
+  </data>
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>Language:</value>
   </data>
