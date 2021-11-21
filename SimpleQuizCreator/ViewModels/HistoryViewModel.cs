@@ -17,6 +17,7 @@ namespace SimpleQuizCreator.ViewModels
     public class HistoryViewModel : BindableBase, INavigationAware
     {
         private readonly IResultService _resultService;
+        private readonly ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
 
         #region properties
         private string selectedQuizName;
@@ -48,11 +49,14 @@ namespace SimpleQuizCreator.ViewModels
         public HistoryViewModel(IResultService resultService)
         {
             _resultService = resultService;
-
             HistoryResult = _resultService.GetAllResult().ToList();
-            List<string> names = HistoryResult.Select(x => x.QuizName).Distinct().ToList();
+            RefreshFilterData();
+        }
 
-            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+        private void RefreshFilterData()
+        {
+            List<string> names = HistoryResult.Select(x => x.QuizName).Distinct().ToList();
+            QuizNames.Clear();
             QuizNames.Add(rm.GetString("AllText"));
             QuizNames.AddRange(names);
             SelectedQuizName = QuizNames[0];
@@ -77,6 +81,7 @@ namespace SimpleQuizCreator.ViewModels
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             RefreshData();
+            RefreshFilterData();
         }
 
         public bool IsNavigationTarget(NavigationContext navigationContext)
