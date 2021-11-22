@@ -449,7 +449,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeAllCorrectAnswerSelected]].
+        ///   Looks up a localized string similar to All correct answer selected.
         /// </summary>
         public static string ScoreTypeAllCorrectAnswerSelected {
             get {
@@ -458,7 +458,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeAnyCorrectAnswerSelected]].
+        ///   Looks up a localized string similar to Any of correct answer selected.
         /// </summary>
         public static string ScoreTypeAnyCorrectAnswerSelected {
             get {
@@ -467,7 +467,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[Any other case]].
+        ///   Looks up a localized string similar to In any other case.
         /// </summary>
         public static string ScoreTypeAnyOtherCase {
             get {
@@ -476,7 +476,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeAnyWrongAnswerSelected]].
+        ///   Looks up a localized string similar to Any of wrong answer selected.
         /// </summary>
         public static string ScoreTypeAnyWrongAnswerSelected {
             get {
@@ -485,7 +485,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeCorrectAnswerSelected]].
+        ///   Looks up a localized string similar to Correct answer selected.
         /// </summary>
         public static string ScoreTypeCorrectAnswerSelected {
             get {
@@ -494,7 +494,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[How the quiz scoring works]].
+        ///   Looks up a localized string similar to How the quiz scoring works.
         /// </summary>
         public static string ScoreTypeDialogText {
             get {
@@ -503,7 +503,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[Score type explanation]].
+        ///   Looks up a localized string similar to Score type explanation.
         /// </summary>
         public static string ScoreTypeDialogTitle {
             get {
@@ -521,7 +521,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [-{0} pts].
+        ///   Looks up a localized string similar to -{0} pts.
         /// </summary>
         public static string ScoreTypeMinusPts {
             get {
@@ -530,7 +530,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeNoAnswerSelected]].
+        ///   Looks up a localized string similar to No answer selected.
         /// </summary>
         public static string ScoreTypeNoAnswerSelected {
             get {
@@ -548,7 +548,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [+{0} pts].
+        ///   Looks up a localized string similar to +{0} pts.
         /// </summary>
         public static string ScoreTypePlusPts {
             get {
@@ -557,7 +557,7 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [[ScoreTypeWrongAnswerSelected]].
+        ///   Looks up a localized string similar to Wrong answer selected.
         /// </summary>
         public static string ScoreTypeWrongAnswerSelected {
             get {

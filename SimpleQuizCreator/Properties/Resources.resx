@@ -248,43 +248,43 @@
     <value>Preview: {0}</value>
   </data>
   <data name="ScoreTypeAllCorrectAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeAllCorrectAnswerSelected]]</value>
+    <value>All correct answer selected</value>
   </data>
   <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeAnyCorrectAnswerSelected]]</value>
+    <value>Any of correct answer selected</value>
   </data>
   <data name="ScoreTypeAnyOtherCase" xml:space="preserve">
-    <value>[[Any other case]]</value>
+    <value>In any other case</value>
   </data>
   <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeAnyWrongAnswerSelected]]</value>
+    <value>Any of wrong answer selected</value>
   </data>
   <data name="ScoreTypeCorrectAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeCorrectAnswerSelected]]</value>
+    <value>Correct answer selected</value>
   </data>
   <data name="ScoreTypeDialogText" xml:space="preserve">
-    <value>[[How the quiz scoring works]]</value>
+    <value>How the quiz scoring works</value>
   </data>
   <data name="ScoreTypeDialogTitle" xml:space="preserve">
-    <value>[[Score type explanation]]</value>
+    <value>Score type explanation</value>
   </data>
   <data name="ScoreTypeMinusOne" xml:space="preserve">
     <value>-1 pts</value>
   </data>
   <data name="ScoreTypeMinusPts" xml:space="preserve">
-    <value>[-{0} pts]</value>
+    <value>-{0} pts</value>
   </data>
   <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeNoAnswerSelected]]</value>
+    <value>No answer selected</value>
   </data>
   <data name="ScoreTypePlusOne" xml:space="preserve">
     <value>+1 pts</value>
   </data>
   <data name="ScoreTypePlusPts" xml:space="preserve">
-    <value>[+{0} pts]</value>
+    <value>+{0} pts</value>
   </data>
   <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
-    <value>[[ScoreTypeWrongAnswerSelected]]</value>
+    <value>Wrong answer selected</value>
   </data>
   <data name="ScoreTypeZeroPts" xml:space="preserve">
     <value>0 pts</value>
