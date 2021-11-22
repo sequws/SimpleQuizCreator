@@ -276,6 +276,48 @@
   <data name="QuizPreviewTitle" xml:space="preserve">
     <value>[[Preview: {0}]]</value>
   </data>
+  <data name="ScoreTypeAllCorrectAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeAllCorrectAnswerSelected</value>
+  </data>
+  <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeAnyCorrectAnswerSelected</value>
+  </data>
+  <data name="ScoreTypeAnyOtherCase" xml:space="preserve">
+    <value>ScoreTypeAnyOtherCase</value>
+  </data>
+  <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeAnyWrongAnswerSelected</value>
+  </data>
+  <data name="ScoreTypeCorrectAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeCorrectAnswerSelected</value>
+  </data>
+  <data name="ScoreTypeDialogText" xml:space="preserve">
+    <value>ScoreTypeDialogText</value>
+  </data>
+  <data name="ScoreTypeDialogTitle" xml:space="preserve">
+    <value>ScoreTypeDialogTitle</value>
+  </data>
+  <data name="ScoreTypeMinusOne" xml:space="preserve">
+    <value>ScoreTypeMinusOne</value>
+  </data>
+  <data name="ScoreTypeMinusPts" xml:space="preserve">
+    <value>ScoreTypeMinusPts</value>
+  </data>
+  <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeNoAnswerSelected</value>
+  </data>
+  <data name="ScoreTypePlusOne" xml:space="preserve">
+    <value>ScoreTypePlusOne</value>
+  </data>
+  <data name="ScoreTypePlusPts" xml:space="preserve">
+    <value>ScoreTypePlusPts</value>
+  </data>
+  <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
+    <value>ScoreTypeWrongAnswerSelected</value>
+  </data>
+  <data name="ScoreTypeZeroPts" xml:space="preserve">
+    <value>ScoreTypeZeroPts</value>
+  </data>
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>[[Language:]]</value>
   </data>

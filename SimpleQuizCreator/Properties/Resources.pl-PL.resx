@@ -276,6 +276,48 @@
   <data name="QuizPreviewTitle" xml:space="preserve">
     <value>Podgląd: {0}</value>
   </data>
+  <data name="ScoreTypeAllCorrectAnswerSelected" xml:space="preserve">
+    <value>Zaznaczono wszystkie prawidłowe odpowiedzi </value>
+  </data>
+  <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
+    <value>Zaznaczono jakąkolwiek prawidłową odpowiedź</value>
+  </data>
+  <data name="ScoreTypeAnyOtherCase" xml:space="preserve">
+    <value>W każdym innym przypadku</value>
+  </data>
+  <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
+    <value>Zaznaczono jakąkolwiek złą odpowiedź</value>
+  </data>
+  <data name="ScoreTypeCorrectAnswerSelected" xml:space="preserve">
+    <value>Zaznaczono prawidłową odpowiedź</value>
+  </data>
+  <data name="ScoreTypeDialogText" xml:space="preserve">
+    <value>Jak działa ocenianie quizu</value>
+  </data>
+  <data name="ScoreTypeDialogTitle" xml:space="preserve">
+    <value>Ocenianie quizu - wyjaśnienie</value>
+  </data>
+  <data name="ScoreTypeMinusOne" xml:space="preserve">
+    <value>-1 pkt</value>
+  </data>
+  <data name="ScoreTypeMinusPts" xml:space="preserve">
+    <value>-{0} pkt</value>
+  </data>
+  <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
+    <value>Nie zaznaczono odpowiedzi</value>
+  </data>
+  <data name="ScoreTypePlusOne" xml:space="preserve">
+    <value>+1 pkt</value>
+  </data>
+  <data name="ScoreTypePlusPts" xml:space="preserve">
+    <value>+{0} pkt</value>
+  </data>
+  <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
+    <value>Zaznaczono złą odpowiedź</value>
+  </data>
+  <data name="ScoreTypeZeroPts" xml:space="preserve">
+    <value>0 pkt</value>
+  </data>
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>Język:</value>
   </data>
