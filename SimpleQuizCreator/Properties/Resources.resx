@@ -253,6 +253,9 @@
   <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
     <value>[[ScoreTypeAnyCorrectAnswerSelected]]</value>
   </data>
+  <data name="ScoreTypeAnyOtherCase" xml:space="preserve">
+    <value>[[Any other case]]</value>
+  </data>
   <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
     <value>[[ScoreTypeAnyWrongAnswerSelected]]</value>
   </data>
@@ -265,11 +268,26 @@
   <data name="ScoreTypeDialogTitle" xml:space="preserve">
     <value>[[Score type explanation]]</value>
   </data>
+  <data name="ScoreTypeMinusOne" xml:space="preserve">
+    <value>-1 pts</value>
+  </data>
+  <data name="ScoreTypeMinusPts" xml:space="preserve">
+    <value>[-{0} pts]</value>
+  </data>
   <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
     <value>[[ScoreTypeNoAnswerSelected]]</value>
   </data>
+  <data name="ScoreTypePlusOne" xml:space="preserve">
+    <value>+1 pts</value>
+  </data>
+  <data name="ScoreTypePlusPts" xml:space="preserve">
+    <value>[+{0} pts]</value>
+  </data>
   <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
     <value>[[ScoreTypeWrongAnswerSelected]]</value>
+  </data>
+  <data name="ScoreTypeZeroPts" xml:space="preserve">
+    <value>0 pts</value>
   </data>
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>Language:</value>

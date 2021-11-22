@@ -21,21 +21,94 @@
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
         <common:ScoreType x:Key="SingleSimple">OneGoodZeroBad</common:ScoreType>
-        <Style TargetType="TextBlock" x:Key="testKey">
+        <Style TargetType="TextBlock" x:Key="scoreName">
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="FontSize" Value="14"></Setter>
             <Setter Property="Margin" Value="0 20 0 0"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="greenText">
+            <Setter Property="Foreground" Value="ForestGreen"></Setter>
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="redText">
+            <Setter Property="Foreground" Value="Red"></Setter>
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="blueText">
+            <Setter Property="Foreground" Value="Blue"></Setter>
+            <Setter Property="Margin" Value="10 0 0 0"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
     </UserControl.Resources>
     <DockPanel Background="AliceBlue">
         <Label DockPanel.Dock="Top" FontSize="16" Content="{x:Static p:Resources.ScoreTypeDialogText}" HorizontalAlignment="Center"></Label>
         <StackPanel Margin="20 0">
             <!--<TextBlock Text="{StaticResource ResourceKey=SingleSimple}"/>-->
-            <TextBlock Text="{Binding SingleSimple}" Style="{StaticResource testKey}"/>
-            <TextBlock Text="{Binding SingleMedium}" Style="{StaticResource testKey}"/>
-            <TextBlock Text="{Binding SingleHard}" Style="{StaticResource testKey}"/>
-            <TextBlock Text="{Binding MultiSimple}" Style="{StaticResource testKey}"/>
-            <TextBlock Text="{Binding MultiHard}" Style="{StaticResource testKey}"/>            
+            <TextBlock Text="{Binding SingleSimple}" Style="{StaticResource scoreName}"/>
+            
+            <StackPanel Orientation="Horizontal"> 
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeCorrectAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypePlusOne}" Style="{StaticResource greenText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeWrongAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeZeroPts}" Style="{StaticResource blueText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeNoAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeZeroPts}" Style="{StaticResource blueText}"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Text="{Binding SingleMedium}" Style="{StaticResource scoreName}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeCorrectAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypePlusOne}" Style="{StaticResource greenText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeWrongAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeMinusOne}" Style="{StaticResource redText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeNoAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeZeroPts}" Style="{StaticResource blueText}"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Text="{Binding SingleHard}" Style="{StaticResource scoreName}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeCorrectAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypePlusOne}" Style="{StaticResource greenText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeWrongAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeMinusOne}" Style="{StaticResource redText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeNoAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeMinusOne}" Style="{StaticResource redText}"></TextBlock>
+            </StackPanel>
+
+
+            <TextBlock Text="{Binding MultiSimple}" Style="{StaticResource scoreName}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeAllCorrectAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypePlusOne}" Style="{StaticResource greenText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeAnyOtherCase}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeZeroPts}" Style="{StaticResource blueText}"></TextBlock>
+            </StackPanel>
+
+            <TextBlock Text="{Binding MultiHard}" Style="{StaticResource scoreName}"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeAllCorrectAnswerSelected}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypePlusOne}" Style="{StaticResource greenText}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeAnyOtherCase}"></TextBlock>
+                <TextBlock Text="{x:Static p:Resources.ScoreTypeMinusOne}" Style="{StaticResource redText}"></TextBlock>
+            </StackPanel>
         </StackPanel>
     </DockPanel>
 </UserControl>

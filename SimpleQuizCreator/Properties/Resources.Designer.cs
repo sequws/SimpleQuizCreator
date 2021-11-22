@@ -467,6 +467,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [[Any other case]].
+        /// </summary>
+        public static string ScoreTypeAnyOtherCase {
+            get {
+                return ResourceManager.GetString("ScoreTypeAnyOtherCase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [[ScoreTypeAnyWrongAnswerSelected]].
         /// </summary>
         public static string ScoreTypeAnyWrongAnswerSelected {
@@ -503,6 +512,24 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to -1 pts.
+        /// </summary>
+        public static string ScoreTypeMinusOne {
+            get {
+                return ResourceManager.GetString("ScoreTypeMinusOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [-{0} pts].
+        /// </summary>
+        public static string ScoreTypeMinusPts {
+            get {
+                return ResourceManager.GetString("ScoreTypeMinusPts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [[ScoreTypeNoAnswerSelected]].
         /// </summary>
         public static string ScoreTypeNoAnswerSelected {
@@ -512,11 +539,38 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to +1 pts.
+        /// </summary>
+        public static string ScoreTypePlusOne {
+            get {
+                return ResourceManager.GetString("ScoreTypePlusOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [+{0} pts].
+        /// </summary>
+        public static string ScoreTypePlusPts {
+            get {
+                return ResourceManager.GetString("ScoreTypePlusPts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [[ScoreTypeWrongAnswerSelected]].
         /// </summary>
         public static string ScoreTypeWrongAnswerSelected {
             get {
                 return ResourceManager.GetString("ScoreTypeWrongAnswerSelected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 0 pts.
+        /// </summary>
+        public static string ScoreTypeZeroPts {
+            get {
+                return ResourceManager.GetString("ScoreTypeZeroPts", resourceCulture);
             }
         }
         
