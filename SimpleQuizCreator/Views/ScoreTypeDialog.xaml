@@ -9,8 +9,8 @@
              xmlns:common="clr-namespace:SimpleQuizCreator.Common"
              xmlns:conv="clr-namespace:SimpleQuizCreator.Converters"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="600"             
-             MinWidth="400" MinHeight="600"  MaxWidth="800" MaxHeight="800">
+             d:DesignHeight="450" d:DesignWidth="500"             
+             MinWidth="400" MinHeight="600"  MaxWidth="500" MaxHeight="800">
     <prism:Dialog.WindowStyle>
         <Style TargetType="Window">
             <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
@@ -44,6 +44,11 @@
     </UserControl.Resources>
     <DockPanel Background="AliceBlue">
         <Label DockPanel.Dock="Top" FontSize="16" Content="{x:Static p:Resources.ScoreTypeDialogText}" HorizontalAlignment="Center"></Label>
+        <StackPanel DockPanel.Dock="Bottom" Height="36" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="{x:Static p:Resources.MenuItemClose}" 
+                    Command="{Binding CloseDialogCommand}" 
+                    Margin="3" Width="80"></Button>
+        </StackPanel>
         <StackPanel Margin="20 0">
             <!--<TextBlock Text="{StaticResource ResourceKey=SingleSimple}"/>-->
             <TextBlock Text="{Binding SingleSimple}" Style="{StaticResource scoreName}"/>

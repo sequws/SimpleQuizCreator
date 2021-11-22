@@ -67,7 +67,7 @@ namespace SimpleQuizCreator.ViewModels
         }
 
         public void OnDialogClosed()
-        {            
+        {
         }
 
         public void OnDialogOpened(IDialogParameters parameters)

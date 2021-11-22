@@ -24,7 +24,16 @@ namespace SimpleQuizCreator.ViewModels
             Title = rm.GetString("ScoreTypeDialogTitle");
        }
 
+        #region commands
+        private DelegateCommand _closeDialogCommand;
+        public DelegateCommand CloseDialogCommand =>
+            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(ExecuteCloseDialogCommand));
 
+        void ExecuteCloseDialogCommand()
+        {
+            RequestClose?.Invoke(new DialogResult(ButtonResult.OK));
+        }
+        #endregion
 
         #region IDailogAware
         public string Title { get; }
