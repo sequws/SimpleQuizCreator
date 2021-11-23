@@ -71,6 +71,7 @@
     <Compile Include="Common\GlobalEnums.cs" />
     <Compile Include="Common\Calculator\OneGoodZeroBadCalcStrategy.cs" />
     <Compile Include="Common\Calculator\OneGoodOneBadOneNoCalcStrategy.cs" />
+    <Compile Include="Converters\IntToStringTimeConverter.cs" />
     <Compile Include="Events\QuizFinishedEvent.cs" />
     <Compile Include="Common\QuizPreviewGenerator.cs" />
     <Compile Include="Converters\BoolToColorConverter.cs" />

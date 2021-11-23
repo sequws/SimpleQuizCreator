@@ -7,11 +7,14 @@
              xmlns:p="clr-namespace:SimpleQuizCreator.Properties"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:cnv="clr-namespace:SimpleQuizCreator.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="600">
+    <UserControl.Resources>
+        <cnv:IntToStringTimeConverter x:Key="IntToTimeConverter" />
+    </UserControl.Resources>
     <DockPanel >
         <DockPanel DockPanel.Dock="Top" Height="40" Background="AliceBlue">
-
             <ComboBox Margin="5" ItemsSource="{Binding QuizNames}" SelectedItem="{Binding SelectedQuizName}"/>
         </DockPanel>
         <DataGrid ItemsSource="{Binding HistoryResult}"
@@ -33,7 +36,7 @@
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderQuestionAmount}" Binding="{Binding Path=QuestionAmount}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderPointScore}" Binding="{Binding Path=PointScore}"></DataGridTextColumn>
                 <DataGridTextColumn Header="{x:Static p:Resources.HeaderPercentScore}" Binding="{Binding Path=PercentScore}"></DataGridTextColumn>
-                <DataGridTextColumn Header="{x:Static p:Resources.HeaderTime}" Binding="{Binding Path=TimeInSeconds}"></DataGridTextColumn>
+                <DataGridTextColumn Header="{x:Static p:Resources.HeaderTime}" Binding="{Binding Path=TimeInSeconds, Converter={StaticResource IntToTimeConverter}}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </DockPanel>
