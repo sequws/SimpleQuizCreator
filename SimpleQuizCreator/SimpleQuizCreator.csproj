@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <DisableFody Condition="'$(Configuration)' == 'Debug'">true</DisableFody>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DBA1C300-069E-45B6-92A2-912C8DEB9A72}</ProjectGuid>
@@ -322,6 +323,11 @@
     <PackageReference Include="AutoMapper">
       <Version>10.1.1</Version>
     </PackageReference>
+    <PackageReference Include="Costura.Fody">
+      <Version>5.7.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Dapper">
       <Version>2.0.90</Version>
     </PackageReference>
@@ -344,6 +350,9 @@
       <Version>4.7.11</Version>
     </PackageReference>
     <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
+    <PackageReference Include="Resource.Embedder">
+      <Version>2.1.1</Version>
+    </PackageReference>
     <PackageReference Include="System.Data.SQLite.Core">
       <Version>1.0.115</Version>
     </PackageReference>
