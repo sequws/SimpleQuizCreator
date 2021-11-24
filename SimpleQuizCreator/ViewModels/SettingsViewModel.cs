@@ -37,7 +37,9 @@ namespace SimpleQuizCreator.ViewModels
                 if( value != null)
                 {
                     Console.WriteLine($"Selected language: {value.Code}");
-                }                
+
+                    IsWarningVisible = !value.Code.Equals(_loadedLanguage);
+                }
             }
         }
 
@@ -47,6 +49,16 @@ namespace SimpleQuizCreator.ViewModels
             get { return historyMinQuestion; }
             set { SetProperty(ref historyMinQuestion, value); }
         }
+
+        private bool isWarningVisible;
+        public bool IsWarningVisible
+        {
+            get { return isWarningVisible; }
+            set { SetProperty(ref isWarningVisible, value); }
+        }
+
+        private string _loadedLanguage = string.Empty;
+
         #endregion
 
         IGlobalSettingService _settingService;
@@ -80,8 +92,10 @@ namespace SimpleQuizCreator.ViewModels
                 Abbrevation = "RUS",
                 Name = "Russian"
             });
-
+                        
             var lang = (string)_settingService.Get("AppLanguage");
+            _loadedLanguage = lang;
+
             SelectedLanguage = languages.FirstOrDefault(x => x.Code == lang);
 
             HistoryMinQuestion = (int)_settingService.Get("HistoryMinQuestion");

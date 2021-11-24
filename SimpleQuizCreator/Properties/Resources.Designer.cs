@@ -593,6 +593,15 @@ namespace SimpleQuizCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Application must be restarted to see changes in translation.
+        /// </summary>
+        public static string SettingsWarningText {
+            get {
+                return ResourceManager.GetString("SettingsWarningText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Set to max.
         /// </summary>
         public static string SetToMaxText {

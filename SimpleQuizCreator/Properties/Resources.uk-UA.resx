@@ -324,6 +324,9 @@
   <data name="SettingsMinQuestionText" xml:space="preserve">
     <value>Мінімальна кількість питань, щоб записати історію:</value>
   </data>
+  <data name="SettingsWarningText" xml:space="preserve">
+    <value>[[Application must be restarted to see changes in translation]]</value>
+  </data>
   <data name="SetToMaxText" xml:space="preserve">
     <value>Встановити макс.</value>
   </data>

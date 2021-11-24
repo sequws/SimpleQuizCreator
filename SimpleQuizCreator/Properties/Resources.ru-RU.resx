@@ -324,6 +324,9 @@
   <data name="SettingsMinQuestionText" xml:space="preserve">
     <value>[[Min. number of questions to save history:]]</value>
   </data>
+  <data name="SettingsWarningText" xml:space="preserve">
+    <value>[[Application must be restarted to see changes in translation]]</value>
+  </data>
   <data name="SetToMaxText" xml:space="preserve">
     <value>[[Set to max]]</value>
   </data>
