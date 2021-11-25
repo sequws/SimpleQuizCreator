@@ -277,55 +277,55 @@
     <value>Огляд: {0}</value>
   </data>
   <data name="ScoreTypeAllCorrectAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeAllCorrectAnswerSelected</value>
+    <value>Усі правильні відповіді були позначені</value>
   </data>
   <data name="ScoreTypeAnyCorrectAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeAnyCorrectAnswerSelected</value>
+    <value>Одна з відповідей є правильною</value>
   </data>
   <data name="ScoreTypeAnyOtherCase" xml:space="preserve">
-    <value>ScoreTypeAnyOtherCase</value>
+    <value>У будь-якому іншому випадку</value>
   </data>
   <data name="ScoreTypeAnyWrongAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeAnyWrongAnswerSelected</value>
+    <value>Одна з неправильних відповідей була позначена</value>
   </data>
   <data name="ScoreTypeCorrectAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeCorrectAnswerSelected</value>
+    <value>Позначено правильну відповідь</value>
   </data>
   <data name="ScoreTypeDialogText" xml:space="preserve">
-    <value>ScoreTypeDialogText</value>
+    <value>Як працює оцінювання у квізі</value>
   </data>
   <data name="ScoreTypeDialogTitle" xml:space="preserve">
-    <value>ScoreTypeDialogTitle</value>
+    <value>Оцінювання квізу - пояснення</value>
   </data>
   <data name="ScoreTypeMinusOne" xml:space="preserve">
-    <value>ScoreTypeMinusOne</value>
+    <value>-1 бал</value>
   </data>
   <data name="ScoreTypeMinusPts" xml:space="preserve">
-    <value>ScoreTypeMinusPts</value>
+    <value>- {0} балів</value>
   </data>
   <data name="ScoreTypeNoAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeNoAnswerSelected</value>
+    <value>Відповідь не вибрано</value>
   </data>
   <data name="ScoreTypePlusOne" xml:space="preserve">
-    <value>ScoreTypePlusOne</value>
+    <value>+1 бал</value>
   </data>
   <data name="ScoreTypePlusPts" xml:space="preserve">
-    <value>ScoreTypePlusPts</value>
+    <value>+ {0} балів</value>
   </data>
   <data name="ScoreTypeWrongAnswerSelected" xml:space="preserve">
-    <value>ScoreTypeWrongAnswerSelected</value>
+    <value>Позначено неправильну відповідь</value>
   </data>
   <data name="ScoreTypeZeroPts" xml:space="preserve">
-    <value>ScoreTypeZeroPts</value>
+    <value>0 балів</value>
   </data>
   <data name="SettingsLanguageText" xml:space="preserve">
     <value>Мова:</value>
   </data>
   <data name="SettingsMinQuestionText" xml:space="preserve">
-    <value>Мінімальна кількість питань, щоб записати історію:</value>
+    <value>Мінімальна кількість питань, щоб зберегти історію:</value>
   </data>
   <data name="SettingsWarningText" xml:space="preserve">
-    <value>[[Application must be restarted to see changes in translation]]</value>
+    <value>Ви повинні перезапустити програму, щоб побачити зміни в перекладі</value>
   </data>
   <data name="SetToMaxText" xml:space="preserve">
     <value>Встановити макс.</value>
