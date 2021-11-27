@@ -1,0 +1,40 @@
+[Q]World's longest river
+[*]	Nile
+[Q]Longest river in North America
+[*]	Mississippi-Missouri
+[Q]World's largest river by volume
+[*]	Amazon
+[Q]Longest river in Asia
+[*]	Yangtze
+[Q]Major river of London
+[*]	Thames
+[Q]Major river of Paris
+[*]	Seine
+[Q]Major river of Rome
+[*]	Tiber
+[Q]Flowest parallel the Tigris
+[*]	Euphrates
+[Q]Connects the Great Lakes to the Atlantic
+[*]	St. Lawrence
+[Q]Home to an ancient civilization in modern-day Pakistan
+[*]	Indus
+[Q]Longest river in Europe
+[*]	Volga
+[Q]Hinduism's most sacred river
+[*]	Ganges
+[Q]Flows through Dusseldorf and Basel
+[*]	Rhine
+[Q]River that carved the Grand Canyon
+[*]	Colorado
+[Q]Second longest in Africa
+[*]	Congo
+[Q]Longest in Indochina
+[*]	Mekong
+[Q]Forms the border of Mexico and Texas
+[*]	Rio Grande
+[Q]Longest in Australia
+[*]	Murray
+[Q]Flows through four capitals, including Vienna and Budapest
+[*]	Danube
+[Q]"Colorful" river that forms the border of South Africa and Namibia
+[*]	Orange

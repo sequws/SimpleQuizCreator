@@ -1,0 +1,60 @@
+[Q]Toyota
+[*]	Japan
+[Q]BMW
+[*]	Germany
+[Q]Ford
+[*]	United States
+[Q]Hyundai
+[*]	South Korea
+[Q]Lamborghini
+[*]	Italy
+[Q]Honda
+[*]	Japan
+[Q]Chevrolet
+[*]	United States
+[Q]Volvo
+[*]	Sweden
+[Q]Suzuki
+[*]	Japan
+[Q]Porsche
+[*]	Germany	
+[Q]Fiat
+[*]	Italy
+[Q]Geely
+[*]	China
+[Q]Tesla
+[*]	United States
+[Q]Rolls-Royce
+[*]	United Kingdom
+[Q]Kia
+[*]	South Korea
+[Q]Lada
+[*]	Russia
+[Q]Holden
+[*]	Australia
+[Q]Seat
+[*]	Spain
+[Q]Citroën
+[*]	France
+[Q]Nissan
+[*]	Japan	
+[Q]Ferrari
+[*]	Italy
+[Q]Volkswagen
+[*]	Germany
+[Q]Mazda
+[*]	Japan
+[Q]Chrysler
+[*]	United States
+[Q]Tata
+[*]	India
+[Q]Peugeot
+[*]	France
+[Q]Aston Martin
+[*]	United Kingdom
+[Q]Alfa Romeo
+[*]	Italy
+[Q]Dacia
+[*]	Romania
+[Q]Škoda
+[*]	Czech Republic
