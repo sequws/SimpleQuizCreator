@@ -54,7 +54,7 @@ namespace SimpleQuizCreator.Tests
             var res = _quizGenerator.GetQuiz();
 
             // Assert
-            Assert.True(res.Questions.Count == 3);            
+            Assert.True(res.Questions.Count == 3);
         }
 
         [Fact]
@@ -108,7 +108,7 @@ namespace SimpleQuizCreator.Tests
 
         [Fact]
         public void GenerateNewQuiz_AutogenerateAnswers()
-        {            
+        {
             Quiz quiz = FakeQuizFactory.NewQuizWithOnlyOneAnswers();
             settings = new QuizSettings { QuestionLimit = 3, AutogenerateAnswers = 4 };
 
@@ -121,5 +121,39 @@ namespace SimpleQuizCreator.Tests
             Assert.Equal(3, allAnswer.Count);
         }
 
+
+        /// <summary>
+        /// Should generate 5 question with 3answers each - only 3 different answers exists!
+        /// </summary>
+        [Fact]
+        public void GenerateNewQuiz_AutogenerateSameSameAnswersIn3Questions()
+        {
+            Quiz quiz = FakeQuizFactory.NewQuizWithSameAnswersIn3Questions();
+            settings = new QuizSettings { QuestionLimit = 5, AutogenerateAnswers = 5 };
+
+            _quizGenerator.GenerateNewQuiz(quiz, settings);
+            var res = _quizGenerator.GetQuiz();
+            var questionsWith3ans = res.Questions.Where(x => x.AnswersCount == 3).ToList();
+
+            Assert.True(res.Questions.Count == 5);
+            Assert.Equal(5, questionsWith3ans.Count);
+        }
+
+        /// <summary>
+        /// Should generate 3 question with 1 answer each - all questions have the same answer
+        /// </summary>
+        [Fact]
+        public void GenerateNewQuiz_AutogenerateSameAnswersForEachQuestion()
+        {
+            Quiz quiz = FakeQuizFactory.NewQuizWithSameAnswerInAllQuestions();
+            settings = new QuizSettings { QuestionLimit = 5, AutogenerateAnswers = 5 };
+
+            _quizGenerator.GenerateNewQuiz(quiz, settings);
+            var res = _quizGenerator.GetQuiz();
+            var questionsWith1ans = res.Questions.Where(x => x.AnswersCount == 1).ToList();
+
+            Assert.True(res.Questions.Count == 3);
+            Assert.Equal(3, questionsWith1ans.Count);
+        }
     }
 }

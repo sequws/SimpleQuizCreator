@@ -132,6 +132,15 @@ namespace SimpleQuizCreator.DataAccess
                     AddError($"Question: {question.QuestionText} - has more than 9 answers!");
                 }
             }
+
+            // should check if minimal 2 different answer exists! 
+            var diffAns = parsedQuiz.Questions.SelectMany(x => x.Answers).GroupBy(y => y.AnswerText).Select(z => z.FirstOrDefault()).ToList();
+            
+            if (diffAns.Count <= 1)
+            {
+                AddError("No minimal 2 different answer exists in the quiz!");
+            }
+
         }
 
         public Quiz GetData()

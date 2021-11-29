@@ -26,7 +26,7 @@ namespace SimpleQuizCreator.Tests
 
             // Assert
             Assert.False( _quizParser.GetData().IsCorrectlyLoaded);
-            Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
+            Assert.Equal(2, ((ErrorCollector)_quizParser).ErrorCounter);
         }
 
         [Fact]
@@ -44,7 +44,7 @@ namespace SimpleQuizCreator.Tests
 
             Assert.True(res);
             Assert.False(_quizParser.GetData().IsCorrectlyLoaded);
-            Assert.Equal(4, ((ErrorCollector)_quizParser).ErrorCounter);
+            Assert.Equal(5, ((ErrorCollector)_quizParser).ErrorCounter);
             //Assert.Equal("No questions in the quiz!", ((ErrorCollector)_quizParser).Errors[0]);
         }
 
@@ -62,7 +62,7 @@ namespace SimpleQuizCreator.Tests
             var res = _quizParser.TryParse(fakeFile);
 
             Assert.True(res);
-            Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
+            Assert.Equal(2, ((ErrorCollector)_quizParser).ErrorCounter);
         }
 
         [Fact]
@@ -282,6 +282,31 @@ namespace SimpleQuizCreator.Tests
             Assert.False(quiz.IsSingleAnswer);
             Assert.True(quiz.IsCorrectlyLoaded);
             Assert.Equal(0, ((ErrorCollector)_quizParser).ErrorCounter);
+        }
+
+        [Fact]
+        public void TryParse_SingleAnswerSameForEachQuestion()
+        {
+            IParser<Quiz> _quizParser = new QuizParser();
+            List<string> fakeFile = new List<string>
+            {
+                $"[Q]Question1",
+                "[*]answer1",
+
+                $"[Q]Question2",
+                "[*]answer1",
+
+                $"[Q]Question3",
+                "[*]answer1"
+            };
+
+            var res = _quizParser.TryParse(fakeFile);
+            var quiz = _quizParser.GetData();
+
+            Assert.True(res);
+            Assert.True(quiz.IsSingleAnswer);
+            Assert.False(quiz.IsCorrectlyLoaded);
+            Assert.Equal(1, ((ErrorCollector)_quizParser).ErrorCounter);
         }
     }
 }

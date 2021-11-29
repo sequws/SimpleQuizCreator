@@ -132,5 +132,55 @@ namespace SimpleQuizCreator.Tests.FakeData
             };
             return quiz;
         }
+
+        public static Quiz NewQuizWithSameAnswersIn3Questions()
+        {
+            Quiz quiz = new Quiz
+            {
+                Errors = new List<string>(),
+                Name = "NewQuizWithSameAnswersInManyQuestions",
+                Questions = new List<Question>()
+                {
+                    new Question { QuestionText = "Question 1", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ1", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 2", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ2", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 3", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ3", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 4", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ3", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 5", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ3", IsCorrect = true },
+                    }},
+                }
+            };
+            return quiz;
+        }
+
+        public static Quiz NewQuizWithSameAnswerInAllQuestions()
+        {
+            Quiz quiz = new Quiz
+            {
+                Errors = new List<string>(),
+                Name = "NewQuizWithSameAnswerInAllQuestions",
+                Questions = new List<Question>()
+                {
+                    new Question { QuestionText = "Question 1", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ1", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 2", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ1", IsCorrect = true },
+                    }},
+                    new Question { QuestionText = "Question 3", Answers = new List<Answer> {
+                        new Answer { AnswerText = "AnswerQ1", IsCorrect = true },
+                    }},
+                }
+            };
+            return quiz;
+        }
     }
 }
