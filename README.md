@@ -14,11 +14,9 @@ Create your own quizzes using simple TXT files.
 - several language versions 
 
 **Screenshots:**
-![Scoring](docs/screen_scoring.png)
-[Main wingow](docs/screen_main.png)
-[History](docs/screen_history.png)
-[Result](docs/screen_result.png)
 
+<img src="docs/screen_scoring.png" width="45%"> <img src="docs/screen_main.png" width="45%">  
+<img src="docs/screen_history.png" width="45%"> <img src="docs/screen_result.png" width="45%"> 
 
 ### How to create a quiz
 
