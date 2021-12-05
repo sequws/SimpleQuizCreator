@@ -33,7 +33,6 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<ILoader<QuizFile>, QuizLoader>();
             containerRegistry.RegisterSingleton<IQuizService, QuizService>();
             containerRegistry.RegisterSingleton<IQuizGenerator, QuizGenerator>();
-            containerRegistry.RegisterSingleton<IWindowView, QuizWindow>();
             containerRegistry.RegisterSingleton<IScoreCalculator, ScoreCalculator>();
 
             containerRegistry.RegisterSingleton<IResultRepository, ResultRepository>();
