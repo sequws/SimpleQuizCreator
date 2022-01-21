@@ -1,0 +1,13 @@
+CREATE TABLE "HistoryResult" (
+	"Id"	INTEGER NOT NULL UNIQUE,
+	"QuizName"	TEXT NOT NULL,
+	"Type"	TEXT NOT NULL,
+	"Date"	TEXT NOT NULL,
+	"QuestionAmount"	INTEGER NOT NULL DEFAULT 0,
+	"AllPosiblePoints"	INTEGER,
+	"AllGoodAnswers"	INTEGER NOT NULL DEFAULT 0,
+	"PointScore"	INTEGER,
+	"PercentScore"	REAL,
+	"TimeInSeconds"	INTEGER DEFAULT 0,
+	PRIMARY KEY("Id" AUTOINCREMENT)
+)
