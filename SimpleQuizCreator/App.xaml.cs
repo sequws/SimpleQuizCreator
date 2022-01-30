@@ -57,9 +57,9 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());            
         }
 
-        protected override void OnStartup(StartupEventArgs e)
+        protected override void OnInitialized()
         {
-            base.OnStartup(e);
+            base.OnInitialized();
 
             var regionManager = Container.Resolve<IRegionManager>();
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(QuizListView));
