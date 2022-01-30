@@ -9,15 +9,9 @@ namespace SimpleQuizCreator.Views
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        public MainWindow(IRegionManager regionManager)
+        public MainWindow()
         {
             InitializeComponent();
-
-            //regionManager.RegisterViewWithRegion("ContentRegion", typeof(HelloView));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(QuizListView));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(StartQuizView));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(HistoryView));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(SettingsView));
 
             Width = Properties.Settings.Default.AppWidth;
             Height = Properties.Settings.Default.AppHeight;

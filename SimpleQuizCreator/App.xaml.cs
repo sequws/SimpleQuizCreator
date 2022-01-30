@@ -11,6 +11,7 @@ using SimpleQuizCreator.Common;
 using System.Threading;
 using AutoMapper;
 using SimpleQuizCreator.Mappings;
+using Prism.Regions;
 
 namespace SimpleQuizCreator
 {
@@ -29,6 +30,11 @@ namespace SimpleQuizCreator
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterForNavigation<QuizListView>("QuizListView");
+            containerRegistry.RegisterForNavigation<StartQuizView>("StartQuizView");
+            containerRegistry.RegisterForNavigation<HistoryView>("HistoryView");
+            containerRegistry.RegisterForNavigation<SettingsView>("SettingsView");
+
             containerRegistry.RegisterSingleton<IParser<Quiz>, QuizParser>();
             containerRegistry.RegisterSingleton<ILoader<QuizFile>, QuizLoader>();
             containerRegistry.RegisterSingleton<IQuizService, QuizService>();
@@ -48,7 +54,15 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IGlobalSettingService, GlobalSettingService>();
             containerRegistry.RegisterSingleton<IQuizPreviewGenerator, QuizPreviewGenerator>();
 
-            containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());
+            containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());            
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            var regionManager = Container.Resolve<IRegionManager>();
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(QuizListView));
         }
     }
 }
