@@ -54,7 +54,7 @@ namespace SimpleQuizCreator
             containerRegistry.RegisterSingleton<IGlobalSettingService, GlobalSettingService>();
             containerRegistry.RegisterSingleton<IQuizPreviewGenerator, QuizPreviewGenerator>();
 
-            containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());            
+            containerRegistry.RegisterInstance<IMapper>(AutoMapperConfig.Initialize());
         }
 
         protected override void OnInitialized()
